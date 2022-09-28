@@ -1,4 +1,5 @@
+/.cache
 /node_modules
 /public
 
-.gatsby-config.js
+/gatsby-config.js

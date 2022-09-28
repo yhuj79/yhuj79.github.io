@@ -21,7 +21,7 @@ const metaConfig = {
   description: `yhuj79's Blog`,
   author: "yhuj79",
   siteUrl: "https://yhuj79.github.io/",
-  lang: "en",
+  lang: "kr",
   utterances: "yhuj79/blog-comments",
   links: {
     github: "https://github.com/yhuj79",
