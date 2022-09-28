@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Dev Ed's RSS Feed]]></title><description><![CDATA[Ed's Blog]]></description><link>https://gatsby-starter-apple.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 28 Sep 2022 12:22:54 GMT</lastBuildDate><item><title><![CDATA[Getting Started]]></title><description><![CDATA[Add Post Set Front matter NOTE : Properties other than alt must be required. Edit About Page Easy. You can modify the blog/about.md file. If…]]></description><link>https://gatsby-starter-apple.netlify.app/blog/getting-started/</link><guid isPermaLink="false">https://gatsby-starter-apple.netlify.app/blog/getting-started/</guid><pubDate>Sun, 01 Mar 2020 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Add Post&lt;/h2&gt;
+&lt;h3&gt;Set Front matter&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;md&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;Getting Started&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;// Post title&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;Instruction&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;// Post category&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;2020-03-01 12:00:00 +09:00&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;// Current time&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;desc&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;Let&amp;#39;s start making blogs step by step!&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;// Post desc&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;thumbnail&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;./images/getting-started/thumbnail.jpg&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;// Post thumbnail&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;apple and shaking hands&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;// [optional] thumbnail image alt&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;NOTE&lt;/em&gt; : Properties other than alt must be required.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Edit About Page&lt;/h2&gt;
+&lt;p&gt;Easy. You can modify the &lt;code&gt;blog/about.md&lt;/code&gt; file. If you need additional styling, give an id or class to a specific element in &lt;code&gt;about.md&lt;/code&gt; and try to control it in the &lt;code&gt;pages/about.js&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;An example is shown below.&lt;/p&gt;
+&lt;h3&gt;blog/about.md&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;md&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;Hello&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;pages/about.js&lt;/h3&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;About&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; () &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;/* ... */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;Container&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;styled&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(Markdown).&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;attrs&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;({&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  as: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  width: var(--post-width);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  margin: 0 auto;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  margin-top: 80px;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  margin-bottom: 6rem;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  @media (max-width: ${({ &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-6&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt; }) &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;sm&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;}) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;    margin-top: var(--sizing-xl);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;    width: 87.5%;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  h1 {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;    margin-bottom: 2rem;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  h2 {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;    margin-top: var(--sizing-lg);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;    @media (max-width: ${({ &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-6&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt; }) &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;sm&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;}) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;      font-size: 1.75rem;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  h3 {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;    @media (max-width: ${({ &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-6&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt; }) &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;sm&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;}) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;      font-size: 1.25rem;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  /* You can Add Additional Styling here */&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  #title {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;    font-size: 60px;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;export&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; About&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Other Customization&lt;/h2&gt;
+&lt;p&gt;You can freely customize each componentfile using the styled-component. If you want to change the style globally, you can change the &lt;code&gt;styles/globalStyle&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Thank you for using &lt;code&gt;gatsby-starter-apple&lt;/code&gt;. If you have any questions, please leave them on this &lt;strong&gt;&lt;a href=&quot;https://github.com/sungik-choi/gatsby-starter-apple/issues&quot;&gt;link&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .github-light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .github-light-theme .grvsc-tiszgT-1 { color: #000000; }
+  .github-light-theme .grvsc-tiszgT-9 { color: #22863A; }
+  .github-light-theme .grvsc-tiszgT-8 { color: #032F62; }
+  .github-light-theme .grvsc-tiszgT-10 { color: #6F42C1; }
+  .github-light-theme .grvsc-tiszgT-5 { color: #D73A49; }
+  .github-light-theme .grvsc-tiszgT-6 { color: #6A737D; }
+  .github-light-theme .grvsc-tiszgT-7 { color: #005CC5; }
+  .github-light-theme .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-5 { color: #BB97E7; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-9 { color: #EB7E81; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-6 { color: #F39961; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Code Highlight]]></title><description><![CDATA[Using Plugin This starter kit uses the code highlight plugin gatsby-remark-vscode.
+Please refer to the link for more detailed instructions…]]></description><link>https://gatsby-starter-apple.netlify.app/blog/code-block/</link><guid isPermaLink="false">https://gatsby-starter-apple.netlify.app/blog/code-block/</guid><pubDate>Sat, 01 Feb 2020 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Using Plugin&lt;/h2&gt;
+&lt;p&gt;This starter kit uses the code highlight plugin &lt;a href=&quot;https://github.com/andrewbranch/gatsby-remark-vscode&quot;&gt;gatsby-remark-vscode&lt;/a&gt;.
+Please refer to the link for more detailed instructions. It&apos;s a great plugin. 👍&lt;/p&gt;
+&lt;h2&gt;React JSX with line highlighting&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;jsx&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; ProfileLink &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; React.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;createClass&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;({&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; () {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;https://www.facebook.com/&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.props.username}&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        {&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.props.username}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    )&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;})&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Javascript&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;js&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {x, y} as p &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;#39;point&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;ANSWER&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;extends&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;Vehicle&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-11 grvsc-t4tStz-6&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-11 grvsc-t4tStz-6&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(speed);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; c &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;#39;cost&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;[c] &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; cost;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.intro &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;`This is a car runs at&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;      ${&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;}.`&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; num &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; [&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;]) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(num &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;0b111110111&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;$initHighlight&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-11 grvsc-t4tStz-6&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-11 grvsc-t4tStz-6&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; (block.className.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-10&quot;&gt;\b&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;no&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-tiszgT-b grvsc-t4tStz-3&quot;&gt;\-&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;highlight&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-10&quot;&gt;\b&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;) &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;processBlock&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(block.function, &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;0x0F&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;) &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;#39; class=&amp;quot;&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  } &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; (e) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;/*handle exception*/&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; e4x &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;Example&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;            &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;1234&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; i &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;; i &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; classes.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;; i&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;// &amp;quot;0 / 2&amp;quot; should not be parsed as regexp&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;checkCondition&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(classes[i]) &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;===&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt; /&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;\d&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-10&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;[\s/]&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-10&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;every&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(classes, &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;Boolean&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;));&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;export&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  $initHighlight;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;HTML&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;html&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;DOCTYPE&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;en&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;charset&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;Hello world&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;link&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;index.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;app&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;vendor/prism.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;examples.bundle.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;CSS&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;css&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;*=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;language-&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;],&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;5c6e74&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;text-shadow&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-3&quot;&gt;Consolas&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-3&quot;&gt; Monaco&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-1&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;Andale Mono&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-1&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-1&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;Ubuntu Mono&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-1&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;monospace&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;direction&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;ltr&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;white-space&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;word-spacing&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;word-break&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;tab-size&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;hyphens&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;*=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;language-&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;::selection&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;::selection&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;text-shadow&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;b3d4fc&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;@media&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;*=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;language-&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;],&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;text-shadow&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;*=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;language-&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;] {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;f8f5ec&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;:not&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;) &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-3&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;em&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;db4c69&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;f9f2f4&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .github-light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .github-light-theme .grvsc-tiszgT-b { font-weight: bold; }
+  .github-light-theme .grvsc-tiszgT-5 { color: #D73A49; }
+  .github-light-theme .grvsc-tiszgT-1 { color: #000000; }
+  .github-light-theme .grvsc-tiszgT-7 { color: #005CC5; }
+  .github-light-theme .grvsc-tiszgT-10 { color: #6F42C1; }
+  .github-light-theme .grvsc-tiszgT-9 { color: #22863A; }
+  .github-light-theme .grvsc-tiszgT-8 { color: #032F62; }
+  .github-light-theme .grvsc-tiszgT-11 { color: #E36209; }
+  .github-light-theme .grvsc-tiszgT-6 { color: #6A737D; }
+  .github-light-theme .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-9 { color: #EB7E81; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-5 { color: #BB97E7; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-6 { color: #F39961; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Category Test]]></title><description><![CDATA[Category Test 🍎]]></description><link>https://gatsby-starter-apple.netlify.app/blog/category-test/</link><guid isPermaLink="false">https://gatsby-starter-apple.netlify.app/blog/category-test/</guid><pubDate>Wed, 01 Jan 2020 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Category Test&lt;/h2&gt;
+&lt;p&gt;🍎&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Markdown Test]]></title><description><![CDATA[Overview Philosophy Markdown is intended to be as easy-to-read and easy-to-write as is feasible. Readability, however, is emphasized above…]]></description><link>https://gatsby-starter-apple.netlify.app/blog/markdown-test/</link><guid isPermaLink="false">https://gatsby-starter-apple.netlify.app/blog/markdown-test/</guid><pubDate>Sun, 01 Dec 2019 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Overview&lt;/h2&gt;
+&lt;h3&gt;Philosophy&lt;/h3&gt;
+&lt;p&gt;Markdown is intended to be as easy-to-read and easy-to-write as is feasible.&lt;/p&gt;
+&lt;p&gt;Readability, however, is emphasized above all else. A Markdown-formatted
+document should be publishable as-is, as plain text, without looking
+like it&apos;s been marked up with tags or formatting instructions. While
+Markdown&apos;s syntax has been influenced by several existing text-to-HTML
+filters -- including &lt;a href=&quot;http://docutils.sourceforge.net/mirror/setext.html&quot;&gt;Setext&lt;/a&gt;, &lt;a href=&quot;http://www.aaronsw.com/2002/atx/&quot;&gt;atx&lt;/a&gt;, &lt;a href=&quot;http://textism.com/tools/textile/&quot;&gt;Textile&lt;/a&gt;, &lt;a href=&quot;http://docutils.sourceforge.net/rst.html&quot;&gt;reStructuredText&lt;/a&gt;,
+&lt;a href=&quot;http://www.triptico.com/software/grutatxt.html&quot;&gt;Grutatext&lt;/a&gt;, and &lt;a href=&quot;http://ettext.taint.org/doc/&quot;&gt;EtText&lt;/a&gt; -- the single biggest source of
+inspiration for Markdown&apos;s syntax is the format of plain text email.&lt;/p&gt;
+&lt;h2&gt;Block Elements&lt;/h2&gt;
+&lt;h3&gt;Paragraphs and Line Breaks&lt;/h3&gt;
+&lt;p&gt;A paragraph is simply one or more consecutive lines of text, separated
+by one or more blank lines. (A blank line is any line that looks like a
+blank line -- a line containing nothing but spaces or tabs is considered
+blank.) Normal paragraphs should not be indented with spaces or tabs.&lt;/p&gt;
+&lt;p&gt;The implication of the &quot;one or more consecutive lines of text&quot; rule is
+that Markdown supports &quot;hard-wrapped&quot; text paragraphs. This differs
+significantly from most other text-to-HTML formatters (including Movable
+Type&apos;s &quot;Convert Line Breaks&quot; option) which translate every line break
+character in a paragraph into a &lt;code&gt;&amp;#x3C;br /&gt;&lt;/code&gt; tag.&lt;/p&gt;
+&lt;p&gt;When you &lt;em&gt;do&lt;/em&gt; want to insert a &lt;code&gt;&amp;#x3C;br /&gt;&lt;/code&gt; break tag using Markdown, you
+end a line with two or more spaces, then type return.&lt;/p&gt;
+&lt;h3&gt;Headers&lt;/h3&gt;
+&lt;p&gt;Markdown supports two styles of headers, [Setext] [1] and [atx] [2].&lt;/p&gt;
+&lt;p&gt;Optionally, you may &quot;close&quot; atx-style headers. This is purely
+cosmetic -- you can use this if you think it looks better. The
+closing hashes don&apos;t even need to match the number of hashes
+used to open the header. (The number of opening hashes
+determines the header level.)&lt;/p&gt;
+&lt;h3&gt;Blockquotes&lt;/h3&gt;
+&lt;p&gt;Markdown uses email-style &lt;code&gt;&gt;&lt;/code&gt; characters for blockquoting. If you&apos;re
+familiar with quoting passages of text in an email message, then you
+know how to create a blockquote in Markdown. It looks best if you hard
+wrap the text and put a &lt;code&gt;&gt;&lt;/code&gt; before every line:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/p&gt;
+&lt;p&gt;Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Markdown allows you to be lazy and only put the &lt;code&gt;&gt;&lt;/code&gt; before the first
+line of a hard-wrapped paragraph:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
+adding additional levels of &lt;code&gt;&gt;&lt;/code&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is the first level of quoting.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is nested blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Back to the first level.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Blockquotes can contain other Markdown elements, including headers, lists,
+and code blocks:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2&gt;This is a header&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;This is the first list item.&lt;/li&gt;
+&lt;li&gt;This is the second list item.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here&apos;s some example code:&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;return shell_exec(&amp;quot;echo $input | $markdown_script&amp;quot;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Any decent text editor should make email-style quoting easy. For
+example, with BBEdit, you can make a selection and choose Increase
+Quote Level from the Text menu.&lt;/p&gt;
+&lt;h3&gt;Lists&lt;/h3&gt;
+&lt;p&gt;Markdown supports ordered (numbered) and unordered (bulleted) lists.&lt;/p&gt;
+&lt;p&gt;Unordered lists use asterisks, pluses, and hyphens -- interchangably
+-- as list markers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Red&lt;/li&gt;
+&lt;li&gt;Green&lt;/li&gt;
+&lt;li&gt;Blue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;is equivalent to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Red&lt;/li&gt;
+&lt;li&gt;Green&lt;/li&gt;
+&lt;li&gt;Blue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;and:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Red&lt;/li&gt;
+&lt;li&gt;Green&lt;/li&gt;
+&lt;li&gt;Blue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ordered lists use numbers followed by periods:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Bird&lt;/li&gt;
+&lt;li&gt;McHale&lt;/li&gt;
+&lt;li&gt;Parish&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It&apos;s important to note that the actual numbers you use to mark the
+list have no effect on the HTML output Markdown produces. The HTML
+Markdown produces from the above list is:&lt;/p&gt;
+&lt;p&gt;If you instead wrote the list in Markdown like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Bird&lt;/li&gt;
+&lt;li&gt;McHale&lt;/li&gt;
+&lt;li&gt;Parish&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;or even:&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Bird&lt;/li&gt;
+&lt;li&gt;McHale&lt;/li&gt;
+&lt;li&gt;Parish&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;you&apos;d get the exact same HTML output. The point is, if you want to,
+you can use ordinal numbers in your ordered Markdown lists, so that
+the numbers in your source match the numbers in your published HTML.
+But if you want to be lazy, you don&apos;t have to.&lt;/p&gt;
+&lt;p&gt;To make lists look nice, you can wrap items with hanging indents:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.&lt;/li&gt;
+&lt;li&gt;Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But if you want to be lazy, you don&apos;t have to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.&lt;/li&gt;
+&lt;li&gt;Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;List items may consist of multiple paragraphs. Each subsequent
+paragraph in a list item must be indented by either 4 spaces
+or one tab:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;This is a list item with two paragraphs. Lorem ipsum dolor
+sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+mi posuere lectus.&lt;/p&gt;
+&lt;p&gt;Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+sit amet velit.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Suspendisse id sem consectetuer libero luctus adipiscing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It looks nice if you indent every line of the subsequent
+paragraphs, but here again, Markdown will allow you to be
+lazy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;This is a list item with two paragraphs.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;This is the second paragraph in the list item. You&amp;#39;re&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;only required to indent the first line. Lorem ipsum dolor
+sit amet, consectetuer adipiscing elit.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Another item in the same list.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To put a blockquote within a list item, the blockquote&apos;s &lt;code&gt;&gt;&lt;/code&gt;
+delimiters need to be indented:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A list item with a blockquote:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a blockquote
+inside a list item.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To put a code block within a list item, the code block needs
+to be indented &lt;em&gt;twice&lt;/em&gt; -- 8 spaces or two tabs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A list item with a code block:&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;  &amp;lt;code goes here&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Code Blocks&lt;/h3&gt;
+&lt;p&gt;Pre-formatted code blocks are used for writing about programming or
+markup source code. Rather than forming normal paragraphs, the lines
+of a code block are interpreted literally. Markdown wraps a code block
+in both &lt;code&gt;&amp;#x3C;pre&gt;&lt;/code&gt; and &lt;code&gt;&amp;#x3C;code&gt;&lt;/code&gt; tags.&lt;/p&gt;
+&lt;p&gt;To produce a code block in Markdown, simply indent every line of the
+block by at least 4 spaces or 1 tab.&lt;/p&gt;
+&lt;p&gt;This is a normal paragraph:&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;This is a code block.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;tell application &amp;quot;Foo&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;    beep&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;end tell&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A code block continues until it reaches a line that is not indented
+(or the end of the article).&lt;/p&gt;
+&lt;p&gt;Within a code block, ampersands (&lt;code&gt;&amp;#x26;&lt;/code&gt;) and angle brackets (&lt;code&gt;&amp;#x3C;&lt;/code&gt; and &lt;code&gt;&gt;&lt;/code&gt;)
+are automatically converted into HTML entities. This makes it very
+easy to include example HTML source code using Markdown -- just paste
+it and indent it, and Markdown will handle the hassle of encoding the
+ampersands and angle brackets. For example, this:&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&amp;lt;div class=&amp;quot;footer&amp;quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;    &amp;amp;copy; 2004 Foo Corporation&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Regular Markdown syntax is not processed within code blocks. E.g.,
+asterisks are just literal asterisks within a code block. This means
+it&apos;s also easy to use Markdown to write about Markdown&apos;s own syntax.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;tell application &amp;quot;Foo&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;    beep&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;end tell&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Span Elements&lt;/h2&gt;
+&lt;h3&gt;Links&lt;/h3&gt;
+&lt;p&gt;Markdown supports two style of links: &lt;em&gt;inline&lt;/em&gt; and &lt;em&gt;reference&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In both styles, the link text is delimited by [square brackets].&lt;/p&gt;
+&lt;p&gt;To create an inline link, use a set of regular parentheses immediately
+after the link text&apos;s closing square bracket. Inside the parentheses,
+put the URL where you want the link to point, along with an &lt;em&gt;optional&lt;/em&gt;
+title for the link, surrounded in quotes. For example:&lt;/p&gt;
+&lt;p&gt;This is &lt;a href=&quot;http://example.com/&quot;&gt;an example&lt;/a&gt; inline link.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no title attribute.&lt;/p&gt;
+&lt;h3&gt;Emphasis&lt;/h3&gt;
+&lt;p&gt;Markdown treats asterisks (&lt;code&gt;*&lt;/code&gt;) and underscores (&lt;code&gt;_&lt;/code&gt;) as indicators of
+emphasis. Text wrapped with one &lt;code&gt;*&lt;/code&gt; or &lt;code&gt;_&lt;/code&gt; will be wrapped with an
+HTML &lt;code&gt;&amp;#x3C;em&gt;&lt;/code&gt; tag; double &lt;code&gt;*&lt;/code&gt;&apos;s or &lt;code&gt;_&lt;/code&gt;&apos;s will be wrapped with an HTML
+&lt;code&gt;&amp;#x3C;strong&gt;&lt;/code&gt; tag. E.g., this input:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;single asterisks&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;single underscores&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;double asterisks&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;double underscores&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Code&lt;/h3&gt;
+&lt;p&gt;To indicate a span of code, wrap it with backtick quotes (&lt;code&gt;`&lt;/code&gt;).
+Unlike a pre-formatted code block, a code span indicates code within a
+normal paragraph. For example:&lt;/p&gt;
+&lt;p&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .github-light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .github-light-theme .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item></channel></rss>
