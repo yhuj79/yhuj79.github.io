@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-index-tsx",
+    "path": "/category/mac-os/",
+    "result": {"data":{"allMarkdownRemark":{"group":[{"fieldValue":"Mac OS","totalCount":1},{"fieldValue":"Markdown","totalCount":1}],"totalCount":2,"edges":[{"node":{"id":"75eecd14-e675-5bfc-8a63-b86549c1d618","frontmatter":{"title":"Markdown Test","category":"Markdown","date":"2022-09-29","desc":"Markdown Syntax","thumbnail":{"childImageSharp":{"id":"0ebf2671-ac57-57ab-af64-3613212d38e9"},"base":"thumbnail.jpg"},"alt":"markdown logo"},"fields":{"slug":"/blog/220929/"}}},{"node":{"id":"274d6007-fe44-5f2c-ab04-18611dfccddb","frontmatter":{"title":"[Mac OS] Terminal App","category":"Mac OS","date":"2022-09-20","desc":"Gatsby Blog 테스트 게시글","thumbnail":null,"alt":null},"fields":{"slug":"/blog/220920/"}}}]}},"pageContext":{"category":"Mac OS"}},
+    "staticQueryHashes": ["1840460387","48878111"]}
