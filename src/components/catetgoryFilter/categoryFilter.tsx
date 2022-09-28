@@ -1,27 +1,27 @@
-import React, { useRef } from "react"
-import { Link } from "gatsby"
-import type { GatsbyLinkProps } from "gatsby"
-import styled from "styled-components"
-import kebabCase from "lodash/kebabCase"
+import React, { useRef } from "react";
+import { Link } from "gatsby";
+import type { GatsbyLinkProps } from "gatsby";
+import styled from "styled-components";
+import kebabCase from "lodash/kebabCase";
 
-import type { MarkdownRemarkGroupConnection } from "Types/GraphQL"
-import useScrollCenter from "./useScrollCenter"
+import type { MarkdownRemarkGroupConnection } from "Types/GraphQL";
+import useScrollCenter from "./useScrollCenter";
 
-const ACTIVE = "active"
+const ACTIVE = "active";
 
 interface CategoryFilterProps {
-  categoryList: MarkdownRemarkGroupConnection[]
+  categoryList: MarkdownRemarkGroupConnection[];
 }
 
-type LinkPropsGetter = GatsbyLinkProps<unknown>["getProps"]
+type LinkPropsGetter = GatsbyLinkProps<unknown>["getProps"];
 
 const CategoryFilter: React.FC<CategoryFilterProps> = ({ categoryList }) => {
-  const categoryRef = useRef<HTMLUListElement>(null)
-  const ALL_CATEGORY_NAME = "All"
+  const categoryRef = useRef<HTMLUListElement>(null);
+  const ALL_CATEGORY_NAME = "All";
   const isActive: LinkPropsGetter = ({ isCurrent }) =>
-    isCurrent ? { id: ACTIVE, tabIndex: -1 } : {}
+    isCurrent ? { id: ACTIVE, tabIndex: -1 } : {};
 
-  useScrollCenter({ ref: categoryRef, targetId: ACTIVE })
+  useScrollCenter({ ref: categoryRef, targetId: ACTIVE });
 
   return (
     <Nav aria-label="Category Filter">
@@ -33,8 +33,8 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({ categoryList }) => {
       <CategoryUl ref={categoryRef} className="invisible-scrollbar">
         {categoryList
           .sort((a, b) => b.totalCount - a.totalCount)
-          .map(category => {
-            const { fieldValue } = category
+          .map((category) => {
+            const { fieldValue } = category;
             return (
               <li key={fieldValue}>
                 <CategoryButton
@@ -44,12 +44,12 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({ categoryList }) => {
                   {fieldValue}
                 </CategoryButton>
               </li>
-            )
+            );
           })}
       </CategoryUl>
     </Nav>
-  )
-}
+  );
+};
 
 const Nav = styled.nav`
   display: flex;
@@ -67,7 +67,7 @@ const Nav = styled.nav`
   @media (max-width: ${({ theme }) => theme.device.sm}) {
     padding: 12px;
   }
-`
+`;
 
 const CategoryTitle = styled.em`
   position: static;
@@ -81,6 +81,8 @@ const CategoryTitle = styled.em`
   font-weight: var(--font-weight-semi-bold);
   font-style: initial;
   margin-right: var(--sizing-lg);
+  margin-top: 14px;
+  margin-bottom: 14px;
 
   @media (max-width: ${({ theme }) => theme.device.sm}) {
     position: absolute;
@@ -90,12 +92,14 @@ const CategoryTitle = styled.em`
     clip: rect(1px, 1px, 1px, 1px);
     white-space: no-wrap;
   }
-`
+`;
 
 const CategoryButton = styled(Link)`
   cursor: pointer;
   display: block;
   background-color: var(--color-category-button);
+  margin-top: 14px;
+  margin-bottom: 14px;
   padding: var(--sizing-sm) var(--sizing-base);
   border-radius: var(--border-radius-base);
   font-size: 0.875rem;
@@ -114,7 +118,7 @@ const CategoryButton = styled(Link)`
     color: var(--color-white);
     background-color: var(--color-blue);
   }
-`
+`;
 
 const Divider = styled.div`
   width: 1px;
@@ -122,7 +126,7 @@ const Divider = styled.div`
   margin: 0 var(--sizing-sm);
   transform: translateX(-50%);
   background-color: var(--color-divider);
-`
+`;
 
 const CategoryUl = styled.ul`
   display: flex;
@@ -131,9 +135,19 @@ const CategoryUl = styled.ul`
   -ms-overflow-style: none;
   scrollbar-width: none;
 
-  li + li {
-    margin-left: 6px;
+  li {
+    margin: 4px;
+    margin-bottom: 10px;
   }
-`
+  ::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background-color: var(--color-card);
+  }
+  ::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(--color-category-button);
+    border-radius: 10px;
+  }
+`;
 
-export default CategoryFilter
+export default CategoryFilter;
