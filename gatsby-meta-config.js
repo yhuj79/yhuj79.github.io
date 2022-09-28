@@ -22,7 +22,7 @@ const metaConfig = {
   author: "yhuj79",
   siteUrl: "https://yhuj79.github.io/",
   lang: "en",
-  utterances: "sungik-choi/gatsby-starter-apple-comment",
+  utterances: "yhuj79/blog-comments",
   links: {
     github: "https://github.com/yhuj79",
   },
