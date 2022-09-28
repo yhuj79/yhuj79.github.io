@@ -1,1 +1,0 @@
-module.exports = require("/Users/mac_yhj/IO/src/styles/typography")
