@@ -53,6 +53,7 @@ const Text = styled.div`
   flex: 1 1 auto;
   justify-content: space-between;
   padding: var(--sizing-md);
+  border-top: 1px solid var(--color-gray-1);
 
   & > * {
     display: block;

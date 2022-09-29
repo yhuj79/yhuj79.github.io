@@ -96,6 +96,7 @@ const CategoryTitle = styled.em`
 
 const CategoryButton = styled(Link)`
   cursor: pointer;
+  white-space: nowrap;
   display: block;
   background-color: var(--color-category-button);
   margin-top: 14px;

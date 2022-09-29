@@ -1,6 +1,7 @@
-# Hello
+# BLOG_YHUJ
 
-Welcome to my blog. My name is Ed.<br>
-I'm very interested in the web front-end development.
+>Dreams will get you nowhere, a good kick in the pants will take you a long way.
 
-Visit my [Github repository](https://github.com/yhuj79).
+* Junior Front Web Developer<br><br>
+    * [Email](mailto:yu1085@naver.com)
+    * [Github Repository](https://github.com/yhuj79)
