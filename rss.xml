@@ -1,4 +1,296 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ's RSS Feed]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 29 Sep 2022 22:11:13 GMT</lastBuildDate><item><title><![CDATA[마크다운(Markdown)]]></title><description><![CDATA[Overview Gatsby Starter Apple Test Post https://daringfireball.net/projects/markdown/syntax Philosophy Markdown is intended to be as easy-to…]]></description><link>https://yhuj79.github.io/blog/220929/</link><guid isPermaLink="false">https://yhuj79.github.io/blog/220929/</guid><pubDate>Thu, 29 Sep 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Overview&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ's RSS Feed]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 04 Oct 2022 22:59:57 GMT</lastBuildDate><item><title><![CDATA[HTTP 헤더 분석]]></title><description><![CDATA[HTTP란? HTTP(Hyper Text Transfer Protocol…]]></description><link>https://yhuj79.github.io/blog/221004/</link><guid isPermaLink="false">https://yhuj79.github.io/blog/221004/</guid><pubDate>Tue, 04 Oct 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;HTTP란?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;HTTP(Hyper Text Transfer Protocol)&lt;/strong&gt; 라는 영문 그대로 인터넷에서 하이퍼텍스트를 빠르게 교환하기 위한 프로토콜의 일종이다. 여기서 하이퍼텍스트는 링크를 통해 다른 문서로 이동할 수 있게 해주는 텍스트, 하이퍼링크를 나타내는 텍스트를 의미한다.&lt;/p&gt;
+&lt;p&gt;HTTP는 Application layer 프로토콜이며 TCP / IP 위에서 작동한다. (포스트의 주제가 HTTP 헤더 분석인지라 계층과 관련된 자세한 내용은 &lt;a href=&quot;https://ko.wikipedia.org/wiki/OSI_%EB%AA%A8%ED%98%95&quot;&gt;OSI_모형&lt;/a&gt; 참고.) HTTP는 80번 포트를 사용하며, 요청(Request)과 응답(Response)으로 구성되어 데이터를 주고받는다. 클라이언트가 80번 포트로 요청을 보내면, 서버에서 응답을 하는 방식이다.&lt;/p&gt;
+&lt;h2&gt;HTTPS란?&lt;/h2&gt;
+&lt;p&gt;기존의 HTTP는 암호화가 되지 않은 평문 데이터를 전송하는 프로토콜이라 비밀번호 등의 개인정보를 제 3자가 조회할 수 있었다. 이러한 문제를 해결하기 위해 HTTPS가 등장하게 되었다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HyperText Transfer Protocol over Secure Socket Layer&lt;br&gt;
+HTTP over TLS&lt;br&gt;
+HTTP over SSL&lt;br&gt;
+HTTP Secure&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;영문에서 알 수 있듯이 제 3자가 정보를 볼 수 없도록 암호화가 첨가되었다. 80번 포트가 아닌 443번 포트를 사용하며, 보안 소켓 계층(SECURE SOCKETS LAYER)을 사용한다. 이 SSL 인증서는 사용자가 사이트에서 제공하는 정보를 암호화하는데, 제 3자가 개인정보에 접근했을 경우에도 데이터가 이미 암호화된 상태이기 때문에 확인이 불가능하다. 전송 계층 보안(Transport Layer Security) 또한 사용되는데, 클라이언트와 서버 간의 커뮤니케이션을 암호화해준다.&lt;/p&gt;
+&lt;h2&gt;네트워크 헤더&lt;/h2&gt;
+&lt;p&gt;브라우저 개발자 도구의 네트워크 탭에서 헤더를 확인할 수 있는데, 요청과 응답의 부가적인 정보가 명시되어 있다. 다음은 네이버의 헤더 내용이다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;▾ 일반&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;요청 URL: https://www.naver.com/&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;요청 메서드: GET&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;상태 코드: 200 &lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;원격 주소: xxx.xxx.xxx.xxx:xxx&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;리퍼러 정책: unsafe-url&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;요청 URL&lt;/strong&gt; : 페이지의 URL.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;요청 메서드&lt;/strong&gt; : 해당 주소에 대한 동작(GET, POST, PUT, PATCH, DELETE 등등...).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;상태 코드&lt;/strong&gt; : 응답 상태를 3자리 숫자로 표시.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;1xx(Information Responses)&lt;/code&gt; : 요청을 받았으며 프로세스를 계속 진행.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;2xx(Successful Responses)&lt;/code&gt; : 요청을 성공적으로 받았으며 인식했고 수용.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;3xx(Redirection Messages)&lt;/code&gt; : 요청 완료를 위해 추가 작업 조치가 필요.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;4xx(Client Error Responses)&lt;/code&gt; : 요청의 문법이 잘못되었거나 승인 실패.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;5xx(Server Error Responses)&lt;/code&gt; : 서버가 명백히 유효한 요청에 대한 충족 실패.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;원격 주소&lt;/strong&gt; : 도메인이 해석되고 브라우저에 의해 어떤 서버와 소통할지 알기 위해 사용되는 IP 주소.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;리퍼러 정책(Referrer-Policy)&lt;/strong&gt; : 정책에 따라 페이지의 Referrer 데이터의 양을 제한.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;no-referrer&lt;/code&gt; : 전송된 요청에 리퍼러 정보가 포함되지 않음.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;no-referrer-when-downgrade&lt;/code&gt; : 프로토콜 보안 레벨이 동일하거나 향상될 경우&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(HTTP -&gt; HTTP, HTTPS -&gt; HTTP)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;origin&lt;/code&gt; : 도메인 정보만 전송.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;origin-when-cross-origin&lt;/code&gt; : 웹사이트가 같을 경우 전체, 다를 때는 도메인 주소만 전송.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;same-origin&lt;/code&gt; : 웹사이트가 같을 경우 전체 주소를 전송.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;strict-origin&lt;/code&gt; : 프로토콜 보안 레벨이 동일할 때만 전송.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;strict-origin-when-cross-origin&lt;/code&gt; : 보안 레벨 동일, 웹사이트가 같을 경우 전송.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;unsafe-url&lt;/code&gt; : 보안과 관계 없음.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;▾ 응답 헤더&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;cache-control: no-cache, no-store, must-revalidate&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;content-encoding: gzip&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;content-type: text/html; charset=UTF-8&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;date: Tue, 04 Oct 2022 09:55:10 GMT&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;p3p: CP=&amp;quot;CAO DSP CURa ADMa TAIa PSAa OUR LAW STP PHY ONL UNI &lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;        PUR FIN COM NAV INT DEM STA PRE&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;pragma: no-cache&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;referrer-policy: unsafe-url&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;server: NWS&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;strict-transport-security: max-age=63072000; includeSubdomains&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;x-frame-options: DENY&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;x-xss-protection: 1; mode=block&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;cache-control&lt;/strong&gt; : 캐시 관리에 대한 여러 정책을 제공.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;no-cache&lt;/code&gt; : 캐시가 유효한지 확인하기 위해 매번 서버에 요청.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;no-store&lt;/code&gt; : 어떤 요청도 캐시로 저장하지 않음.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;must-revalidate&lt;/code&gt; : no-cache 정책을 프록시 서버에게 요청.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;content-encoding&lt;/strong&gt; : 원본 미디어 유형에 대한 정보를 잃지 않고 메시지 데이터를 압축하는 데 사용. gzip, compress, deflate, br 등이 있음.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;content-type&lt;/strong&gt; : 원본 미디어 유형을 명시. UTF-8의 경우 최근 가장 통상적인 인코딩 방식이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;date&lt;/strong&gt; : HTTP 메시지가 만들어진 시각.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;p3p&lt;/strong&gt; : 프라이버시 보호정책을 전달하는 기준을 제공.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;pragma&lt;/strong&gt; : HTTP/1.0의 유물. cache-control 역할과 동일.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;server&lt;/strong&gt; : 응답 서버.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;strict-transport-security&lt;/strong&gt; : HTTP로 액세스하여 보안에 문제가 생기게 되는 상황을 방지.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;max-age&lt;/code&gt; : strict-transport-security가 브라우저에 설정될 시간.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;includeSubdomains&lt;/code&gt; : 서브 도메인까지 확장 적용함.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;x-frame-options&lt;/strong&gt; : 클릭 재킹(Click Jacking)을 이용한 공격을 막아주는 역할.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;DENY&lt;/code&gt; : 무조건 frame을 화면에 띄우지 않음.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;SAMEORIGIN&lt;/code&gt; : 같은 도메인의 경우 frame 가능.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ALLOW-FROM https://www.example.com/&lt;/code&gt; : 신뢰할 수 있는 출처인 경우 가능.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;h4&gt;클릭 재킹(Click Jacking)이란?&lt;/h4&gt;
+&lt;p&gt;HTML 삽입 취약점이 존재할 경우 iframe과 같은 태그를 삽입하여 사용자의 의도와 다른 클릭 이벤트를 실행시키거나, 순간적으로 수백, 수천 개의 request를 발생시켜 디도스를 발생시킬 수 있는 해킹 기법.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;x-xss-protection&lt;/strong&gt; : 위의 클릭 재킹(Click Jacking) 공격을 감지했을 경우 페이지 로드를 중지하는 기능을 가짐. 그러나 현재 비표준으로 분류되어 향후 변동 가능성이 있음.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;▾ 요청 헤더&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;:authority: www.naver.com&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;:method: GET&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;:path: /&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;:scheme: https&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;accept: text/html,application/xhtml+xml,application/xml;q=0.9,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;accept-encoding: gzip, deflate, br&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;accept-language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;cache-control: max-age=0        &lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;cookie: NNB=OOOOOOOOOOOOO; (생략)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;referer: https://www.naver.com/&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sec-ch-ua: &amp;quot;Google Chrome&amp;quot;;v=&amp;quot;105&amp;quot;, &amp;quot;Not)A;Brand&amp;quot;;v=&amp;quot;8&amp;quot;, &lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;    &amp;quot;Chromium&amp;quot;;v=&amp;quot;105&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sec-ch-ua-mobile: ?0&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sec-ch-ua-platform: &amp;quot;macOS&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sec-fetch-dest: document&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sec-fetch-mode: navigate&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sec-fetch-site: same-origin&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;sec-fetch-user: ?1&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;upgrade-insecure-requests: 1&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;            AppleWebKit/537.36 (KHTML, like Gecko)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;            Chrome/105.0.0.0 Safari/537.36&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;accept&lt;/strong&gt; : 요청을 보낼 때 데이터의 타입(MIME)을 명시할 때 사용.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;accept-encoding&lt;/strong&gt; : 원본 미디어 유형 압축 방식.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;cookie&lt;/strong&gt; : 서버로부터 받은 쿠키를 다시 서버에게 전송.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sec-ch-ua&lt;/strong&gt; : user-agent의 버전 정보를 제공. (user-agent에 대한 내용은 하단 참조.)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sec-ch-ua-mobile&lt;/strong&gt; : 브라우저가 모바일 장치에 있는지에 대한 여부.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sec-ch-ua-platform&lt;/strong&gt; : user-agent가 실행 중인 플랫폼 또는 운영 체제를 제공.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sec-fetch-dest&lt;/strong&gt; : 요청의 대상을 의미, document이면 HTML 문서의 최상위 탐색 결과.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sec-fetch-mode&lt;/strong&gt; : 요청 모드를 설정.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cors&lt;/code&gt; : 교차 출처 리소스 공유(cors). 추가 HTTP 헤더를 사용하여, 한 출처에서 실행 중인 웹 애플리케이션이 다른 출처의 선택한 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;no-cors&lt;/code&gt; : 메소드가 HEAD, GET또는 POST, 헤더가 아닌 다른 헤더가 되지 않도록 함.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;navigate&lt;/code&gt; : 탐색 지원 모드. 탐색 요청은 문서를 탐색하는 동안 생성됨.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;websocket&lt;/code&gt; : WebSocket 연결을 설정할 때만 사용되는 특수 모드.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;sec-fetch-site&lt;/strong&gt; : 요청 개시자의 출처와 요청된 리소스의 출처 간의 관계.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sec-fetch-user&lt;/strong&gt; : 사용자 활성화에 의해 시작된 요청에 대해서만 전송. 값이 항상 ?1이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;upgrade-insecure-requests&lt;/strong&gt; : 암호화되고 인증된 응답에 대한 클라이언트의 기본 설정과 CSP 지시문을 성공적으로 처리할 수 있음을 나타내는 신호를 서버에 전송.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;user-agent&lt;/strong&gt; : HTTP 요청을 보내는 디바이스, 브라우저 등의 사용자 소프트웨어 식별 정보.&lt;/p&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.zerocho.com/category/HTTP&quot;&gt;https://www.zerocho.com/category/HTTP&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.whatap.io/ko/blog/40/&quot;&gt;https://www.whatap.io/ko/blog/40/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cloudflare.com/ko-kr/learning/ssl/transport-layer-security-tls/&quot;&gt;https://www.cloudflare.com/ko-kr/learning/ssl/transport-layer-security-tls/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://csbankstorage.blogspot.com/2016/11/http_10.html&quot;&gt;https://csbankstorage.blogspot.com/2016/11/http_10.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.huskyhoochu.com/cache-control/&quot;&gt;https://www.huskyhoochu.com/cache-control/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://webhack.dynu.net/?idx=20161117.003&amp;#x26;print=friendly&quot;&gt;https://webhack.dynu.net/?idx=20161117.003&amp;#x26;print=friendly&lt;/a&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .github-light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .github-light-theme .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[마크다운(Markdown)]]></title><description><![CDATA[Overview Gatsby Starter Apple Test Post https://daringfireball.net/projects/markdown/syntax Philosophy Markdown is intended to be as easy-to…]]></description><link>https://yhuj79.github.io/blog/220929/</link><guid isPermaLink="false">https://yhuj79.github.io/blog/220929/</guid><pubDate>Thu, 29 Sep 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Overview&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Gatsby Starter Apple Test Post&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://daringfireball.net/projects/markdown/syntax&quot;&gt;https://daringfireball.net/projects/markdown/syntax&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Philosophy&lt;/h3&gt;
