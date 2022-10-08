@@ -141,8 +141,7 @@ const CategoryUl = styled.ul`
     margin-bottom: 10px;
   }
   ::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
+    height: 10px;
     background-color: var(--color-card);
   }
   ::-webkit-scrollbar-thumb:horizontal {
