@@ -1,4 +1,131 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ's RSS Feed]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 10 Oct 2022 23:59:14 GMT</lastBuildDate><item><title><![CDATA[HTTP 헤더 분석]]></title><description><![CDATA[HTTP란? HTTP(Hyper Text Transfer Protocol…]]></description><link>https://yhuj79.github.io/blog/221004/</link><guid isPermaLink="false">https://yhuj79.github.io/blog/221004/</guid><pubDate>Tue, 04 Oct 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;HTTP란?&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ's RSS Feed]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 12 Oct 2022 16:39:23 GMT</lastBuildDate><item><title><![CDATA[동적 타입 언어]]></title><description><![CDATA[컴퓨터가 이해하는 코드는 어떤 바보도 쓸 수 있다. 하지만 훌륭한 프로그래머는 사람이 이해할 수 있는 코드를 쓴다. -- Martin Fowler 정적 타입 언어 C, C++, Java, C#, Swift…]]></description><link>https://yhuj79.github.io/blog/221013/</link><guid isPermaLink="false">https://yhuj79.github.io/blog/221013/</guid><pubDate>Thu, 13 Oct 2022 03:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;컴퓨터가 이해하는 코드는 어떤 바보도 쓸 수 있다. 하지만 훌륭한 프로그래머는 사람이 이해할 수 있는 코드를 쓴다.&lt;/p&gt;
+&lt;p&gt;-- Martin Fowler&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;정적 타입 언어&lt;/h2&gt;
+&lt;p&gt;C, C++, Java, C#, Swift 등의 정적 타입 언어는 &lt;strong&gt;변수를 선언할 경우 데이터 타입을 사전에 선언해야 한다.&lt;/strong&gt; 정적 타입 언어는 컴파일 시 선언한 데이터 타입에 맞는 값을 할당했는지 검사하고, 맞지 않을 경우 에러를 보낸다. 변수 선언 시점에서 타입이 결정되고, 타입을 변경할 수 없다. 이는 컴파일 시 타입을 결정하기 때문에 실행 속도가 빠르고, 타입의 일관성을 강제함으로써 안정적인 코드를 구축 가능한 이점이 있다.&lt;/p&gt;
+&lt;h2&gt;동적 타입 언어&lt;/h2&gt;
+&lt;p&gt;반면 자바스크립트는 동적 타입 언어이다. var, let, const로 변수를 선언하고 데이터 타입은 선언하지 않는다. &lt;strong&gt;값을 할당하는 시점에, 현재 변수에 할당되어 있는 값에 의해 변수의 타입이 동적으로 결정된다.&lt;/strong&gt; 이를 &lt;strong&gt;동적 타이핑(Dynamic Typing)&lt;/strong&gt; 이라 한다. 타입 없이 변수를 선언하기 때문에 느슨한 타입(Loosely Typed)언어로도 불린다. 동적 타입 언어는 JavaScript, Ruby, Python, PHP, SmallTalk, Lisp 등이 있다.&lt;/p&gt;
+&lt;h2&gt;동적 타이핑의 장단점&lt;/h2&gt;
+&lt;p&gt;동적 타입 언어는 변수에 어떤 데이터 타입의 값이라도 자유롭게 할당할 수 있어 입문자가 이해하기 쉽고, 사용하기 편리하다. 또한 런타임까지 타입에 대한 결정을 끌고 갈 수 있기 때문에 많은 선택의 여지가 있다.&lt;/p&gt;
+&lt;p&gt;하지만 이러한 구조가 유연성(Flexibility)은 높지만 신뢰성(Reliability)은 떨어지는 단점이 생기는데, 동적으로 결정되는 부분에 있어 프로그램이 복잡할 경우 때때로 변수 값의 추적이 어려워질 수 있다. 자바스크립트는 개발자의 의도와 상관없이 자바스크립트 엔진에 의해 암묵적으로 타입이 자동으로 변환되기도 한다. 이러한 잘못된 예측은 코드의 양이 방대할수록 타입 에러를 찾아내기가 어려워진다.&lt;/p&gt;
+&lt;h2&gt;변수를 사용할 때 주의할 사항&lt;/h2&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;1. 변수의 개수가 많아지만 오류가 발생할 확률이 높아지므로,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;   꼭 필요한 경우에 한해 제한적으로 사용한다.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;2. 변수의 유효 범위(Scope)는 최대한 좁게 만들어 변수의 부작용을 억제한다.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;3. 전역 변수는 최대한 사용하지 않는다.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;4. 상수를 사용하여 값의 변경을 억제한다.&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;5. 변수의 목적이나 의미를 파악할 수 있도록 네이밍하는 습관을 기른다.&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://wikibook.co.kr/mjs/&quot;&gt;모던 자바스크립트 Deep Dive&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures&lt;/a&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .github-light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .github-light-theme .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[HTTP 헤더 분석]]></title><description><![CDATA[HTTP란? HTTP(Hyper Text Transfer Protocol…]]></description><link>https://yhuj79.github.io/blog/221004/</link><guid isPermaLink="false">https://yhuj79.github.io/blog/221004/</guid><pubDate>Tue, 04 Oct 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;HTTP란?&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;HTTP(Hyper Text Transfer Protocol)&lt;/strong&gt; 라는 영문 그대로 인터넷에서 하이퍼텍스트를 빠르게 교환하기 위한 프로토콜의 일종이다. 여기서 하이퍼텍스트는 링크를 통해 다른 문서로 이동할 수 있게 해주는 텍스트, 하이퍼링크를 나타내는 텍스트를 의미한다.&lt;/p&gt;
 &lt;p&gt;HTTP는 OSI 7계층 중에 응용 계층(Application layer)의 프로토콜이며, TCP/IP Suite 위에서 작동한다. (OSI계층과 관련된 자세한 내용은 &lt;a href=&quot;https://ko.wikipedia.org/wiki/OSI_%EB%AA%A8%ED%98%95&quot;&gt;OSI_모형&lt;/a&gt; 참고.) HTTP는 인터넷 할당 번호 관리 기관(IANA)의 가이드라인에 의거하여 80번 포트를 사용하며, 요청(Request)과 응답(Response)으로 구성되어 데이터를 주고받는다. 클라이언트가 80번 포트로 요청을 보내면, 서버에서 응답을 하는 방식이다.&lt;/p&gt;
 &lt;h2&gt;HTTPS란?&lt;/h2&gt;
