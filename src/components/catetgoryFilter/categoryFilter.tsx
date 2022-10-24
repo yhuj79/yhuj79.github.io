@@ -25,7 +25,6 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({ categoryList }) => {
 
   return (
     <Nav aria-label="Category Filter">
-      <CategoryTitle>Category</CategoryTitle>
       <CategoryButton getProps={isActive} to="/">
         {ALL_CATEGORY_NAME}
       </CategoryButton>
@@ -41,7 +40,8 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({ categoryList }) => {
                   getProps={isActive}
                   to={`/category/${kebabCase(fieldValue!)}/`}
                 >
-                  {fieldValue}
+                  {fieldValue}{" "}
+                  <CategoryCount>({category.totalCount})</CategoryCount>
                 </CategoryButton>
               </li>
             );
@@ -148,6 +148,11 @@ const CategoryUl = styled.ul`
     background-color: var(--color-category-button);
     border-radius: 10px;
   }
+`;
+
+const CategoryCount = styled.span`
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-2);
 `;
 
 export default CategoryFilter;

@@ -1,15 +1,15 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import type Post from "Types/Post"
-import Category from "Styles/category"
-import DateTime from "Styles/dateTime"
-import CenteredImg from "./centeredImg"
+import type Post from "Types/Post";
+import Category from "Styles/category";
+import DateTime from "Styles/dateTime";
+import CenteredImg from "./centeredImg";
 
 type CardProps = Pick<
   Post,
   "thumbnail" | "alt" | "category" | "title" | "desc" | "date"
->
+>;
 
 const Card: React.FC<CardProps> = ({
   thumbnail,
@@ -24,15 +24,18 @@ const Card: React.FC<CardProps> = ({
       <CenteredImg src={thumbnail} alt={alt} />
       <Text>
         <div>
-          <Category>{category}</Category>
+          <PostNumberDiv>
+            <Category>{category}</Category>
+            <Alt>#{alt}</Alt>
+          </PostNumberDiv>
           <Title>{title}</Title>
           <Desc>{desc}</Desc>
         </div>
         <DateTime dateTime={date}>{date}</DateTime>
       </Text>
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
   position: relative;
@@ -45,7 +48,7 @@ const Wrapper = styled.div`
 
   /* Fix Safari overflow:hidden with border radius not working error */
   transform: translateZ(0);
-`
+`;
 
 const Text = styled.div`
   display: flex;
@@ -58,7 +61,18 @@ const Text = styled.div`
   & > * {
     display: block;
   }
-`
+`;
+
+const PostNumberDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Alt = styled(Category)`
+  font-size: 1rem;
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--color-text-2);
+`;
 
 const Title = styled.h3`
   margin-top: var(--sizing-xs);
@@ -73,7 +87,7 @@ const Title = styled.h3`
   @media (max-width: ${({ theme }) => theme.device.sm}) {
     font-size: var(--text-md);
   }
-`
+`;
 
 const Desc = styled.p`
   line-height: 1.5;
@@ -86,6 +100,6 @@ const Desc = styled.p`
   word-break: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
-`
+`;
 
-export default React.memo(Card)
+export default React.memo(Card);
