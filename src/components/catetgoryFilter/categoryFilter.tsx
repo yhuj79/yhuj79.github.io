@@ -99,8 +99,6 @@ const CategoryButton = styled(Link)`
   white-space: nowrap;
   display: block;
   background-color: var(--color-category-button);
-  margin-top: 14px;
-  margin-bottom: 14px;
   padding: var(--sizing-sm) var(--sizing-base);
   border-radius: var(--border-radius-base);
   font-size: 0.875rem;
