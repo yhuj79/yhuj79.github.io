@@ -1,38 +1,39 @@
-import React, { useState, useLayoutEffect } from "react"
-import type { PageProps } from "gatsby"
-import { graphql } from "gatsby"
-import styled from "styled-components"
+import React, { useState, useLayoutEffect } from "react";
+import type { PageProps } from "gatsby";
+import { graphql } from "gatsby";
+import styled from "styled-components";
 
-import type { Query, MarkdownRemarkFrontmatter } from "Types/GraphQL"
-import type Post from "Types/Post"
-import useSiteMetadata from "Hooks/useSiteMetadata"
-import Layout from "Layouts/layout"
-import SEO from "Components/seo"
-import PostGrid from "Components/postGrid"
-import CategoryFilter from "Components/catetgoryFilter"
+import type { Query, MarkdownRemarkFrontmatter } from "Types/GraphQL";
+import type Post from "Types/Post";
+import useSiteMetadata from "Hooks/useSiteMetadata";
+import Layout from "Layouts/layout";
+import SEO from "Components/seo";
+import PostGrid from "Components/postGrid";
+import CategoryFilter from "Components/catetgoryFilter";
 
 const Home = ({
   pageContext,
   data,
 }: PageProps<Query, MarkdownRemarkFrontmatter>) => {
-  const [posts, setPosts] = useState<Post[]>([])
-  const currentCategory = pageContext.category
-  const postData = data.allMarkdownRemark.edges
+  const [posts, setPosts] = useState<Post[]>([]);
+  const currentCategory = pageContext.category;
+  const postData = data.allMarkdownRemark.edges;
 
   useLayoutEffect(() => {
     const filteredPostData = currentCategory
       ? postData.filter(
           ({ node }) => node?.frontmatter?.category === currentCategory
         )
-      : postData
+      : postData;
 
     filteredPostData.forEach(({ node }) => {
-      const { id } = node
-      const { slug } = node?.fields!
-      const { title, desc, date, category, thumbnail, alt } = node?.frontmatter!
-      const { childImageSharp } = thumbnail!
+      const { id } = node;
+      const { slug } = node?.fields!;
+      const { title, desc, date, category, thumbnail, alt } =
+        node?.frontmatter!;
+      const { childImageSharp } = thumbnail!;
 
-      setPosts(prevPost => [
+      setPosts((prevPost) => [
         ...prevPost,
         {
           id,
@@ -44,32 +45,39 @@ const Home = ({
           thumbnail: childImageSharp?.id,
           alt,
         },
-      ])
-    })
-  }, [currentCategory, postData])
+      ]);
+    });
+  }, [currentCategory, postData]);
 
-  const site = useSiteMetadata()
-  const postTitle = currentCategory || site.postTitle
+  const site = useSiteMetadata();
+  const postTitle = currentCategory || site.postTitle;
 
   return (
     <Layout>
       <SEO title="Home" />
       <Main>
         <Content>
-          <CategoryFilter categoryList={data.allMarkdownRemark.group} />
-          <PostTitle>{postTitle}</PostTitle>
+          <CategoryFilter
+            categoryList={data.allMarkdownRemark.group}
+            postData={postData}
+          />
+          {postTitle == "All" ? (
+            <PostTitle>All {postData.length} Posts</PostTitle>
+          ) : (
+            <PostTitle>{postTitle}</PostTitle>
+          )}
           <PostGrid posts={posts} />
         </Content>
       </Main>
     </Layout>
-  )
-}
+  );
+};
 
 const Main = styled.main`
   min-width: var(--min-width);
   min-height: calc(100vh - var(--nav-height) - var(--footer-height));
   background-color: var(--color-background);
-`
+`;
 
 const Content = styled.div`
   box-sizing: content-box;
@@ -83,7 +91,7 @@ const Content = styled.div`
     padding-top: var(--grid-gap-lg);
     width: 87.5%;
   }
-`
+`;
 
 const PostTitle = styled.h2`
   font-size: 2rem;
@@ -94,7 +102,7 @@ const PostTitle = styled.h2`
   @media (max-width: ${({ theme }) => theme.device.sm}) {
     font-size: 1.75rem;
   }
-`
+`;
 
 export const query = graphql`
   query {
@@ -131,6 +139,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Home
+export default Home;

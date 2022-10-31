@@ -4,20 +4,27 @@ import type { GatsbyLinkProps } from "gatsby";
 import styled from "styled-components";
 import kebabCase from "lodash/kebabCase";
 
-import type { MarkdownRemarkGroupConnection } from "Types/GraphQL";
+import type {
+  MarkdownRemarkEdge,
+  MarkdownRemarkGroupConnection,
+} from "Types/GraphQL";
 import useScrollCenter from "./useScrollCenter";
 
 const ACTIVE = "active";
 
 interface CategoryFilterProps {
   categoryList: MarkdownRemarkGroupConnection[];
+  postData: MarkdownRemarkEdge[];
 }
 
 type LinkPropsGetter = GatsbyLinkProps<unknown>["getProps"];
 
-const CategoryFilter: React.FC<CategoryFilterProps> = ({ categoryList }) => {
+const CategoryFilter: React.FC<CategoryFilterProps> = ({
+  categoryList,
+  postData,
+}) => {
   const categoryRef = useRef<HTMLUListElement>(null);
-  const ALL_CATEGORY_NAME = "All";
+  const ALL_CATEGORY_NAME = `All (${postData.length})`;
   const isActive: LinkPropsGetter = ({ isCurrent }) =>
     isCurrent ? { id: ACTIVE, tabIndex: -1 } : {};
 
