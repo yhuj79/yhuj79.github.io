@@ -101,7 +101,8 @@ const Time = styled(DateTime)`
 const Desc = styled.p`
   margin-top: var(--sizing-lg);
   line-height: 1.5;
-  font-size: var(--text-lg);
+  font-size: var(--text-title);
+  opacity: 0.6;
 
   @media (max-width: ${({ theme }) => theme.device.sm}) {
     line-height: 1.31579;

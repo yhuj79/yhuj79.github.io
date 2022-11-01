@@ -92,7 +92,7 @@ const Title = styled.h3`
 const Desc = styled.p`
   line-height: 1.5;
   margin-top: 8px;
-  padding-bottom: var(--sizing-sm);
+  /* padding-bottom: var(--sizing-sm); */
   color: var(--color-text-2);
   display: -webkit-box;
   -webkit-line-clamp: 2;
