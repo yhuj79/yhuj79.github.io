@@ -1,4 +1,580 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ's RSS Feed]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 02 Jan 2023 07:02:53 GMT</lastBuildDate><item><title><![CDATA[Next.js REST API 세팅하기]]></title><description><![CDATA[Create Next App Next.js는 React 기반의, React를 품은 프레임워크이다. SSR (Server Side Rendering) 을 지원하여 SEO (Search Engine Optimize) 에 수월하다. 소스코드 안에 HTML…]]></description><link>https://yhuj79.github.io/blog/221213/</link><guid isPermaLink="false">https://yhuj79.github.io/blog/221213/</guid><pubDate>Tue, 13 Dec 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Create Next App&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ's RSS Feed]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 02 Jan 2023 16:32:25 GMT</lastBuildDate><item><title><![CDATA[Open API XML 데이터 배포하기]]></title><description><![CDATA[XML 형식의 Open API 예전 프로젝트에서 공공데이터포털에 있는 XML(Extensible Markup Language) 형식의 API를 다룬 적이 있다. 데이터를 이용하여 원하는 형태로 구현하는 것 까지는 문제가 없었지만, GitHub Page…]]></description><link>https://yhuj79.github.io/blog/230103/</link><guid isPermaLink="false">https://yhuj79.github.io/blog/230103/</guid><pubDate>Tue, 03 Jan 2023 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;XML 형식의 Open API&lt;/h2&gt;
+&lt;p&gt;예전 프로젝트에서 &lt;a href=&quot;https://www.data.go.kr&quot; target=&quot;_blank&quot;&gt;공공데이터포털&lt;/a&gt;에 있는 &lt;strong&gt;XML(Extensible Markup Language)&lt;/strong&gt; 형식의 API를 다룬 적이 있다. 데이터를 이용하여 원하는 형태로 구현하는 것 까지는 문제가 없었지만, &lt;strong&gt;GitHub Page&lt;/strong&gt;, &lt;strong&gt;Vercel&lt;/strong&gt; 등으로 프로젝트를 배포했을 경우 갖가지 문제에 부딪혔다. 특히 공공데이터포털에서 제공하는 API는 대다수가 XML 형식으로 되어 있다. 이 문제의 해결법은 아래에 설명해 놓은 방법만이 정답인 것은 아니겠지만 비교적 괜찮은 방법으로 성공한 것 같다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub&lt;/strong&gt;에 새 저장소를 만들고, 생성한 저장소를 클론 후 &lt;code&gt;react-app&lt;/code&gt;을 만들었다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 114.11042944785277%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAABYlAAAWJQFJUiTwAAACyElEQVQ4y5VUy47aQBBESpYsC/aMBz9mPH5jYIHAPrSbRLnmEOUYKYf8/49U1D22FwirbA6lHkZ0uXqqu0e+0ggiCzE3HTRkmPJ5KqI3YSZjeEHCcUTJu/tP2ByesN4/4/bwjP3jVyy394hMiXlSOGiKOUJdcuTf3V1PRnHkKY1QFwjTBsquIE0LkTT8ZVLp1KYuhi6e44SQkrStMRMRbvw54rREWrQw+QJBmGIWuD96MjlJpHtG93somQjb3Wcstw+w1RoqzrjUOK34I+8+zDC+8TERClMRv7ybHzvIU2ImLJd7NOs98uYWOmsYpFDnCyS2ZnJTuDMhyivIwiIoMsgkPVHPphTNLWy55ERS6KsE5P6L8w58pwz8ucYsjOGFTt2x0yMqazzx8f7aw3gicDXxcXXdwzs6H2HiY3wtHCYOUxE6Qhll0PmSFaokd2q6Puz78ZJSr0fQoyvZVwY6WyCrVmyGinMum5qdeoxiEGV8x/dx5oy4AFZI76Viy60SpRVfkrKgI+3jeeIldG2jkddrVkguV8sdbLkayEiVjGyXpF8lGwgpqWw/MmFWr2GKdnDbjVoBGVp+9JmMXi13KFnGBcrVAVW7xWJ94D6jkukt6WNEpiILmVQQcQXvnyUrjbRYoFhshg3Db8hmWCakTvDnFp4yJ+N3CW70NndY7x55/Fbbh0EluxznEEnNZFRyT/gaKU9Ks3KjV7Zbdpr6cEigyOeu386WwUWFtlqhaDYwefPSMvFp74mkgh/mnTHREdnZtvFpObRbtJt7ZIvdsPvk0bT0u7CfID+kN0270pPzxtYIEgtF27fYQJlqaBfezEfnPqq0hbzgeOeyQSAsxMxAegZKZS5RFzzb56ueN4uIBoP+IvSNQf3zDu2vRyx/P0F/WcIXGiKkNXW6FN40KV6ikX/bov5+QP3jgPBQYepFwxb+H9Ab/gEaUD40SrV5TgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-01&quot;
+        title=&quot;230103-01&quot;
+        src=&quot;/static/13b302f121ade2f9d51b5a9f017e861e/a6d36/230103-01.png&quot;
+        srcset=&quot;/static/13b302f121ade2f9d51b5a9f017e861e/222b7/230103-01.png 163w,
+/static/13b302f121ade2f9d51b5a9f017e861e/ff46a/230103-01.png 325w,
+/static/13b302f121ade2f9d51b5a9f017e861e/a6d36/230103-01.png 650w,
+/static/13b302f121ade2f9d51b5a9f017e861e/e548f/230103-01.png 975w,
+/static/13b302f121ade2f9d51b5a9f017e861e/3c492/230103-01.png 1300w,
+/static/13b302f121ade2f9d51b5a9f017e861e/0d292/230103-01.png 1620w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ git clone https://github.com/(github-id)/open-api-tutorial.git&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;cd&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; open-api-tutorial&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn create react-app open-api-tutorial&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;생성한 react-app에서 &lt;code&gt;axios&lt;/code&gt;를 설치한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;1&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;cd&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; open-api-tutorial&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn add axios&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;공공데이터포털에서 제공하는 국내 코로나 바이러스 현황을 받아볼 수 있는 API를 사용하였다.&lt;br&gt;
+&lt;a href=&quot;https://www.data.go.kr/bbs/ntc/selectNotice.do?originId=NOTICE_0000000002849&quot; target=&quot;_blank&quot;&gt;공공데이터활용지원센터_보건복지부 코로나19 감염 현황 (현재 폐기됨)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;XML&lt;/strong&gt;은 &lt;strong&gt;Extensible Markup Language&lt;/strong&gt; 의 약자로, HTML과 비슷한 구조를 가진다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 120.85889570552146%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAABYlAAAWJQFJUiTwAAAC/klEQVQ4y41VV5bjIBD0CdZKgAJJWUhCThvuf7LaR8v2zr6Z8cxHG4SgRXVVlw9d22JdFszOwXuPeZ6xrutzHsI5R2uPCO/cff9j3zRNFIem6zGsJ3Szh61raKWgtYYxmuZGa1hrYa2BMXvsz/8irO1nDA4ZYyjaEeWwIisV8kohLytkeQlRKaSiwPF4RBTFOEYRzV/FIY4iCGmgJo+yn9G7BW5e0E0O07JC2gY8fEjXEFIjSWIkSfJpHLgQUOOKaliQJCmi4w9EdKPjvzGOEUUR4jhCfB/D4TiOKf5LGH5KqSAnj9w0SDMGkedgjIFzDsE5crGPKRdgeYmMi3eJngnjJKFbFXUP439Cz2dcrjf40xnj6YZ2PaMeHKQ2yPICXGqwvPg8IV09Ou4JlzOxPfgLRjej0hZc1eDKImGc9u3xBeRQq9y00OsVtb/h9us3Zr9BuhPMeqOPPer2iM8hxzGyLEPZjqj6GZnIkec51YkVEpkonjfZI3om+/CGbxMGPQbt1U1DQlVKQ0oFpRQqKcGKCkJZGl/WkCDrBsqdoN0Gf7pg9Rsa56GGGbIZSPBJmiFlHGmWfUVKtNdw8ujcgtGf0fYDRFGCSwNeaUr2LcjJXTa5DaTcoJcLzpcrdYlaLrRW2G4//IaQt0nf1TCIWA7LTgrjCN2TZIwICs/JB/BesJwgTVMiRU4bimYgixrHCd00ox0dwVdagwfjMC14Kb8iZe8U6/fOWC8/sW5n2H5C0YzIbXdnNnoH98MaEimB5dGjnTes5yumeUFpW7p5ePdd2IfHiwAldEaAPE4OfdfBdgNMN6AOkJUGK9Vdh+XrTgmuUnWOYAeNCSFI7IJlYFm6u40Q5DbBIIIWX+sw3nUYSCk7h23b4JYF/XKCHRzqrkclFVlXMOMwvk54fLjNBe3s0S8buY2qW3DTkOOEv4Jvu03YRMIOCbcbrr/+YN1OUL2j7pHtSNIK5UgZe3bNC8gxsanmC4Rp0HU96rqGrRuYuoFtWkilqA2Dq78yh7/ah28/nyvaZwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-02&quot;
+        title=&quot;230103-02&quot;
+        src=&quot;/static/9948cdfa8fe725297bd384eb4d0124fd/a6d36/230103-02.png&quot;
+        srcset=&quot;/static/9948cdfa8fe725297bd384eb4d0124fd/222b7/230103-02.png 163w,
+/static/9948cdfa8fe725297bd384eb4d0124fd/ff46a/230103-02.png 325w,
+/static/9948cdfa8fe725297bd384eb4d0124fd/a6d36/230103-02.png 650w,
+/static/9948cdfa8fe725297bd384eb4d0124fd/e548f/230103-02.png 975w,
+/static/9948cdfa8fe725297bd384eb4d0124fd/78612/230103-02.png 1260w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;App.js에서 데이터를 콘솔에 출력하였다. 이 API는 &lt;strong&gt;startCreateDt&lt;/strong&gt;, &lt;strong&gt;endCreateDt&lt;/strong&gt; 파라미터로 데이터 범위를 지정할 수 있는데, &lt;code&gt;Moment.js&lt;/code&gt;, &lt;code&gt;Day.js&lt;/code&gt;와 같은 라이브러리를 사용하면 현재 날짜를 받아서 원하는 기간의 데이터를 받아볼 수 있다. 우선 테스트를 위해 날짜 라이브러리는 사용하지 않고 임의의 날짜를 입력해 주었다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;javascript&quot; data-index=&quot;2&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;// src/App.js&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; logo &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;./logo.svg&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;./App.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; { useEffect } &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;react&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; axios &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;axios&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(() &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;fetchData&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; () &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;await&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; axios.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;`http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=${&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-10&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-10&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-10&quot;&gt;REACT_APP_API_KEY&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;}&amp;amp;pageNo=1&amp;amp;numOfRows=10&amp;amp;startCreateDt=20221212&amp;amp;endCreateDt=20230103`&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(res.data.response.body.items.item);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      } &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; (e) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(e);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    };&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;fetchData&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  }, []);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; (&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;App&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;App-header&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;{logo} &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;App-logo&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;logo&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;          Edit &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;src/App.js&amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt; and save to reload.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;a&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;App-link&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;https://reactjs.org&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;_blank&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;noopener noreferrer&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;          Learn React&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &amp;lt;/&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  );&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;export&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; App;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;react-app에 &lt;code&gt;.env&lt;/code&gt;파일을 생성하고 다음과 같이 API KEY를 입력한다. GitHub에 &lt;code&gt;.env&lt;/code&gt;파일이 올라가지 않게 &lt;code&gt;.gitignore&lt;/code&gt;에 .env도 추가한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;3&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# .env&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;REACT_APP_API_KEY=APIKEY입력하는곳&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# .gitignore&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.env&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;yarn start&lt;/code&gt;로 실행시켜 확인하면 다음과 같이 지정한 범위의 코로나 데이터를 확인할 수 있다.&lt;br&gt;
+(콘솔에 두 번 출력되는 이유는 React의 &lt;strong&gt;StrictMode&lt;/strong&gt; 때문이다.)&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.14723926380368%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABp0lEQVQoz32SW66bMBRFM5MmYLDBb4OBcBP60Z8OoOoIqg6h3x1E57sqfENypUr92DoP2cvbxz4pM/LSUKLUA9aPxJQxNtC2iq639MbTG1fi3rcukMaJNEy4tODCyOkAfATvdats2aRdRLmItL6AtIml79z4Lj/gw0iMC6r3nA6Y7BOyi09gI005sRsyl3mhXlZ0iAR/x/mR4Da8u6N1IvgVZ25c6ubhsE904YrOW4EdQOsSXRq55Il6WtAu4Oxa+t7dSq7NgPdXjL4ewEwrHW8/f/Hl9x+6uJYDhDIYP9DHkcuYqfJM7yPOLlg3FOAuY/ZrzzjzRvV02EXi12/k7z9QbioOhbLYmDFDpppmqvmKTgPBrbiQieFO8BvGZkJY8HajFu07MOYbad6I00aa7mg/I/YZprkAL/NMdV0xaST4N3yYCjD6z1g7EeJagC+Heigz7Icbcn/p3WGrUSagtEP0hrPsqBuFaHpE0z2iRoiu1FI6aiE/vLJOZXbqUe9A0SiatiuxrtuyYb+WaOQzP2Ire6q6/fcfHnklOj6d65cugvN/dKz7C5Z8McumSylBAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-03&quot;
+        title=&quot;230103-03&quot;
+        src=&quot;/static/ac2595f66f50d4109ac6253d03621a1b/a6d36/230103-03.png&quot;
+        srcset=&quot;/static/ac2595f66f50d4109ac6253d03621a1b/222b7/230103-03.png 163w,
+/static/ac2595f66f50d4109ac6253d03621a1b/ff46a/230103-03.png 325w,
+/static/ac2595f66f50d4109ac6253d03621a1b/a6d36/230103-03.png 650w,
+/static/ac2595f66f50d4109ac6253d03621a1b/e548f/230103-03.png 975w,
+/static/ac2595f66f50d4109ac6253d03621a1b/3c492/230103-03.png 1300w,
+/static/ac2595f66f50d4109ac6253d03621a1b/59173/230103-03.png 3014w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;작성한 그대로 &lt;strong&gt;GitHub Page&lt;/strong&gt;에 배포하여 확인해 보자. &lt;code&gt;gh-pages&lt;/code&gt;를 설치한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;4&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn add --dev gh-pages&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt; 내용을 추가 후, &lt;code&gt;build&lt;/code&gt;, &lt;code&gt;deploy&lt;/code&gt;를 하고 나면&lt;br&gt;
+&lt;code&gt;https://(github-id).github.io/open-api-tutorial&lt;/code&gt;에서 페이지를 확인할 수 있다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;json&quot; data-index=&quot;5&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;// package.json scripts에 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;predeploy&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;yarn build&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;deploy&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;gh-pages -d build&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;// package.json에 따로 추가&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;homepage&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;https://(github-id).github.io/open-api-tutorial&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;6&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn build&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn deploy&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 88.95705521472392%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAACgUlEQVQ4y41U2XLbMAzUBzi2Y1sS70ukLst2HCdpmr61//9N2yGmVdI0TvuwAwwkLgEsiOJw/4R2PKLdn9BPZ6TxCOUiFsstVrcVluvyD+TYelPP9j0KpRqEMMDYBOtaSOmRY9a22FUSFdMoazX7b8k+Ii3S+YDp6wPa0wHNNGJ8vMf++YL+fIJveqRuQogDrO+QugNqbq5mR4S892C9Q90YsGTBO486GpRWzyVnS/4nRDOh9z2UbJCtMS2V6lyP0Awz0SqTvsVtOZf8G68ZSgcfe9jQgStHJTFpCblntbAQvgezCdy1EKFHpcL1HmqXcP/4gun4QGSpP1DPcu9yD10cEO+e0dx9wf7bD4wv35EuL3DjGZX0f5EWZaWgbSIVc4DJX1kKi4obUpiZBsxEMBshm4H8TLb+KMM4TTA+UUbaRsrKk6otoR2O1E/BHZQMiGmkCqTyKDsNNjnUvUE9aFRRo4iXCTZ2UKaB8S3ZTExwCca14N6j7izY4CBcgAs9hPJQtoHQAbWJEL5DKSwK3x3pI+OaLJUoLJWdwaXHTkhsvMC2kdgxSZfmf6QO4MqTSFmwHTMolI0UKKVHVty4RKTZzxlW+SLpYXSCNS20ibhZ73CzesUy2/xU1yWKTMBzw01DN9vQEln2qVc6QJpA8TxaOYHbLbs+2CGNMK4jpV1+075HSBNsGNC0B8TuROI0aU+TsLjZzIc/nEPGagxJwihO8IYjeU6xPkqMSaIsayzXfx6+um22JYNRAoxzCCGgtYazBkZLaMVhjcBmlwk+J5oJh+mM/fERh7snbEuJmueBtljeMixWJRar6p878N1y8JiOFwIJkUYSIm+Z/ynxPeFPWOjZLRzNXgcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-04&quot;
+        title=&quot;230103-04&quot;
+        src=&quot;/static/70a8a09dd8434339bde85648e4bd66e0/a6d36/230103-04.png&quot;
+        srcset=&quot;/static/70a8a09dd8434339bde85648e4bd66e0/222b7/230103-04.png 163w,
+/static/70a8a09dd8434339bde85648e4bd66e0/ff46a/230103-04.png 325w,
+/static/70a8a09dd8434339bde85648e4bd66e0/a6d36/230103-04.png 650w,
+/static/70a8a09dd8434339bde85648e4bd66e0/e548f/230103-04.png 975w,
+/static/70a8a09dd8434339bde85648e4bd66e0/3c492/230103-04.png 1300w,
+/static/70a8a09dd8434339bde85648e4bd66e0/7e881/230103-04.png 1521w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;페이지는 잘 나타났으나 데이터에서 &lt;code&gt;Mixed Content Error&lt;/code&gt;가 발생한다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54.601226993865026%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABj0lEQVQoz5WSy24UMRBF5w9gA0pISPe43Xb70W33a5gkIyBEKAzZs2LJjh9A/ALim0/knicsIFlcVdkqnSqX76zyA3+qR7sB1/SMY6Rta0qZYW1JiJ4mOGL0hGBpGkMbHJe9Z9G3hC4wSxDt+gPQ9Si/oFGGu+w5n8QL1uIla3XKfXXGZ33GnX7FfZ2zrs4n3coTPogTlqfPmB3DUj6d6xGlPO1cE4XCi5KYSxqhCPMSl0tMus8kLisIhWZQFnueHybUtttApzhSVg2qXaJX7yiGEVE5CuMptlFaj0x55SiNR9kaocwWaDsWX75x8+MX9fVHtGkpTaA0NaYdqJqITBBtKLRBVnYDrhzSuG3uD8BS1bz5+p33P39jhrdTA2UjeV7slWWCLMX/aGbqkThc0w4russbumFF011RVmFTNJeT8kdqmtDWI75f0Vzd4uKS1CQ9OQHzJ8Am4O5nk/f07oP8gDoCPgU8O/bf3jZpryZwkYl94WP2N+3wb2PvcmUiUuoJ+voip5AaUah/KtU8AC9ERX8l8qkKAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-05&quot;
+        title=&quot;230103-05&quot;
+        src=&quot;/static/f910d01b8a0d5d1748fec4566a93e2d1/a6d36/230103-05.png&quot;
+        srcset=&quot;/static/f910d01b8a0d5d1748fec4566a93e2d1/222b7/230103-05.png 163w,
+/static/f910d01b8a0d5d1748fec4566a93e2d1/ff46a/230103-05.png 325w,
+/static/f910d01b8a0d5d1748fec4566a93e2d1/a6d36/230103-05.png 650w,
+/static/f910d01b8a0d5d1748fec4566a93e2d1/e548f/230103-05.png 975w,
+/static/f910d01b8a0d5d1748fec4566a93e2d1/3c492/230103-05.png 1300w,
+/static/f910d01b8a0d5d1748fec4566a93e2d1/0e288/230103-05.png 3018w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;암호화된 HTTPS 페이지에 암호화되지 않은 HTTP를 통해 요청할 때 발생하는 에러라고 한다.&lt;br&gt;
+public/index.html에 HTTPS 변환 메타태그를 추가 후 다시 확인해 보면...&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;html&quot; data-index=&quot;7&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-9 grvsc-t4tStz-3&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;http-equiv&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;Content-Security-Policy&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;upgrade-insecure-requests&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.14723926380368%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABTElEQVQoz6WSS27bMBRFvYyiqa0f/xQlSnQkO0kTBIhnnXTYDXQJXUAX0e2eQpKrNCnciQcHj48EDh55uTH1nlcSxid0vSf1nqEXpLYiuC0x5MRQzHRNsfRNwb6TjEmT9oGUHJtJpH3ib/HUa2Op+4i57TC1xRiJcgqtBbo2GKuwWuCMogmeJtRopdn8kWnboW1chZUO2OERO9yhQoe0YUZM1TVIHxGuRfoW6SJqrs15Qtfjx2fC/WleT1duc8FRae7qwGjdzKDMuWoGIefzg9LU2x3u5hPmw8dFqEzk/vsPXn7+wraHWSqFRZQCUSzIUq5UWUm1K6iyhWKbr6wTxtNX+i/f1ncshWWXl2S5YJdXb8gKcZFZ2N0+0I9PdOMT/fAZ346UwpDlFXkh/mXav8Caso1HXHpYE58mvCj8D68p+34J5Frh+394rfA3Gskm2UDRw2oAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-06&quot;
+        title=&quot;230103-06&quot;
+        src=&quot;/static/f416f2ec40ff51e4f131078f14426bba/a6d36/230103-06.png&quot;
+        srcset=&quot;/static/f416f2ec40ff51e4f131078f14426bba/222b7/230103-06.png 163w,
+/static/f416f2ec40ff51e4f131078f14426bba/ff46a/230103-06.png 325w,
+/static/f416f2ec40ff51e4f131078f14426bba/a6d36/230103-06.png 650w,
+/static/f416f2ec40ff51e4f131078f14426bba/e548f/230103-06.png 975w,
+/static/f416f2ec40ff51e4f131078f14426bba/3c492/230103-06.png 1300w,
+/static/f416f2ec40ff51e4f131078f14426bba/59173/230103-06.png 3014w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ERR_CERT_COMMON_NAME_INVALID&lt;/code&gt; 에러가 등장했다. SSL 인증서 관련 문제라고 한다. 이 프로젝트에서는 HTTPS 변환된 API가 존재하지 않아 에러가 발생했다는 뜻으로 보여진다.&lt;/p&gt;
+&lt;p&gt;따라서 다른 방법으로 구상한 게 웹 서버에 데이터를 파싱 후 웹 앱에 뿌리는 것이다.&lt;/p&gt;
+&lt;h2&gt;Express Web Server&lt;/h2&gt;
+&lt;p&gt;프로젝트 디렉터리에 server 디렉터리를 만들고 다음 라이브러리들을 설치했다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;8&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn add express  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# Node.js 서버 프레임워크&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn add request  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# HTTP 네트워크 요청&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn add xml-js   &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# XML JSON 변환&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn add cors     &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# Node.js CORS middleware&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn add dotenv   &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# Node.js에서 환경변수 사용&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;server.js와 환경 변수 파일을 작성한다. react-app처럼 &lt;code&gt;.gitignore&lt;/code&gt;을 만들고 &lt;code&gt;node_modules&lt;/code&gt; , &lt;code&gt;.env&lt;/code&gt;를 추가한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;javascript&quot; data-index=&quot;9&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;// server/server.js&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;dotenv&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;express&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;cors&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;cors&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;request&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;xml-js&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;app.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;cors&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;());&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;app.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;/api/data&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, (&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-11 grvsc-t4tStz-6&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-11 grvsc-t4tStz-6&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;) &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      url: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;`http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=${&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-10&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-10&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-10&quot;&gt;REACT_APP_API_KEY&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;}&amp;amp;pageNo=1&amp;amp;numOfRows=10&amp;amp;startCreateDt=20221212&amp;amp;endCreateDt=20230103`&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      method: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;GET&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;,&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    },&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    (&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-11 grvsc-t4tStz-6&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-11 grvsc-t4tStz-6&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-11 grvsc-t4tStz-6&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;) &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;xmlToJson&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; convert.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;xml2json&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(body, { compact: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, space: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; }); &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;// xml to json&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      res.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(xmlToJson);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  );&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;app.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;, () &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;`Listening on port ${&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-10&quot;&gt;PORT&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;}`&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;10&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# .env&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;REACT_APP_API_KEY=APIKEY입력하는곳&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# .gitignore&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.env&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;/node_modules&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;터미널에서 server 디렉터리로 이동, &lt;code&gt;node server.js&lt;/code&gt;를 실행하면 5050포트로 서버가 실행된다. &lt;code&gt;http://localhost:5050/api/data&lt;/code&gt;에서 API를 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.14723926380368%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA2ElEQVQoz62R2wqEMAxE+/8fKN6vrwqiooKXLCcSKe6yTxbGpNNkMq2uLEvJskySJFHkeS5RFN0ceVEUmhPZW10cx5KmqeZw4ziKq+tamyGBnxtoRAwggAkTMq7ve9n3XVzTNDrVnHJIESLGWaPlfqSG2q7rhOUg/OnWaE2+k6dzfwjGhmG4HDLhnwu7MuKW82bs7XyapsshTUEQaEEYhvejw9mPQYCbUOvfiH1VVVrXtu0luCyLzPP8BXiwrqscxyHbtumjE3/lQAXlxXWepzg+b+F1hwh+ALdl7tPfNlsFAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-07&quot;
+        title=&quot;230103-07&quot;
+        src=&quot;/static/dde7dccc841f8e0bc858421742f9f077/a6d36/230103-07.png&quot;
+        srcset=&quot;/static/dde7dccc841f8e0bc858421742f9f077/222b7/230103-07.png 163w,
+/static/dde7dccc841f8e0bc858421742f9f077/ff46a/230103-07.png 325w,
+/static/dde7dccc841f8e0bc858421742f9f077/a6d36/230103-07.png 650w,
+/static/dde7dccc841f8e0bc858421742f9f077/e548f/230103-07.png 975w,
+/static/dde7dccc841f8e0bc858421742f9f077/3c492/230103-07.png 1300w,
+/static/dde7dccc841f8e0bc858421742f9f077/59173/230103-07.png 3014w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;코드 수정 시 서버 재부팅이 귀찮기 때문에 &lt;code&gt;nodemon&lt;/code&gt;을 설치하고, 명령어 간소화를 위해 &lt;code&gt;package.json&lt;/code&gt;에 &lt;code&gt;scripts&lt;/code&gt;를 추가한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;11&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn add nodemon&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;json&quot; data-index=&quot;12&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;// server/package.json&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;scripts&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;&amp;quot;dev&amp;quot;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;nodemon server.js&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이제 &lt;code&gt;yarn dev&lt;/code&gt; 명령어로 서버를 실행시킬 수 있다.&lt;/p&gt;
+&lt;h2&gt;Heroku&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Heroku&lt;/strong&gt;는 여러 프로그래밍 언어를 지원하는 클라우드 &lt;a href=&quot;https://azure.microsoft.com/ko-kr/resources/cloud-computing-dictionary/what-is-paas&quot; target=&quot;_blank&quot;&gt;PaaS&lt;/a&gt;로, 백엔드 서버를 이 플랫폼에 배포하려 한다. 최근 무료 서비스가 중단되었는데, 학생 개발자 프로그램으로 플랫폼 크레딧을 지급받을 수 있었다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://dashboard.heroku.com/apps&quot; target=&quot;_blank&quot;&gt;Heroku Dashboard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;우측 상단 NEW 버튼 &gt; Create new app &gt; 앱 이름 입력 &gt; Create App&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.533742331288344%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA2UlEQVQoz62Py24DIQxF+f+/6za7SpWatFGVGRIz+HWrcV5kwkRd1OLoGrAvJm0/B+SBwKyoVe6w4EQV47HgMJxCKyumuNMz0mIYqSIVYlBQGxilSECFMeYSUOwFZTorTQya84aETqgpvsc9jjWDjSEX2GpoEYK59lqR3B0tc4gqtvsdRspQ13ighVVgZlG77E9Ls5uaQdUwb80cbh56zdv6B8N23GtRnQSbtw/8fOWnhvvjfln++OWeIVfB+2aHfKDVSZY/6hr2CtbO1qI74axmryf5k+F/xC971hZhvA+/bQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-08&quot;
+        title=&quot;230103-08&quot;
+        src=&quot;/static/c62e780017255ddd889d555fe450b209/a6d36/230103-08.png&quot;
+        srcset=&quot;/static/c62e780017255ddd889d555fe450b209/222b7/230103-08.png 163w,
+/static/c62e780017255ddd889d555fe450b209/ff46a/230103-08.png 325w,
+/static/c62e780017255ddd889d555fe450b209/a6d36/230103-08.png 650w,
+/static/c62e780017255ddd889d555fe450b209/e548f/230103-08.png 975w,
+/static/c62e780017255ddd889d555fe450b209/3c492/230103-08.png 1300w,
+/static/c62e780017255ddd889d555fe450b209/59173/230103-08.png 3014w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.533742331288344%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABSklEQVQoz3VSiW7lMAjM/39ptbsvlw/M5VlBXqJWbS2NABtGeGD5+DhQ9g7qgjEU1BlEDBFD64xSCWel9AcbBitYDKyXT0MvK4bSGUsQ1cpYXxXnSVjXinUrKHWgNk60Lll4o5OgD8mcqAnbh6KRYMH7qBhEFGaO6RM+J1QVIpLWzNKqGn470x2Lm2fSthWs64njqEkcpPH911bw5++Of68N+15QSsVrPbAdDefZMj8kcp/JswgbAiqeyHhcd60O7EdD7/K889CUqHVNn0mf/IgX0+jQMeh6jPhGyJBSsEBYnztT+5J3Iwb5aBjaufsXTagJiAStd7TWYO6gwWARzDm/azjnRRjO1amlFhFH/jWIn4s/k9zvD2F0FoK3SmAWqF2TJBo4zoL9vRYxZRbNod3w90Y8hL+1noSDsR0FrQ8Qxy5+h6gl5pvwPxWzENmbTiZPAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-09&quot;
+        title=&quot;230103-09&quot;
+        src=&quot;/static/8973c56e252c6188f7bc53b88141dd92/a6d36/230103-09.png&quot;
+        srcset=&quot;/static/8973c56e252c6188f7bc53b88141dd92/222b7/230103-09.png 163w,
+/static/8973c56e252c6188f7bc53b88141dd92/ff46a/230103-09.png 325w,
+/static/8973c56e252c6188f7bc53b88141dd92/a6d36/230103-09.png 650w,
+/static/8973c56e252c6188f7bc53b88141dd92/e548f/230103-09.png 975w,
+/static/8973c56e252c6188f7bc53b88141dd92/3c492/230103-09.png 1300w,
+/static/8973c56e252c6188f7bc53b88141dd92/59173/230103-09.png 3014w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;작성했던 server와의 연결에 앞서 server 디렉터리에 &lt;code&gt;Procfile&lt;/code&gt;을 생성하고 다음과 같이 작성한다. Procfile을 읽은 헤로쿠가 &lt;code&gt;yarn dev&lt;/code&gt;를 실행하고 yarn dev는 위에서 package.json에 작성했던 &lt;code&gt;nodemon server.js&lt;/code&gt;를 실행하게 되는 구조다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;c&quot; data-index=&quot;13&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;// server/Procfile&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;web: yarn dev&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;터미널에서 Heroku를 설치한다. Mac을 사용중이기 때문에 &lt;code&gt;homebrew&lt;/code&gt;로 설치하였다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;14&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# Mac&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ brew install heroku/brew/heroku&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# Windows&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;npm install -g heroku&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;로그인 후, server 디렉터리에서 Heroku Server에 연결한다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;15&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ heroku login&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;# /server&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ git init&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ heroku git:remote -a open-api-tutorial&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Heroku에 환경 변수를 전송하려면 &lt;code&gt;heroku-dotenv&lt;/code&gt;를 설치해야 한다. 설치 후 push하면 &lt;code&gt;.env&lt;/code&gt;의 &lt;code&gt;REACT_APP_API_KEY&lt;/code&gt;가 온전하게 적용된다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;16&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn add heroku-dotenv&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ heroku-dotenv push&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이제 작성한 server의 코드를 &lt;code&gt;commit&lt;/code&gt;, &lt;code&gt;push&lt;/code&gt;하면 Heroku Deploy가 완료된다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;17&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ git add &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ git commit -am &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;&amp;quot;heroku open-api-tutorial&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ git push heroku master&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;https://open-api-tutorial.herokuapp.com/api/data&lt;/code&gt;에서 데이터를 확인할 수 있다.&lt;br&gt;
+이렇게 재가공된 API가 만들어졌다.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 52.14723926380368%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA2ElEQVQoz62R2wqEMAxE+/8fKN6vrwqiooKXLCcSKe6yTxbGpNNkMq2uLEvJskySJFHkeS5RFN0ceVEUmhPZW10cx5KmqeZw4ziKq+tamyGBnxtoRAwggAkTMq7ve9n3XVzTNDrVnHJIESLGWaPlfqSG2q7rhOUg/OnWaE2+k6dzfwjGhmG4HDLhnwu7MuKW82bs7XyapsshTUEQaEEYhvejw9mPQYCbUOvfiH1VVVrXtu0luCyLzPP8BXiwrqscxyHbtumjE3/lQAXlxXWepzg+b+F1hwh+ALdl7tPfNlsFAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-07&quot;
+        title=&quot;230103-07&quot;
+        src=&quot;/static/dde7dccc841f8e0bc858421742f9f077/a6d36/230103-07.png&quot;
+        srcset=&quot;/static/dde7dccc841f8e0bc858421742f9f077/222b7/230103-07.png 163w,
+/static/dde7dccc841f8e0bc858421742f9f077/ff46a/230103-07.png 325w,
+/static/dde7dccc841f8e0bc858421742f9f077/a6d36/230103-07.png 650w,
+/static/dde7dccc841f8e0bc858421742f9f077/e548f/230103-07.png 975w,
+/static/dde7dccc841f8e0bc858421742f9f077/3c492/230103-07.png 1300w,
+/static/dde7dccc841f8e0bc858421742f9f077/59173/230103-07.png 3014w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;이제 Heroku의 데이터를 받아서 콘솔에 출력한다.&lt;br&gt;
+다시 GitHub Page에 배포하고 확인해보면 문제없이 잘 작동하는 것을 볼 수 있다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;javascript&quot; data-index=&quot;18&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;// src/App.js&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(() &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-10 grvsc-t4tStz-5&quot;&gt;fetchData&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; () &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;await&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; axios.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;          &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-8 grvsc-t4tStz-10&quot;&gt;`https://open-api-tutorial.herokuapp.com/api/data`&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        );&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(res.data.response.body.items.item);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      } &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-5 grvsc-t4tStz-9&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt; (e) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-3&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-1&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;(e);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;      }&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    };&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-7 grvsc-t4tStz-5&quot;&gt;fetchData&lt;/span&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;  }, []);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-9&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;
+    &gt;
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.533742331288344%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABRElEQVQoz32SS1LDMBBEfZI4cWxLiiTr59jFnwULtlSxZscV2HMIztvUjC3HhMCia0ZV8pvWtAtpepyUuAqdYF1CTCOMDdjXAkJqSGUWCZLUOOiO7zifWEUGrMF0bqSBiwN8OMK6CNOFRdp6dC7yoE1ZYVc1qPYC26pBkWHiECGUPwGFgXHT1G4tl3iADz3qRqLc7rHd1VxJRYYpfwU9PjKMVAsD7SYAubIrGXaY0LRqAWYxsJUON+8fePr8ggrXPKCWFsb37IQc0RMd9TOUetrhRSABwvMr+pc3KDfOO7SwcUCIRzjfMyCkYVqBS9wTcFNeeHI43iKODwjjPeJwB+1G1K2Gdj0nqHS3pEw19xTKZYc68Q4P6RZiTpqAU3ot1+zgXGsYA5eUdZySns9VrVCW1Z8fZp0P+PUf/gCuQP9B1w6/AQkRKt8w3smKAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;230103-10&quot;
+        title=&quot;230103-10&quot;
+        src=&quot;/static/e0deb6158c99ea28c1f00c0d501e2556/a6d36/230103-10.png&quot;
+        srcset=&quot;/static/e0deb6158c99ea28c1f00c0d501e2556/222b7/230103-10.png 163w,
+/static/e0deb6158c99ea28c1f00c0d501e2556/ff46a/230103-10.png 325w,
+/static/e0deb6158c99ea28c1f00c0d501e2556/a6d36/230103-10.png 650w,
+/static/e0deb6158c99ea28c1f00c0d501e2556/e548f/230103-10.png 975w,
+/static/e0deb6158c99ea28c1f00c0d501e2556/3c492/230103-10.png 1300w,
+/static/e0deb6158c99ea28c1f00c0d501e2556/59173/230103-10.png 3014w&quot;
+        sizes=&quot;(max-width: 650px) 100vw, 650px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://velog.io/@vvsogi/%EA%B3%B5%EA%B3%B5-%EB%8D%B0%EC%9D%B4%ED%84%B0-API-React%EC%97%90%EC%84%9C-XML%EC%97%90%EC%84%9C-JSON-%EB%B3%80%ED%99%98&quot;&gt;https://velog.io/@vvsogi/%EA%B3%B5%EA%B3%B5-%EB%8D%B0%EC%9D%B4%ED%84%B0-API-React%EC%97%90%EC%84%9C-XML%EC%97%90%EC%84%9C-JSON-%EB%B3%80%ED%99%98&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/harrythegreat/node-js%EC%97%90%EC%84%9C-request-js-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-28744c52f68d&quot;&gt;https://medium.com/harrythegreat/node-js%EC%97%90%EC%84%9C-request-js-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-28744c52f68d&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://azure.microsoft.com/ko-kr/resources/cloud-computing-dictionary/what-is-paas&quot;&gt;https://azure.microsoft.com/ko-kr/resources/cloud-computing-dictionary/what-is-paas&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://krpeppermint100.medium.com/devops-react-express-%EC%95%B1-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-netlify-heroku-b238e057d920&quot;&gt;https://krpeppermint100.medium.com/devops-react-express-%EC%95%B1-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0-netlify-heroku-b238e057d920&lt;/a&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .github-light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .github-light-theme .grvsc-tiszgT-1 { color: #000000; }
+  .github-light-theme .grvsc-tiszgT-7 { color: #005CC5; }
+  .github-light-theme .grvsc-tiszgT-6 { color: #6A737D; }
+  .github-light-theme .grvsc-tiszgT-5 { color: #D73A49; }
+  .github-light-theme .grvsc-tiszgT-8 { color: #032F62; }
+  .github-light-theme .grvsc-tiszgT-10 { color: #6F42C1; }
+  .github-light-theme .grvsc-tiszgT-9 { color: #22863A; }
+  .github-light-theme .grvsc-tiszgT-11 { color: #E36209; }
+  .github-light-theme .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-9 { color: #EB7E81; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-5 { color: #BB97E7; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-6 { color: #F39961; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[Next.js REST API 세팅하기]]></title><description><![CDATA[Create Next App Next.js는 React 기반의, React를 품은 프레임워크이다. SSR (Server Side Rendering) 을 지원하여 SEO (Search Engine Optimize) 에 수월하다. 소스코드 안에 HTML…]]></description><link>https://yhuj79.github.io/blog/221213/</link><guid isPermaLink="false">https://yhuj79.github.io/blog/221213/</guid><pubDate>Tue, 13 Dec 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Create Next App&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Next.js&lt;/strong&gt;는 React 기반의, React를 품은 프레임워크이다. &lt;strong&gt;SSR (Server Side Rendering)&lt;/strong&gt; 을 지원하여 &lt;strong&gt;SEO (Search Engine Optimize)&lt;/strong&gt; 에 수월하다. 소스코드 안에 HTML이 남아있는 상태로 렌더링되기 때문에 네트워크 지연과 같은 상황에도 최소한 텅 빈 화면을 볼 일은 없을 것이다.&lt;/p&gt;
 &lt;p&gt;Next App은 기존 React에서 사용했던 Boilerplate와 유사한 명령어로 설치할 수 있다.&lt;/p&gt;
 &lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;bash&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-1 grvsc-t4tStz-1&quot;&gt;$ yarn create next-app 프로젝트명&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
