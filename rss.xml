@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Feb 2023 00:18:14 GMT</lastBuildDate><item><title><![CDATA[Terminal App]]></title><description><![CDATA[블로그 테스트 게시글입니다.
+해당 링크의 내용으로 작성되었습니다. wikipedia : macOS apple : 터미널 사용 설명서 Terminal 터미널(Terminal, Terminal.app) 은 애플이 개발한 macOS…]]></description><link>https://yhuj79.github.io/MacOS/220920/</link><guid isPermaLink="false">https://yhuj79.github.io/MacOS/220920/</guid><pubDate>Tue, 20 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;블로그 테스트 게시글입니다.
+해당 링크의 내용으로 작성되었습니다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%ED%84%B0%EB%AF%B8%EB%84%90_%28macOS%29&quot;&gt;wikipedia : macOS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://support.apple.com/ko-kr/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac&quot;&gt;apple : 터미널 사용 설명서&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;terminal&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#terminal&quot; aria-label=&quot;terminal permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Terminal&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;터미널(Terminal, Terminal.app)&lt;/strong&gt; 은 애플이 개발한 macOS 운영 체제에 포함된 단말 에뮬레이터이다.
+터미널은 macOS의 전작 운영 체제인 NeXTSTEP, 오픈스텝에서 기원이 된다.&lt;/p&gt;
+&lt;p&gt;단말 에뮬레이터로서 이 애플리케이션은 bash(맥 OS X 10.2 이후의 기본 셸) 등의 유닉스 셸과 결합하여 사용할 때 명령 줄 인터페이스를 운영 체제에 제공함으로써 운영 체제에 대한 텍스트 기반 접근을 제공하며, 이는 macOS의 그래픽 사용자 경험에 대비된다. 사용자는 macOS와 사용할 콘 셸, Tcsh, Z 셸과 같은 다른 셸을 지정할 수 있다.&lt;/p&gt;
+&lt;h3 id=&quot;터미널-열기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%84%B0%EB%AF%B8%EB%84%90-%EC%97%B4%EA%B8%B0&quot; aria-label=&quot;터미널 열기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;터미널 열기&lt;/h3&gt;
+&lt;p&gt;Mac에서 다음 중 하나를 수행하십시오.
+Dock에서 Launchpad 아이콘을 클릭하고 검색 필드에 터미널을 입력한 다음 터미널을 클릭하십시오.
+Finder에서 /응용 프로그램/유틸리티 폴더를 연 다음, 터미널을 이중 클릭하십시오.&lt;/p&gt;
+&lt;h3 id=&quot;셸-세션-종료하기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%85%B8-%EC%84%B8%EC%85%98-%EC%A2%85%EB%A3%8C%ED%95%98%EA%B8%B0&quot; aria-label=&quot;셸 세션 종료하기 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;셸 세션 종료하기&lt;/h3&gt;
+&lt;p&gt;Mac용 터미널 앱의 종료할 셸 프로세스가 실행 중인 윈도우에서 exit를 입력한 다음, Return을 누르십시오.
+셸에서 실행되고 있는 명령어가 종료됩니다. 작업이 진행 중인 경우 대화상자가 나타납니다.
+셸 종료 동작을 변경하려면 프로파일 셸 환경설정 변경하기를 참조하십시오.&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item></channel></rss>
