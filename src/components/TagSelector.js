@@ -30,38 +30,55 @@ const TagSelector = ({ onTagClick, state, tags }) => {
 
   return (
     <div
-      ref={containerRef}
       css={css`
+        display: flex;
         padding: 0.5rem;
-        border-radius: 0.1rem;
-        margin: 0.3rem;
+        background-color: ${isDarkMode ? "#2C2C2C" : "#FFF"};
+        border-radius: 8px;
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
-        border-left-width: 4px;
         border-color: ${isDarkMode
           ? darkModeColor.mainColor2
           : whiteModeColor.mainColor2};
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        &::-webkit-scrollbar {
-          display: none;
-        }
-        ${tw`flex flex-no-wrap content-center mx-4 py-2 pl-2 overflow-scroll`}
+        ${tw`mx-3`}
       `}
     >
-      <Tag
-        tag={"ALL"}
-        selectedTag={state.tag}
-        index={"default"}
-        onClick={onTagClick}
-        scrollToCenter={scrollToCenter}
-      />
-      <Tags
-        tags={tags}
-        onClick={onTagClick}
-        tag={state.tag}
-        scrollToCenter={scrollToCenter}
-      />
+      <div
+        css={css`
+          ${tw`content-center py-2 pl-2 pr-1`}
+          border-right: 1px solid ${isDarkMode ? "#4B4B4B" : "#EDEDED"};
+        `}
+      >
+        <Tag
+          tagWhite={`#0066CC`}
+          tagDark={`#79AAFF`}
+          tag={"ALL"}
+          selectedTag={state.tag}
+          index={"default"}
+          onClick={onTagClick}
+          scrollToCenter={scrollToCenter}
+        />
+      </div>
+      <div
+        ref={containerRef}
+        css={css`
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          ${tw`flex flex-no-wrap content-center mx-2 py-2 pl-1 overflow-scroll`}
+        `}
+      >
+        <Tags
+          tagWhite={`#484848`}
+          tagDark={`#F2F2F2`}
+          tags={tags}
+          onClick={onTagClick}
+          tag={state.tag}
+          scrollToCenter={scrollToCenter}
+        />
+      </div>
     </div>
   )
 }

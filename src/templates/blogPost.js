@@ -5,7 +5,6 @@ import Profile from "../components/Profile"
 import tw from "twin.macro"
 import Markdown from "../components/Markdown"
 import Navigator from "../components/Navigator"
-import Divider from "../components/Divider"
 import TableOfContents from "../components/TableOfContents"
 import Layout from "../components/Layout"
 import Utterances from "../components/Utterances"
@@ -79,9 +78,13 @@ export default ({ data, pageContext, location }) => {
                 {frontmatter.date}
               </h2>
               <div className="blog-tags" css={tw`mb-2`}>
-                <Tags tags={frontmatter.tags} onClick={handleTagClick} />
+                <Tags
+                  tagWhite={`#484848`}
+                  tagDark={`#FFF`}
+                  tags={frontmatter.tags}
+                  onClick={handleTagClick}
+                />
               </div>
-              <Divider color />
             </Wrapper>
             <div className={"blog-content"}>
               {isTOCVisible && (

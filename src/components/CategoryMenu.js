@@ -54,15 +54,15 @@ const CategoryMenu = ({ path }) => {
                   key={`categorylist_${index}`}
                   css={css`
                     transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
-                    ${tw`text-gray-500 text-base mx-2`}
+                    ${tw`text-gray-600 text-base mx-2`}
                     ${path &&
                     decodeURI(path) === `/${category.relativePath}/` &&
                     `
                         font-size: 0.95rem;
-                        color: ${isDarkMode ? "#DDDDDD" : "#555555"};
+                        color: ${isDarkMode ? "#EEEEEE" : "#333333"};
                         `}
                         &:hover {
-                      color: ${isDarkMode ? "#DDDDDD" : "#555555"};
+                      color: ${isDarkMode ? "#EEEEEE" : "#333333"};
                     }
                   `}
                 >
@@ -147,15 +147,15 @@ const CategoryMenu = ({ path }) => {
                   key={`category_${index}`}
                   css={css`
                     transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
-                    ${tw`text-gray-500 text-sm`}
+                    ${tw`text-gray-600 text-sm`}
                     ${path &&
                     decodeURI(path) === `/${category.relativePath}/` &&
                     `
                         font-size: 0.95rem;
-                        color: ${isDarkMode ? "#DDDDDD" : "#555555"};
+                        color: ${isDarkMode ? "#EEEEEE" : "#333333"};
                         `}
                         &:hover {
-                      color: ${isDarkMode ? "#DDDDDD" : "#555555"};
+                      color: ${isDarkMode ? "#EEEEEE" : "#333333"};
                     }
                   `}
                 >

@@ -16,12 +16,10 @@ const Nav = () => {
   const [isVisible, setIsVisible] = useState(false)
 
   const backgroundCSS = css`
-    background: linear-gradient(
-      90deg,
-      ${isDarkMode
-        ? darkModeColor.mainColor1 + "," + darkModeColor.mainColor2
-        : whiteModeColor.mainColor1 + "," + whiteModeColor.mainColor2}
-    );
+    background-color: ${isDarkMode
+      ? darkModeColor.mainColor1
+      : whiteModeColor.mainColor1};
+    border-bottom: ${isDarkMode ? "1px solid #404040" : "1px solid #D8D8D8"};
   `
 
   const handleScroll = (_e) => {
@@ -37,11 +35,26 @@ const Nav = () => {
   const Content = () => {
     return (
       <>
-        <Link css={tw`text-xl text-white font-bold`} to={"/"}>
+        <Link
+          css={css`
+            ${tw`text-xl text-white font-bold`}
+            color: ${isDarkMode
+              ? darkModeColor.textColor1
+              : whiteModeColor.textColor1};
+          `}
+          to={"/"}
+        >
           BLOG_YHUJ
         </Link>
         <Link to={`/search`} aria-label={`search page`}>
-          <AiOutlineSearch css={tw`text-white my-auto w-8 h-8`} />
+          <AiOutlineSearch
+            css={css`
+              ${tw`text-white my-auto w-8 h-8`}
+              color: ${isDarkMode
+                ? darkModeColor.textColor1
+                : whiteModeColor.textColor1};
+            `}
+          />
         </Link>
       </>
     )

@@ -79,7 +79,7 @@ const Markdown = ({ html }) => {
     }
     blockquote {
       padding: 0.5rem;
-      background-color: ${isDarkMode ? "#333" : "#eee"};
+      background-color: ${isDarkMode ? "#333" : "#fff"};
       margin: 0.3rem;
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
@@ -111,10 +111,10 @@ const Markdown = ({ html }) => {
         : whiteModeColor.mainColor2};
     }
     tr:nth-of-type(even) {
-      background-color: ${isDarkMode ? "#333" : "#eee"};
+      background-color: ${isDarkMode ? "#333" : "#fff"};
     }
     th {
-      background-color: ${isDarkMode ? "#333" : "#eee"};
+      background-color: ${isDarkMode ? "#333" : "#fff"};
     }
     table {
       margin-bottom: 1.5rem;
@@ -135,7 +135,7 @@ const Markdown = ({ html }) => {
       color: ${isDarkMode
         ? darkModeColor.textColor1
         : whiteModeColor.textColor1};
-      background-color: ${isDarkMode ? "#333" : "#eee"};
+      background-color: ${isDarkMode ? "#333" : "#fff"};
       white-space: pre-line;
     }
 
@@ -147,7 +147,7 @@ const Markdown = ({ html }) => {
     hr {
       margin-top: 24px;
       margin-bottom: 24px;
-      height: 2px;
+      height: 1px;
       border: none;
       background: linear-gradient(
         270deg,

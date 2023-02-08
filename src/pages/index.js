@@ -10,6 +10,7 @@ import TagSelector from "../components/TagSelector"
 import useInfiniteScroll from "../lib/hooks/useInfiniteScroll"
 import useCount from "../lib/hooks/useCount"
 import CategoryMenu from "../components/CategoryMenu"
+import Count from "../components/Count"
 
 const Wrapper = tw.div`w-full max-w-screen-md mx-auto`
 
@@ -86,7 +87,9 @@ export default ({ data, location }) => {
       </Wrapper>
       <CategoryMenu />
       <Wrapper>
+        <Count tag={state.tag} length={state.filteredPosts.length} />
         <TagSelector tags={tags} onTagClick={onTagClick} state={state} />
+
         {state.filteredPosts
           .slice(0, count * countOfInitialPost)
           .map((post, index) => {

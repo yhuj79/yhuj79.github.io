@@ -25,14 +25,14 @@ const Navigator = ({ pageContext }) => {
               width: 100%;
               height: 100%;
               padding: 0.5rem;
-              background-color: ${isDarkMode ? "#333" : "#eee"};
+              background-color: ${isDarkMode ? "#333" : "#FFF"};
               border-radius: 0.25rem;
               border-left-width: 4px;
               border-color: ${isDarkMode
                 ? darkModeColor.mainColor2
                 : whiteModeColor.mainColor2};
               &:hover {
-                background-color: ${isDarkMode ? "#444" : "#ddd"};
+                background-color: ${isDarkMode ? "#444" : "#DDD"};
               }
             `}
             to={previous.fields.slug}
@@ -71,14 +71,14 @@ const Navigator = ({ pageContext }) => {
               width: 100%;
               height: 100%;
               padding: 0.5rem;
-              background-color: ${isDarkMode ? "#333" : "#eee"};
+              background-color: ${isDarkMode ? "#333" : "#FFF"};
               border-radius: 0.25rem;
               border-right-width: 4px;
               border-color: ${isDarkMode
                 ? darkModeColor.mainColor2
                 : whiteModeColor.mainColor2};
               &:hover {
-                background-color: ${isDarkMode ? "#444" : "#ddd"};
+                background-color: ${isDarkMode ? "#444" : "#DDD"};
               }
             `}
             to={next.fields.slug}

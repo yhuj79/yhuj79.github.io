@@ -79,14 +79,14 @@ export default ({ data, location }) => {
       }
     }
   }, [location.href, setFilteredPosts])
-
+  console.log(state)
   return (
     <Layout>
-      <SEO title={categoryTitle} />
+      <SEO title={decodeURI(categoryTitle)} />
       <Wrapper>
         <Profile />
         <h1 className="category-title" css={tw`mt-4 px-4 text-4xl font-bold`}>
-          #{categoryTitle}
+          # {decodeURI(categoryTitle)}
         </h1>
       </Wrapper>
       <CategoryMenu path={location.pathname} />

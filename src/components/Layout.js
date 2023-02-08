@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
     <Wrapper
       css={css`
         transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
-        background-color: ${isDarkMode ? "#1E1F21" : "#FFFFFF"};
+        background-color: ${isDarkMode ? "#1C1C1C" : "#F2F2F2"};
         color: ${isDarkMode ? "#EEEEEE" : "#333333"};
       `}
     >

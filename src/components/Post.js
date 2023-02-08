@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import tw, { css } from "twin.macro"
 import { Link } from "gatsby"
 import Tags from "./Tags"
-import Divider from "./Divider"
 import { keyframes } from "@emotion/core"
+import ThemeContext from "../lib/context/ThemContext"
 
 const Post = ({ post }) => {
+  const { isDarkMode } = useContext(ThemeContext)
   const fadein = keyframes`
   from {
     opacity:0;
@@ -18,19 +19,22 @@ const Post = ({ post }) => {
     <>
       <div
         css={css`
+          background-color: ${isDarkMode ? "#2c2c2c" : "#FFFFFF"};
+          padding: 20px;
+          border-radius: 8px;
           animation: ${fadein} 500ms;
           transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
           &:hover {
             --transform-scale-x: 1.02;
             --transform-scale-y: 1.02;
           }
-          ${tw`mx-4 my-12 transform`}
+          ${tw`mx-3 my-10 transform`}
         `}
       >
         <Link to={post.node.fields.slug}>
           <h1
             css={css`
-              ${tw`text-xl font-semibold`}
+              ${tw`text-2xl font-semibold`}
             `}
           >
             {post.node.frontmatter.title}
@@ -43,7 +47,12 @@ const Post = ({ post }) => {
             {post.node.frontmatter.date}
           </h2>
           <div css={tw`my-4`}>
-            <Tags tags={post.node.frontmatter.tags} onClick={() => {}} />
+            <Tags
+              tagWhite={`#484848`}
+              tagDark={`#F2F2F2`}
+              tags={post.node.frontmatter.tags}
+              onClick={() => {}}
+            />
           </div>
           <div
             css={css`
@@ -54,7 +63,6 @@ const Post = ({ post }) => {
           </div>
         </Link>
       </div>
-      <Divider margin color />
     </>
   )
 }

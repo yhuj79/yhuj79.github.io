@@ -6,7 +6,6 @@ import { graphql } from "gatsby"
 import queryString from "query-string"
 import Search from "../components/Search"
 import Post from "../components/Post"
-import TagSelector from "../components/TagSelector"
 
 const Wrapper = tw.div`w-full max-w-screen-md mx-auto`
 
@@ -19,24 +18,6 @@ export default ({ data, location }) => {
     filteredData: [],
     tags: [],
   })
-
-  const onTagClick = (tag) => {
-    setState((prev) => {
-      const filteredData = prev.filteredData.filter((post) => {
-        const {
-          excerpt,
-          frontmatter: { title, tags },
-        } = post.node
-        if (tags.includes(tag)) return (excerpt && excerpt) || (title && title)
-        return []
-      })
-      return {
-        ...prev,
-        tag: tag,
-        filteredData: filteredData,
-      }
-    })
-  }
 
   const handleChange = (query) => {
     if (query.trim() === state.query.trim()) {
@@ -118,7 +99,6 @@ export default ({ data, location }) => {
           onChange={(e) => handleChange(e.target.value)}
           location={location}
         />
-        <TagSelector tags={state.tags} onTagClick={onTagClick} state={state} />
         {state.filteredData.map((post, index) => (
           <Post post={post} key={`post_${index}`} />
         ))}

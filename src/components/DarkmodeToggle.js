@@ -22,7 +22,7 @@ const DarkmodeToggle = () => {
           <>
             <FiSun
               css={css`
-                ${tw`fill-current text-red-400 w-4 h-4 my-auto md:inline-block mr-0 md:mr-1`}
+                ${tw`fill-current w-4 h-4 my-auto md:inline-block mr-0 md:mr-1`}
               `}
             />
             <span
@@ -30,14 +30,14 @@ const DarkmodeToggle = () => {
                 ${tw`hidden md:inline-block`}
               `}
             >
-              라이트 모드로 보기
+              Light Theme
             </span>
           </>
         ) : (
           <>
             <FiMoon
               css={css`
-                ${tw`fill-current text-yellow-400 w-4 h-4 my-auto md:inline-block mx-0 md:mx-1`}
+                ${tw`fill-current w-4 h-4 my-auto md:inline-block mx-0 md:mx-1`}
               `}
             />
             <span
@@ -45,7 +45,7 @@ const DarkmodeToggle = () => {
                 ${tw`hidden md:inline-block mr-0 md:mr-1`}
               `}
             >
-              다크 모드로 보기
+              Dark Theme
             </span>
           </>
         )}
