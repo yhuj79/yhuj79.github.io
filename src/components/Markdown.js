@@ -49,9 +49,7 @@ const Markdown = ({ html }) => {
     }
 
     a {
-      color: ${isDarkMode
-        ? darkModeColor.textColor1
-        : whiteModeColor.textColor1};
+      color: ${isDarkMode ? "#1266FF" : "#050099"};
     }
     a:hover {
       text-decoration: underline;
@@ -60,6 +58,9 @@ const Markdown = ({ html }) => {
       margin: 0.3rem;
       margin-top: 0.75rem;
       margin-bottom: 0.75rem;
+    }
+    strong {
+      color: ${isDarkMode ? "#FFF" : "#000"};
     }
     ul,
     ol {
