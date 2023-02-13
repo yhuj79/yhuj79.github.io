@@ -49,7 +49,7 @@ const Markdown = ({ html }) => {
     }
 
     a {
-      color: ${isDarkMode ? "#1266FF" : "#050099"};
+      color: ${isDarkMode ? "#2478FF" : "#0042ED"};
     }
     a:hover {
       text-decoration: underline;
@@ -102,14 +102,7 @@ const Markdown = ({ html }) => {
     }
     td,
     th {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      padding-top: 0.25rem;
-      padding-bottom: 0.25rem;
-      border-width: 1px;
-      border-color: ${isDarkMode
-        ? darkModeColor.mainColor2
-        : whiteModeColor.mainColor2};
+      padding: 0;
     }
     tr:nth-of-type(even) {
       background-color: ${isDarkMode ? "#333" : "#fff"};
