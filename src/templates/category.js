@@ -79,7 +79,7 @@ export default ({ data, location }) => {
       }
     }
   }, [location.href, setFilteredPosts])
-  console.log(state)
+
   return (
     <Layout>
       <SEO title={decodeURI(categoryTitle)} />
