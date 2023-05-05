@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { graphql, navigate } from "gatsby"
 import SEO from "../components/seo"
 import Profile from "../components/Profile"
-import tw from "twin.macro"
+import tw, { css } from "twin.macro"
 import Markdown from "../components/Markdown"
 import Navigator from "../components/Navigator"
 import TableOfContents from "../components/TableOfContents"
@@ -94,6 +94,13 @@ export default ({ data, pageContext, location }) => {
                 />
               )}
               <Wrapper>
+                <img
+                  css={css`
+                    padding: 0.3rem;
+                  `}
+                  src={require(`../../content/assets/${frontmatter.tags[0]}.png`)}
+                  alt={frontmatter.tags[0]}
+                />
                 <Markdown html={html} />
               </Wrapper>
             </div>

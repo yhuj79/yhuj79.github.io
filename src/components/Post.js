@@ -20,7 +20,6 @@ const Post = ({ post }) => {
       <div
         css={css`
           background-color: ${isDarkMode ? "#2c2c2c" : "#FFFFFF"};
-          padding: 20px;
           border-radius: 8px;
           animation: ${fadein} 500ms;
           transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -32,34 +31,48 @@ const Post = ({ post }) => {
         `}
       >
         <Link to={post.node.fields.slug}>
-          <h1
+          <img
             css={css`
-              ${tw`text-2xl font-semibold`}
+              border-top-left-radius: 8px;
+              border-top-right-radius: 8px;
             `}
-          >
-            {post.node.frontmatter.title}
-          </h1>
-          <h2
-            css={css`
-              ${tw`my-1 text-xs`}
-            `}
-          >
-            {post.node.frontmatter.date}
-          </h2>
-          <div css={tw`my-4`}>
-            <Tags
-              tagWhite={`#484848`}
-              tagDark={`#F2F2F2`}
-              tags={post.node.frontmatter.tags}
-              onClick={() => {}}
-            />
-          </div>
+            src={require(`../../content/assets/${post.node.frontmatter.tags[0]}.png`)}
+            alt={post.node.frontmatter.tags[0]}
+          />
           <div
             css={css`
-              ${tw`break-words`}
+              padding: 20px;
             `}
           >
-            {post.node.excerpt}
+            <h1
+              css={css`
+                ${tw`text-2xl font-semibold`}
+              `}
+            >
+              {post.node.frontmatter.title}
+            </h1>
+            <h2
+              css={css`
+                ${tw`my-1 text-xs`}
+              `}
+            >
+              {post.node.frontmatter.date}
+            </h2>
+            <div css={tw`my-4`}>
+              <Tags
+                tagWhite={`#484848`}
+                tagDark={`#F2F2F2`}
+                tags={post.node.frontmatter.tags}
+                onClick={() => {}}
+              />
+            </div>
+            <div
+              css={css`
+                ${tw`break-words`}
+              `}
+            >
+              {post.node.excerpt}
+            </div>
           </div>
         </Link>
       </div>
