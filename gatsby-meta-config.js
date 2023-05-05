@@ -2,7 +2,7 @@ module.exports = {
   title: "BLOG_YHUJ",
   description: "yhuj79's Blog",
   author: "yhuj79",
-  introduction: "Junior Front Web Developer",
+  introduction: "🌱 Junior Developer",
   siteUrl: "https://yhuj79.github.io/", // Your blog site url
   social: {
     github: "yhuj79", // Your GitHub account
