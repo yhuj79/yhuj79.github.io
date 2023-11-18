@@ -67,10 +67,7 @@ const CategoryMenu = ({ path }) => {
                   `}
                 >
                   <Link to={`/${category.relativePath}/`}>
-                    {category.relativePath
-                      .replace("/", " ")
-                      .trim()
-                      .replace(" ", "/")}
+                    {category.relativePath}
                   </Link>
                 </li>
               )
@@ -160,10 +157,7 @@ const CategoryMenu = ({ path }) => {
                   `}
                 >
                   <Link to={`/${category.relativePath}/`}>
-                    {category.relativePath
-                      .replace("/", " ")
-                      .trim()
-                      .replace(" ", "/")}
+                    {category.relativePath}
                   </Link>
                 </li>
               )
