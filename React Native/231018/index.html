@@ -61,7 +61,7 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ react-native init --version 0.68.2 프로젝트명</span></span></span></code></pre>
 <p>안드로이드 에뮬레이터를 통해 진행했다. 디바이스는 기존에 갤럭시 S21로 세팅되어 있으며, 다음 명령어로 프로젝트를 실행했다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ react-native run android</span></span></span></code></pre>
-<img alt="geo1" src="https://drive.google.com/uc?export=view&amp;id=13UqY1IVOPNQxNzKY-YppxvuGoQJQRhPm">
+<img alt="geo1" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo1.png">
 <p>에뮬레이터가 실행되면 위처럼 설정되어 있던 기본 화면이 나온다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">/**</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> * Sample React Native App</span></span></span>
@@ -202,7 +202,7 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">})</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
-<img alt="geo2" src="https://drive.google.com/uc?export=view&amp;id=1bJG5eWWwyVXYh6SxDL_fPT_3ki-pisHm" width="300">
+<img alt="geo2" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo2.png" width="300">
 <h2 id="geolocation-service" style="position:relative;"><a href="#geolocation-service" aria-label="geolocation service permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Geolocation Service</h2>
 <p>모바일 디바이스의 현재 위치 좌표 값을 얻기 위해서는 <code>Geolocation Service</code>라는 라이브러리를 사용한다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn add react-native-geolocation-service</span></span></span></code></pre>
@@ -311,19 +311,20 @@
 <table>
     <tbody><tr>
         <td>
-            <img alt="geo3" src="https://drive.google.com/uc?export=view&amp;id=1ysWQmDG39SKtroO0vHnlJmJ7Fa0yAZBy">
+            <img alt="geo3" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo3.png">
         </td>
         <td>
-            <img alt="geo4" src="https://drive.google.com/uc?export=view&amp;id=1psA2fniEB0PQz46Nxu36GiFlEk2Be4_6">
+            <img alt="geo4" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo4.png">
         </td>
     </tr>
 </tbody></table>
 <p>이렇게 위치 정보의 접근하는 메시지가 뜨고, 동의하면 좌표 값이 정상적으로 출력된다.</p>
 <p>그런데 실제 모바일 디바이스에서 실행한 것도 아니고 에뮬레이터에 표시된 <code>37.4219983, -122.084</code> 라는 좌표는 뭘까? 이 좌표를 한번 구글 맵에 검색해 보았다.</p>
-<img alt="geo5" src="https://drive.google.com/uc?export=view&amp;id=1VcWZmc3qsGakYzjCiuwNo4GqXH7naGZ4">
+<img alt="geo5" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo5.png">
 <p>이렇듯 PC 개발 환경에서 위치 정보를 받아 오면 default로 구글 본사의 위치가 표시되는 것을 볼 수 있다.</p>
 <p>APK를 생성하여 모바일 디바이스에서 앱을 실행해 보면 현재 자신이 위치에 있는 좌표 값이 나오는 것을 확인해 볼 수 있을 것이다. APK 생성 방법은 아래 포스트를 참고하였다.</p>
 <p><a href="https://ssilook.tistory.com/entry/React-Native-RN-Android-Studio%EB%A1%9C-APK-%EC%B6%94%EC%B6%9C%ED%95%98%EA%B8%B0">RN - APK 추출하기 1편(Android Studio로 APK 추출하기)</a></p>
+<hr>
 <h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <p><a href="https://www.npmjs.com/package/react-native-geolocation-service">react-native-geolocation-service - npm</a></p>
 <p><a href="https://velog.io/@flowersayo/React-NativeExpo%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-GPS-%EC%9C%84%EC%B9%98%EC%B6%94%EC%A0%81-%EB%9F%AC%EB%8B%9D-%ED%8A%B8%EB%9E%98%ED%82%B9-%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0">React Native(Expo)를 이용한 GPS 위치추적 - 러닝 트래킹 앱 만들기</a></p>

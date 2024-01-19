@@ -77,7 +77,7 @@
 <li>명령어를 실행한다. (Execute)</li>
 </ol>
 <h2 id="프로세스-주소-공간" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EC%A3%BC%EC%86%8C-%EA%B3%B5%EA%B0%84" aria-label="프로세스 주소 공간 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로세스 주소 공간</h2>
-<img src="https://drive.google.com/uc?export=view&amp;id=1UmBnrKivFK5Lw3K7HhSS-619nBgqGhDT" width="300">
+<img alt="addressspace" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230628/addressspace.png" width="300">
 <ol>
 <li>
 <p><strong>Stack</strong></p>
@@ -114,7 +114,7 @@
 </li>
 </ol>
 <h2 id="프로세스-상태" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EC%83%81%ED%83%9C" aria-label="프로세스 상태 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로세스 상태</h2>
-<img src="https://drive.google.com/uc?export=view&amp;id=1k1MMt5mJ0nVRMknLIrb7CsK28bEBCsF4" width="600">
+<img alt="state" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230628/state.png">
 <p><strong>New</strong> : 프로세스가 막 생성된 상태</p>
 <p><strong>Ready</strong> : 프로세스가 CPU에 실행되기 위해 대기하는 상태</p>
 <p><strong>Running</strong> : 프로세스에 포함된 명령어가 실행되고 있는 상태</p>
@@ -150,6 +150,7 @@
 <p><strong>Shortest job first(SJF)</strong> : 가장 빨리 끝날 수 있는 애플리케이션부터 배정. 항상 짧은 작업을 먼저 처리하여 평균 대기시간이 가장 짧다. 수행시간이 긴 작업은 짧은 작업에 밀려 기아가 발생, 실행 시간을 예측할 수 없어 실용적이지 못함. 짧은 작업이 먼저 실행되므로 공정하지 못한 정책으로 볼 수도 있다.</p>
 <p><strong>Round Robin scheduling(RR)</strong> : 처음 요청에 먼저 배정, 만약 일정 시간 내에 종료하지 않으면 운영체제가 강제로 실행을 중단시키고 Ready Queue로 돌려보낸다. 시간 할당량이 너무 크면 FCFS 스케줄링과 다를 바가 없고, 너무 작으면 문맥 교환에 잦아져 작업 수행 방해, 오버헤드가 크게 증가하기 때문에 Time Quantum을 어떻게 정해야 할지가 난감한 방법이다.</p>
 <p><strong>Priority Scheduling</strong> : 우선 순위가 가장 높은 프로세스를 우선적으로 배정하는 방법. 우선 순위가 낮은 프로세스의 기아 상태를 해결하려면 초기에는 우선 순위가 낮더라도 시간이 갈수록 우선순위 레벨을 올려주는 방식을 적용하면 된다.</p>
+<hr>
 <h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <p><a href="https://cocoon1787.tistory.com/685">운영체제란? (운영체제의 역할, 목적, 종류, 기능)</a></p>
 <p><a href="https://jokerkwu.tistory.com/119">OS 용어 정리 &#x26; 프로세스</a></p>

@@ -177,7 +177,7 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}).</span><span class="mtk3">then</span><span class="mtk1">(</span><span class="mtk9">function</span><span class="mtk1"> (</span><span class="mtk4 mtki">response</span><span class="mtk1">) {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk7">JSON</span><span class="mtk1">.</span><span class="mtk8">stringify</span><span class="mtk1">(</span><span class="mtk11">response</span><span class="mtk1">.</span><span class="mtk4">data</span><span class="mtk1">, </span><span class="mtk7">null</span><span class="mtk1">, </span><span class="mtk7">5</span><span class="mtk1">))</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">})</span></span></span></code></pre>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1njXsUEgOblqBNXwQDrTMgqJ8zbHmGu3z" alt="jsonplaceholder"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230125/jsonplaceholder.png" alt="jsonplaceholder"></p>
 <p>jsonplaceholder의 users에는 총 10명의 정보가 들어있다. id, 이름, 이메일, 주소 등등...</p>
 <p>모든 user의 이름을 나타내기 위해 다음과 같이 코드를 작성했다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="9"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">axios</span><span class="mtk1">({</span></span></span>
@@ -188,7 +188,7 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk6">`id : </span><span class="mtk9">${</span><span class="mtk4">key</span><span class="mtk9">}</span><span class="mtk8">\n</span><span class="mtk6">name : </span><span class="mtk9">${</span><span class="mtk11">value</span><span class="mtk1">.</span><span class="mtk4">name</span><span class="mtk9">}</span><span class="mtk6">`</span><span class="mtk1">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">})</span></span></span></code></pre>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1FDuoHohbVjvZ45-Nc4FKRUkc3MNyDxWU" alt="objectEntries"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230125/objectEntries.png" alt="objectEntries"></p>
 <p><code>Object.entries</code> 메서드를 사용하면 객체 자체의 enumerable 속성 [key, value] 쌍의 배열을 반환, 객체의 키(key)와 값(value)을 순회할 수 있다. response.data에 있는 value의 name을 순회하며 모든 user의 이름을 얻을 수 있게 되었다.</p>
 <hr>
 <h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>

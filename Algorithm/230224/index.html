@@ -131,7 +131,7 @@
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">printNum</span><span class="mtk1">(</span><span class="mtk7">20</span><span class="mtk1">)</span></span></span></code></pre>
 <p><strong>이진 탐색(Binary Search)</strong>의 경우 또한 O(log n)의 시간 복잡도를 가진다. 찾고자 하는 값을 정렬된 배열의 중간 값과 비교하여 절반을 탐색 대상에서 제외시키기 때문이다.</p>
-<img alt="bs" width="100%" src="https://drive.google.com/uc?export=view&amp;id=1e_uLViHhtSZ02ObSWodsE2RLfA_apS4f">
+<img alt="bs" width="100%" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230224/bs.gif">
 <h3 id="3️-on--linear-time" style="position:relative;"><a href="#3%EF%B8%8F-on--linear-time" aria-label="3️ on  linear time permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3️⃣ O(n) : Linear Time</h3>
 <p>입력 데이터의 크기에 비례해서 처리시간이 늘어나는 경우 <strong>O(n)</strong>이다. 입력된 값이 1일 때의 시간이 1초 걸린다면, 입력된 값이 100일 때 100초일 것이다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="c" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// C</span></span></span>
@@ -226,7 +226,8 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <h2 id="시간-복잡도-그래프" style="position:relative;"><a href="#%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B7%B8%EB%9E%98%ED%94%84" aria-label="시간 복잡도 그래프 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>시간 복잡도 그래프</h2>
 <p>속도는 <code>O(1)</code> <code>O(log N)</code> <code>O(N)</code> <code>O(N log N)</code> <code>O(N^2)</code> <code>O(2^N)</code> <code>O(N!)</code> 순서대로 빠르다.</p>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1zE2aqiOAM45JzRxoOvRqr3Kv9J5rBwOd" alt="bigochart"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230224/bigochart.png" alt="bigochart"></p>
+<hr>
 <h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <p><a href="https://www.acmicpc.net/">Baekjoon Online Judge</a></p>
 <p><a href="https://levelup.gitconnected.com/time-complexity-and-bigo-notation-linear-time-constant-time-and-quadratic-time-686c279ecd88">Time Complexity and BigO Notation... | by Sebastian De Lima</a></p>

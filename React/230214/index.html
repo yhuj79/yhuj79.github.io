@@ -108,7 +108,7 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1RpM46eO4En2eDCdOTBOSAu5ppgQLQFUd" alt="quill_1"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/quill_1.gif" alt="quill_1"></p>
 <p>Html 형태의 문자열이 content 값에 들어왔다.<br>
 이 포스팅에서 CRUD까지 다루진 않지만 만약 DB에 저장된 content 값을 출력하고자 한다면 다음과 같이 <code>dangerouslySetInnerHTML</code>, <code>DOMPurify</code>를 사용하면 된다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn add isomorphic-dompurify</span></span></span></code></pre>
@@ -132,7 +132,7 @@
 <p>이렇게 dangerouslySetInnerHTML을 사용하여 직접적으로 HTML을 설정하는 것은 <a href="https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8_%EA%B0%84_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8C%85">Cross Site Scripting(XSS)</a>에 취약하다고 한다. 그래서 XSS 공격을 방지하는 dompurify와 같은 sanitization library와 함께 사용해 주었다.</p>
 <h2 id="에디터에-이미지를-올리면" style="position:relative;"><a href="#%EC%97%90%EB%94%94%ED%84%B0%EC%97%90-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A5%BC-%EC%98%AC%EB%A6%AC%EB%A9%B4" aria-label="에디터에 이미지를 올리면 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>에디터에 이미지를 올리면?</h2>
 <p>일반적인 텍스트가 입력되면 content값은 그렇게 크지 않지만, 이미지가 들어오게 될 경우 문제가 생긴다. 이미지를 에디터에 올려보고 value를 체크해보자.</p>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1KZnxoI8zuthT55TM-AV-TgUYR7QyRYoM" alt="quill_2"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/quill_2.gif" alt="quill_2"></p>
 <pre class="grvsc-container one-dark-pro" data-language="html" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">&lt;</span><span class="mtk4">img</span><span class="mtk1"> </span><span class="mtk7">src</span><span class="mtk1">=</span><span class="mtk6">&quot;data:image/png;base64, 엄청나게 긴 base64 value...</span></span></span></code></pre>
 <p>React-Quill은 이미지를 올리게 되면 8비트 이진 데이터를 문자 코드에 영향을 받지 않는 공통 ASCII 문자열로 바꾼다. (<a href="https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EC%8A%A464">base64</a>) 따라서 위와 같은 base64 인코딩이 된 형태로 이미지가 저장된다. 이렇게 value에 담긴 값을 DB에 저장하려 하면 전송에 실패하게 된다.</p>
 <h2 id="firebase-storage로-이미지-처리하기" style="position:relative;"><a href="#firebase-storage%EB%A1%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0" aria-label="firebase storage로 이미지 처리하기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Firebase Storage로 이미지 처리하기</h2>
@@ -141,12 +141,12 @@
 <p><code>Firebase 프로젝트 생성</code> > <code>웹 앱 추가</code> > <code>Storage</code> > <code>시작하기 (지역 : asia-east1)</code></p>
 <table>
   <tbody><tr>
-    <td valign="top"><img src="https://drive.google.com/uc?export=view&amp;id=1i4L-Z9ZD1rsAlsbmhtGe7WfsJ8CP59YM"></td>
-    <td valign="top"><img src="https://drive.google.com/uc?export=view&amp;id=1p9zxJ-LFj-P9usNKmrI63T7pYYWg_LE9"></td>
+    <td valign="top"><img alt="fb1" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb1.png"></td>
+    <td valign="top"><img alt="fb2" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb2.png"></td>
   </tr>
   <tr>
-    <td valign="top"><img src="https://drive.google.com/uc?export=view&amp;id=1XaNcWsCF53C5vbG9AILE1nuw49CA5ATW"></td>
-    <td valign="top"><img src="https://drive.google.com/uc?export=view&amp;id=1SYRPaBt65FLNyJotseoAgCWpmotoFdp3"></td>
+    <td valign="top"><img alt="fb3" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb3.png"></td>
+    <td valign="top"><img alt="fb4" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb4.png"></td>
   </tr>
 </tbody></table>
 <p>프로젝트에 <code>firebase</code>를 설치하고 SDK를 작성한다.</p>
@@ -235,8 +235,8 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span></code></pre>
 <p>Storage에 성공적으로 업로드 되었고, 이미지 URL 또한 에디터에 잘 반영이 되었다.</p>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1qGb6MXInHSddKEZ3cOJydUH7QKs2gQXN" alt="quill_3"></p>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1oS2fohxreWs8DGaHVQzCyR6o_Q0PQOGg" alt="quill_4"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/quill_3.gif" alt="quill_3"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/quill_4.png" alt="quill_4"></p>
 <hr>
 <h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <p><a href="https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8_%EA%B0%84_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8C%85">사이트 간 스크립팅 - 위키백과, 우리 모두의 백과사전</a></p>

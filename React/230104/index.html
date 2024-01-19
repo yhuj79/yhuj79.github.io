@@ -58,7 +58,7 @@
 <h2 id="xml-형식의-open-api" style="position:relative;"><a href="#xml-%ED%98%95%EC%8B%9D%EC%9D%98-open-api" aria-label="xml 형식의 open api permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>XML 형식의 Open API</h2>
 <p>예전 프로젝트에서 <a href="https://www.data.go.kr" target="_blank">공공데이터포털</a>에 있는 <strong>XML(Extensible Markup Language)</strong> 형식의 API를 다룬 적이 있다. 데이터를 이용하여 원하는 형태로 구현하는 것 까지는 문제가 없었지만, <strong>GitHub Page</strong>, <strong>Vercel</strong> 등으로 프로젝트를 배포했을 경우 갖가지 문제에 부딪혔다. 특히 공공데이터포털에서 제공하는 API는 대다수가 XML 형식으로 되어 있다. 이 문제의 해결법은 아래에 설명해 놓은 방법만이 정답인 것은 아니겠지만 비교적 괜찮은 방법으로 성공한 것 같다.</p>
 <p><strong>GitHub</strong>에 새 저장소를 만들고, 생성한 저장소를 클론 후 <code>react-app</code>을 만들었다.</p>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1OpR1IkM4jH3kOT94yt1rp22KIGJbcdu_" alt="230104-01"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230104/230104-01.png" alt="230104-01"></p>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ git clone https://github.com/(github-id)/open-api-tutorial.git</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ </span><span class="mtk8">cd</span><span class="mtk1"> open-api-tutorial</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn create react-app open-api-tutorial</span></span></span></code></pre>
@@ -68,7 +68,7 @@
 <p>공공데이터포털에서 제공하는 국내 코로나 바이러스 현황을 받아볼 수 있는 API를 사용하였다.<br>
 <a href="https://www.data.go.kr/bbs/ntc/selectNotice.do?originId=NOTICE_0000000002849" target="_blank">공공데이터활용지원센터_보건복지부 코로나19 감염 현황 (현재 폐기됨)</a></p>
 <p><strong>XML</strong>은 <strong>Extensible Markup Language</strong> 의 약자로, HTML과 비슷한 구조를 가진다.</p>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1dFe_du1ObK_BJ4psIyiF4ONFWX8v_TA8" alt="230104-02"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230104/230104-02.png" alt="230104-02"></p>
 <p>App.js에서 데이터를 콘솔에 출력하였다. 이 API는 <strong>startCreateDt</strong>, <strong>endCreateDt</strong> 파라미터로 데이터 범위를 지정할 수 있는데, <code>Moment.js</code>, <code>Day.js</code>와 같은 라이브러리를 사용하면 현재 날짜를 받아서 원하는 기간의 데이터를 받아볼 수 있다. 우선 테스트를 위해 날짜 라이브러리는 사용하지 않고 임의의 날짜를 입력해 주었다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// src/App.js</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">logo</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;./logo.svg&quot;</span></span></span>
@@ -122,7 +122,7 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">.env</span></span></span></code></pre>
 <p><code>yarn start</code>로 실행시켜 확인하면 다음과 같이 지정한 범위의 코로나 데이터를 확인할 수 있다.<br>
 (콘솔에 두 번 출력되는 이유는 React의 <strong>StrictMode</strong> 때문이다.)</p>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1VGyA6pq1hE3pC5XQPMfyyr52vGoTjLHz" alt="230104-03"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230104/230104-03.png" alt="230104-03"></p>
 <p>작성한 그대로 <strong>GitHub Page</strong>에 배포하여 확인해 보자. <code>gh-pages</code>를 설치한다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn add --dev gh-pages</span></span></span></code></pre>
 <p><code>package.json</code> 내용을 추가 후, <code>build</code>, <code>deploy</code>를 하고 나면<br>
@@ -135,16 +135,16 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk6">&quot;homepage&quot;</span><span class="mtk1">: </span><span class="mtk6">&quot;https://(github-id).github.io/open-api-tutorial&quot;</span></span></span></code></pre>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn build</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn deploy</span></span></span></code></pre>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1u9EzciAWd7-gqjl3ZFACDYpS1P_JpzO6" alt="230104-04"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230104/230104-04.png" alt="230104-04"></p>
 <p>페이지는 잘 나타났으나 데이터에서 <code>Mixed Content Error</code>가 발생한다.</p>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1VL2TJgbqegg3a7x0iEQRLaf4OdjgZxCq" alt="230104-05"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230104/230104-05.png" alt="230104-05"></p>
 <p>암호화된 HTTPS 페이지에 암호화되지 않은 HTTP를 통해 요청할 때 발생하는 에러라고 한다.<br>
 public/index.html에 HTTPS 변환 메타태그를 추가 후 다시 확인해 보면...</p>
 <pre class="grvsc-container one-dark-pro" data-language="html" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">&lt;</span><span class="mtk4">meta</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk7">http-equiv</span><span class="mtk1">=</span><span class="mtk6">&quot;Content-Security-Policy&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk7">content</span><span class="mtk1">=</span><span class="mtk6">&quot;upgrade-insecure-requests&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">/&gt;</span></span></span></code></pre>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=1EC4zUEBz3_0iIZqwJNz4m5NCjvT5GSWy" alt="230104-06"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230104/230104-06.png" alt="230104-06"></p>
 <p><code>ERR_CERT_COMMON_NAME_INVALID</code> 에러가 등장했다. SSL 인증서 관련 문제라고 한다. 이 프로젝트에서는 HTTPS 변환된 API가 존재하지 않아 에러가 발생했다는 뜻으로 보여진다.</p>
 <p>따라서 다른 방법으로 구상한 게 웹 서버에 데이터를 파싱 후 웹 앱에 뿌리는 것이다.</p>
 <h2 id="express-web-server" style="position:relative;"><a href="#express-web-server" aria-label="express web server permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Express Web Server</h2>
@@ -189,7 +189,7 @@ public/index.html에 HTTPS 변환 메타태그를 추가 후 다시 확인해 �
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">.env</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">/node_modules</span></span></span></code></pre>
 <p>터미널에서 server 디렉터리로 이동, <code>node server.js</code>를 실행하면 5050포트로 Express 서버가 실행된다. <code>http://localhost:5050/api/data</code>에서 API를 확인할 수 있다.</p>
-<p><img src="https://drive.google.com/uc?export=view&#x26;id=12634ER-q49C8cllgvWrt7fyddqUX1tnb" alt="230104-07"></p>
+<p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230104/230104-07.png" alt="230104-07"></p>
 <p>코드 수정마다 매번 서버 재부팅을 하는 것은 귀찮기 때문에 <code>nodemon</code>을 설치하고, 명령어 간소화를 위해 <code>package.json</code>에 <code>scripts</code>를 추가한다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="bash" data-index="11"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn add nodemon</span></span></span></code></pre>
 <pre class="grvsc-container one-dark-pro" data-language="json" data-index="12"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// server/package.json</span></span></span>
