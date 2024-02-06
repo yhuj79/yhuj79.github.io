@@ -172,7 +172,7 @@ const Profile = () => {
               display: inline-block;
             `}
             title={"Email Link"}
-            href={`mailto:yu1085@naver.com`}
+            href={`mailto:yhuj79@outlook.com`}
           >
             <ImMail
               css={css`
