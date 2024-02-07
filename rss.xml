@@ -1,4 +1,240 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 06 Feb 2024 07:48:20 GMT</lastBuildDate><item><title><![CDATA[외판원 문제 (TSP) - 최근접 이웃 알고리즘 솔루션]]></title><description><![CDATA[여행하는 외판원 문제(TSP : Traveling Salesman Problem)는 모든 도시들을 단 한 번만 방문하고 원래 출발한 도시로 돌아오는 최단 경로를 알아내는 문제이다. 이번 포스트는 다음과 유사한 문제를 최근접 이웃 알고리즘(Nearest…]]></description><link>https://yhuj79.github.io/Algorithm/240117/</link><guid isPermaLink="false">https://yhuj79.github.io/Algorithm/240117/</guid><pubDate>Wed, 17 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 07 Feb 2024 08:59:52 GMT</lastBuildDate><item><title><![CDATA[소프트웨어 설계 주요 내용]]></title><description><![CDATA[정보처리기사 필기 1과목 소프트웨어 설계에 나오는 주요 내용들로, 이 포스트는 해당 파트의 기출 내용 전부를 다루고 있지 않다. 소프트웨어 공학의 개념 소프트웨어 공학(Software Engineering…]]></description><link>https://yhuj79.github.io/Computer Science/240207/</link><guid isPermaLink="false">https://yhuj79.github.io/Computer Science/240207/</guid><pubDate>Wed, 07 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;정보처리기사 필기 1과목 소프트웨어 설계에 나오는 주요 내용들로, 이 포스트는 해당 파트의 기출 내용 전부를 다루고 있지 않다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;소프트웨어-공학의-개념&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EA%B3%B5%ED%95%99%EC%9D%98-%EA%B0%9C%EB%85%90&quot; aria-label=&quot;소프트웨어 공학의 개념 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;소프트웨어 공학의 개념&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;소프트웨어 공학(Software Engineering)&lt;/strong&gt;은 소프트웨어의 위기를 극복하기 위한 방안으로 연구된 학문이며 여러 가지 방법론과 도구, 관리 기법들을 통하여 소프트웨어의 품질과 생산성 향상을 목적으로 한다.
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;소프트웨어-공학의-기본-원칙&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EA%B3%B5%ED%95%99%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EC%9B%90%EC%B9%99&quot; aria-label=&quot;소프트웨어 공학의 기본 원칙 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;소프트웨어 공학의 기본 원칙&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;현대적인 프로그래밍 기술을 계속적으로 적용해야 한다.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;개발된 소프트웨어의 품질이 유지되도록 지속적으로 검증해야 한다.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;소프트웨어 개발 관련 사항 및 결과에 대한 명확한 기록을 유지해야 한다.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;하향식상향식-소프트웨어-개발&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%ED%95%98%ED%96%A5%EC%8B%9D%EC%83%81%ED%96%A5%EC%8B%9D-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EA%B0%9C%EB%B0%9C&quot; aria-label=&quot;하향식상향식 소프트웨어 개발 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;하향식/상향식 소프트웨어 개발&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;하향식 소프트웨어 개발(Top-Down Software Development)&lt;/strong&gt;은 큰 시스템이나 프로그램을 작성할 때 사용되는 소프트웨어 개발 방법론 중 하나로, 이 방법은 전체 시스템을 세분화하고 각 세부 부분을 순차적으로 설계하고 개발하는 접근법을 갖추고 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;요구사항 분석 (Requirements Analysis): 전체 시스템의 요구사항을 정의하고 이를 세부적으로 나누어 핵심 기능을 식별&lt;/li&gt;
+&lt;li&gt;시스템 설계 (System Design): 전체 시스템을 설계하고 각 모듈 간의 인터페이스와 상호 작용을 결정&lt;/li&gt;
+&lt;li&gt;모듈 설계 (Module Design): 각 모듈에 대한 상세한 설계를 수행&lt;/li&gt;
+&lt;li&gt;코딩 (Coding): 설계한 모듈을 실제 프로그래밍 언어로 구현&lt;/li&gt;
+&lt;li&gt;테스트 (Testing): 개발된 각 모듈이나 구성 요소를 개별적으로 테스트하고, 전체 시스템이 예상대로 동작하는지 확인&lt;/li&gt;
+&lt;li&gt;통합 (Integration): 각 모듈을 통합하여 전체 시스템을 완성&lt;/li&gt;
+&lt;li&gt;유지보수 (Maintenance): 시스템의 안정성 및 성능을 유지하고 필요에 따라 수정하거나 업데이트&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;하향식 소프트웨어 개발은 대규모 프로젝트에서 특히 효과적일 수 있으며, 큰 그림을 먼저 그린 후 세부 사항에 대한 작업을 진행함으로써 전체적인 구조를 미리 계획할 수 있다. 그러나 이 방법론은 프로젝트의 초기에 정확한 요구사항을 수집하고 결정하는 것이 중요하다는 전제를 가지고 있다.
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;상향식 소프트웨어 개발(Bottom-Up Software Development)&lt;/strong&gt;은 소프트웨어를 작성할 때 시스템의 세부 구성 요소부터 시작하여 전체 시스템을 완성해 나가는 방법론이다. 이 방법은 작은 모듈부터 출발하여 이를 조합해 나가는 방식으로 개발이 진행된다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;최하위 모듈 설계 (Low-Level Design): 개발자는 시스템의 가장 기본이 되는 모듈들의 설계를 수행&lt;/li&gt;
+&lt;li&gt;코딩 (Coding): 최하위 모듈부터 시작하여 모듈을 프로그래밍 언어로 구현&lt;/li&gt;
+&lt;li&gt;테스트 (Testing): 각 모듈을 개별적으로 테스트하고 모듈 간 상호 작용이 예상대로 이루어지는지 확인&lt;/li&gt;
+&lt;li&gt;통합 (Integration): 개발된 각 모듈을 조합하여 시스템을 완성&lt;/li&gt;
+&lt;li&gt;시스템 테스트 (System Testing): 전체 시스템이 예상대로 동작하는지 확인하기 위해 시스템 전체에 대한 테스트를 수행&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;상향식 소프트웨어 개발은 주로 작은 규모의 프로젝트나 중간 규모의 프로토타입 개발에 유용할 수 있다. 이 방법론은 초기에는 구체적인 요구사항을 정확히 수집하기 어려운 상황에서도 점진적으로 개발하면서 요구사항을 조정할 수 있는 유연성을 제공한다.
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;test-driven-development-테스트-주도-개발&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#test-driven-development-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%A3%BC%EB%8F%84-%EA%B0%9C%EB%B0%9C&quot; aria-label=&quot;test driven development 테스트 주도 개발 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Test-Driven Development (테스트 주도 개발)&lt;/h2&gt;
+&lt;p&gt;개발자가 실제 코드를 작성하기 전에 테스트 케이스를 먼저 작성하므로 자신이 무엇을 해야할지를 정확히 파악한다.
+테스트가 지속적으로 진행될 수 있도록자동화된 테스팅 도구(구조, 프레임워크)를 사용한다.
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;dbmsdatabase-management-system&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#dbmsdatabase-management-system&quot; aria-label=&quot;dbmsdatabase management system permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;DBMS(DataBase Management System)&lt;/h2&gt;
+&lt;p&gt;사용자와 데이터베이스 사이에서 사용자의 요구에 따라 정보를 생성해 주고, 데이터베이스를 관리해 주는 소프트웨어이다. DBMS는 기존의 파일 시스템이 갖는 데이터의 종속성과 중복성의 문제를 해결하기 위해 제안된 시스템으로, 모든 응용 프로그램들이 데이터베이스를 공용할 수 있도록 관리해 준다.
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;웹-애플리케이션-서버was&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%84%9C%EB%B2%84was&quot; aria-label=&quot;웹 애플리케이션 서버was permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;웹 애플리케이션 서버(WAS)&lt;/h2&gt;
+&lt;p&gt;정적인 콘텐츠 처리를 하는 웹 서버와 달리 사용자의 요구에 따라 변하는 동적인 콘텐츠를 처리하기 위해 사용되는 미들웨어이다. 데이터 접근, 세션 관리, 트랜잭션 관리 등을 위한 라이브러리를 제공한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ex )&lt;/strong&gt; Tomcat, GlassFish, JBoss, Jetty, JEUS, Resin, WebLogic, WebSphere
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;user-interface사용자-인터페이스의-구분&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#user-interface%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%9D%98-%EA%B5%AC%EB%B6%84&quot; aria-label=&quot;user interface사용자 인터페이스의 구분 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;User Interface(사용자 인터페이스)의 구분&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CLI(Command Line Interface)&lt;/strong&gt; : 명령과 출력이 텍스트 형태로 이뤄지는 인터페이스
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GUI(Graphical User Interface)&lt;/strong&gt; : 아이콘이나 메뉴를 마우스로 선택하여 작업을 수행하는 그래픽 환경의 인터페이스
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NUI(Natural User Interface)&lt;/strong&gt; : 사용자의 말이나 행동으로 기기를 조작하는 인터페이스
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VUI(Voice User Interface)&lt;/strong&gt; : 사람의 음성으로 기기를 조작하는 인터페이스
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OUI(Organic User Interface)&lt;/strong&gt; : 모든 사물과 사용자 간의 상호작용을 위한 인터페이스로, 소프트웨어가 아닌 하드웨어 분야에서 사물 인터넷(Internet of Things), 가상현실(Virtual Reality), 증강현실(Augmented Reality), 혼합현실(Mixed Reality) 등과 함께 대두되고 있다.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;user-interface사용자-인터페이스-기본-원칙&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#user-interface%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B8%B0%EB%B3%B8-%EC%9B%90%EC%B9%99&quot; aria-label=&quot;user interface사용자 인터페이스 기본 원칙 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;User Interface(사용자 인터페이스) 기본 원칙&lt;/h2&gt;
+&lt;p&gt;누구나 쉽게 이해하고 사용할 수 있어야 한다.
+사용자의 목적을 정확하고 완벽하게 달성해야 한다.
+누구나 쉽게 배우고 익힐 수 있어야 한다.
+사용자의 요구사항을 최대한 수용하고 실수를 최소화해야 한다.
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;소프트웨어-아키텍쳐-설계의-기본-원리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90-%EC%84%A4%EA%B3%84%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EC%9B%90%EB%A6%AC&quot; aria-label=&quot;소프트웨어 아키텍쳐 설계의 기본 원리 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;소프트웨어 아키텍쳐 설계의 기본 원리&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;모듈화(Modularity)&lt;/strong&gt; : 소프트웨어의 성능을 향상시키거나 시스템의 수정 및 재사용, 유지 관리 등이 용이하도록 시스템의 기능들을 모듈 단위로 나누는 것을 의미
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;추상화(Abstraction)&lt;/strong&gt; : 문제의 전체적이고 포괄적인 개념을 설계한 후 차례로 세분화하여 구체화시켜 나가는 것
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;단계적 분해(Stepwise Refinement)&lt;/strong&gt; : Niklaus Wirth에 의해 제안된 하향식 설계 전략으로, 문제를 상위의 중요 개념으로부터 하위의 개념으로 구체화시키는 분할 기법
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;정보 은닉(Information Hiding)&lt;/strong&gt; : 한 모듈 내부에 포함된 절차와 자료들의 정보가 감추어져 다른 모듈이 접근하거나 변경하지 못하도록 하는 기법
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;아키텍쳐-패턴&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90-%ED%8C%A8%ED%84%B4&quot; aria-label=&quot;아키텍쳐 패턴 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;아키텍쳐 패턴&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;파이프 필터 패턴(Pipe - Filter Pattern)&lt;/strong&gt; : 데이터 스트림 절차의 각 단계를 필터(Filter) 컴포넌트로 캡슐화하여 파이프(Pipe)를 통해 데이터를 전송하는 패턴이다. 필터 컴포넌트는 재사용성이 좋고, 추가가 쉬워 확장이 용이하며, 재배치하여 다양한 파이프라인을 구축하는 것이 가능하다. 파이프 필터 패턴은 데이터 변환, 버퍼링, 동기화 등에 주로 사용된다. 대표적으로 UNIX의 쉘(Shell)이 있다.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;모델 뷰 컨트롤러 패턴(Model - View - Controler Pattern)&lt;/strong&gt; : 서브시스템을 3개의 부분으로 구조화하는 패턴이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;모델(Model) : 서브시스템의 핵심 기능과 데이터를 보관&lt;/li&gt;
+&lt;li&gt;뷰(View) : 사용자에게 정보를 표시&lt;/li&gt;
+&lt;li&gt;컨트롤러(Controler) : 사용자로부터 입력된 변경 요청을 처리하기 위해 모델에게 명령
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;클라이언트 서버 패턴(Client-Server Pattern)&lt;/strong&gt; : 하나의 서버 컴포넌트와 다수의 클라이언트 컴포넌트로 구성되는 패턴이다. 클라이언트 서버 패턴에서 사용자는 클라이언트와만 의사소통을 한다. 즉 사용자가 클라이언트를 통해 서버에 요청하고 클라이언트가 응답을 받아 사용자에게 제공하는 방식으로 서비스를 제공한다. 서버는 클라이언트의 요청에 대비해 항상 대기 상태를 유지해야 한다. 클라이언트나 서버는 요청과 응답을 받기 위해 동기화되는 경우를 제외하고는 서로 독립적이다.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;마스터 슬레이브 패턴(Master-Slave Patern)&lt;/strong&gt; : 마스터 컴포넌트에서 슬레이브 컴포넌트로 작업을 분할한 후, 슬레이브 컴포넌트에서 처리된 결과물을 다시 돌려받는 방식으로 작업을 수행하는 패턴. 장애 허용 시스템과 병렬 컴퓨팅 시스템에서 주로 활용된다.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;브로커 패턴(Broker Patern)&lt;/strong&gt; : 사용자가 원하는 서비스와 특성을 브로커 컴포넌트에 요청하면 브로커 컴포넌트가 요청에 맞는 컴포넌트와 사용자를 연결한다. 분산 환경 시스템에서 주로 활용된다.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;피어 투 피어 패턴(Peer-To-Peer Patern)&lt;/strong&gt; : 피어(Peer)를 하나의 컴포넌트로 간주하며, 각 피어는 서비스를 호출하는 클라이언트가 될 수도, 서비스를 제공하는 서버가 될 수도 있는 패턴.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;이벤트 버스 패턴(Event-Bus Patern)&lt;/strong&gt; : 소스가 특정 채널에 이벤트 메시지를 발행(Publish)하면, 해당 채널을 구독(Subscribe)한 리스너들이 메시지를 받아 이벤트를 처리하는 방식.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;블랙보드 패턴(Blackboard Patern)&lt;/strong&gt; : 모든 컴포넌트들이 공유 데이터 저장소와 블랙보드 컴포넌트에 접근이 가능한 형태로, 컴포넌트들은 검색을 통해 블랙보드에서 원하는 데이터를 찾을 수 있다. 음성 인식, 차량 식별, 신호 해석 등에 주로 활용된다.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;인터프리터 패턴(Interpreter Patern)&lt;/strong&gt; : 프로그램 코드의 각 라인을 수행하는 방법을 지정하고, 기호마다 클래스를 갖도록 구성된다.
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;객체지향-설계-원칙&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%EC%84%A4%EA%B3%84-%EC%9B%90%EC%B9%99&quot; aria-label=&quot;객체지향 설계 원칙 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;객체지향 설계 원칙&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;단일 책임 원칙(SRP, Single Responsibility Principle)&lt;/strong&gt; : 객체는 단 하나의 책임만 가져야 한다는 원칙
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;개방-폐쇄 원칙(OCP, Open-Closed Principle)&lt;/strong&gt; : 기존의 코드를 변경하지 않고 기능을 추가할 수 있도록 설계해야 한다는 원칙
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;리스코프 치환 원칙(LSP, Liskov Substitution Principle)&lt;/strong&gt; : 자식 클래스는 최소한 자신의 부모 클래스에서 가능한 행위는 수행할 수 있어야 한다는 설계 원칙
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;인터페이스 분리 원칙(ISP, Interface Segregation Principle)&lt;/strong&gt; : 자신이 사용하지 않는 인터페이스와 의존 관계를 맺거나 영향을 받지 않아야 한다는 원칙
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;의존 역전 원칙(DIP, Dependency Inversion Principle)&lt;/strong&gt; : 각 객체들 간의 의존 관계가 성립될 때, 추상성이 낮은 클래스보다 추상성이 높은 클래스와 의존 관계를 맺어야 한다는 원칙
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;디자인-패턴&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4&quot; aria-label=&quot;디자인 패턴 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;디자인 패턴&lt;/h2&gt;
+&lt;p&gt;디자인 패턴은 각 모듈의 세분화된 역할이나 모듈들 간의 인터페이스와 같은 코드를 작성하는 수준의 세부적인 구현 방안을 설계할 때 참조할 수 있는 전형적인 해결 방식 또는 예제를 의미한다. 디자인 패턴은 문제 및 배경, 실제 적용된 사례, 재사용이 가능한 샘플 코드 등으로 구성되어 있다. ‘바퀴를 다시 발명하지 마라(Don&apos;t reinvent the wheel)’라는 말과 같이, 개발 과정 중에 문제가 발생하면 새로 해결책을 구상하는 것보다 문제에 해당하는 디자인 패턴을 참고하여 적용하는 것이 더 효율적이다. GoF의 디자인 패턴은 유형에 따라 생성 패턴 5개, 구조 패턴 7개, 행위 패턴 11개 총 23개의 패턴으로 구성된다.&lt;/p&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;생성 패턴(Creational Pattern)&lt;/strong&gt; : 객체의 생성과 참조 과정을 캡슐화 하여 객체가 생성되거나 변경되어도 프로그램의 구조에 영향을 크게 받지 않도록 하여 프로그램에 유연성을 더해 준다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ex )&lt;/strong&gt; 추상 팩토리(Abstract Factory), 빌더(Builder), 팩토리 메소드(Factory Method), 프로토타입(Prototype), 싱글톤(Singleton)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;구조 패턴(Structural Pattern)&lt;/strong&gt; : 클래스나 객체들을 조합하여 더 큰 구조로 만들 수 있게 해주는 패턴으로, 구조가 복잡한 시스템을 개발하기 쉽게 도와준다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ex )&lt;/strong&gt; 어댑터(Adapter), 브리지(Bridge), 컴포지트(Composite)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;행위 패턴(Behavioral Pattern)&lt;/strong&gt; : 클래스나 객체들이 서로 상호작용하는 방법이나 책임 분배 방법을 정의하는 패턴으로, 하나의 객체로 수행할 수 없는 작업을 여러 객체로 분배하면서 결합도를 최소화 할 수 있도록 도와준다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ex )&lt;/strong&gt; 책임 연쇄(Chain of Responsibility), 커맨드(Command), 인터프리터(Interpreter)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.gilbut.co.kr/book/view?bookcode=BN003879&amp;#x26;keyword=%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC&amp;#x26;collection=GB_BOOK&quot;&gt;책정보, 2024 시나공 정보처리기사 필기 기본서 : 길벗, 이지톡&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[외판원 문제 (TSP) - 최근접 이웃 알고리즘 솔루션]]></title><description><![CDATA[여행하는 외판원 문제(TSP : Traveling Salesman Problem)는 모든 도시들을 단 한 번만 방문하고 원래 출발한 도시로 돌아오는 최단 경로를 알아내는 문제이다. 이번 포스트는 다음과 유사한 문제를 최근접 이웃 알고리즘(Nearest…]]></description><link>https://yhuj79.github.io/Algorithm/240117/</link><guid isPermaLink="false">https://yhuj79.github.io/Algorithm/240117/</guid><pubDate>Wed, 17 Jan 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;여행하는 외판원 문제(TSP : Traveling Salesman Problem)는 모든 도시들을 단 한 번만 방문하고 원래 출발한 도시로 돌아오는 최단 경로를 알아내는 문제이다. 이번 포스트는 다음과 유사한 문제를 최근접 이웃 알고리즘(Nearest Neighbor Algorithm)을 통해 구현했던 프로젝트에 대해 다루었다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;여행하는-외판원-문제&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%97%AC%ED%96%89%ED%95%98%EB%8A%94-%EC%99%B8%ED%8C%90%EC%9B%90-%EB%AC%B8%EC%A0%9C&quot; aria-label=&quot;여행하는 외판원 문제 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;여행하는 외판원 문제&lt;/h2&gt;
@@ -1010,7 +1246,7 @@
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[운영체제 프로세스와 쓰레드]]></title><description><![CDATA[What is an operating system? 운영체제(Operating System…]]></description><link>https://yhuj79.github.io/OS/230628/</link><guid isPermaLink="false">https://yhuj79.github.io/OS/230628/</guid><pubDate>Wed, 28 Jun 2023 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[운영체제 프로세스와 쓰레드]]></title><description><![CDATA[What is an operating system? 운영체제(Operating System…]]></description><link>https://yhuj79.github.io/Computer Science/230628/</link><guid isPermaLink="false">https://yhuj79.github.io/Computer Science/230628/</guid><pubDate>Wed, 28 Jun 2023 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;What is an operating system?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;운영체제(Operating System)는 사용자가 컴퓨터를 사용하기 위해 필요한 소프트웨어이다. 컴퓨터 하드웨어 바로 위에 설치되어 사용자 및 다른 소프트웨어와 하드웨어를 연결하는 소프트웨어 계층 즉, 중개자 역할을 해준다.&lt;/p&gt;
 &lt;p&gt;이 글은 운영체제 프로세스, 쓰레드와 관련된 개념, 용어를 기록해 두기 위해 작성하였다.&lt;/p&gt;
@@ -1740,7 +1976,7 @@
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[클라우드 서비스 IaaS, PaaS, SaaS]]></title><description><![CDATA[클라우드 서비스는 자신이 보유한 PC가 아닌, 제공업체가 호스팅하여 인터넷을 통해 사용자에게 인프라, 플랫폼 또는 소프트웨어를 제공한다. 클라우드 서비스 종류는 Infrastructure, Platform, Software의 형태로 나뉘어진다. On…]]></description><link>https://yhuj79.github.io/Network/230312/</link><guid isPermaLink="false">https://yhuj79.github.io/Network/230312/</guid><pubDate>Sun, 12 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[클라우드 서비스 IaaS, PaaS, SaaS]]></title><description><![CDATA[클라우드 서비스는 자신이 보유한 PC가 아닌, 제공업체가 호스팅하여 인터넷을 통해 사용자에게 인프라, 플랫폼 또는 소프트웨어를 제공한다. 클라우드 서비스 종류는 Infrastructure, Platform, Software의 형태로 나뉘어진다. On…]]></description><link>https://yhuj79.github.io/Computer Science/230312/</link><guid isPermaLink="false">https://yhuj79.github.io/Computer Science/230312/</guid><pubDate>Sun, 12 Mar 2023 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;클라우드 서비스는 자신이 보유한 PC가 아닌, 제공업체가 호스팅하여 인터넷을 통해 사용자에게 인프라, 플랫폼 또는 소프트웨어를 제공한다. 클라우드 서비스 종류는 Infrastructure, Platform, Software의 형태로 나뉘어진다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;on-premise-방식과-cloud-computing&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#on-premise-%EB%B0%A9%EC%8B%9D%EA%B3%BC-cloud-computing&quot; aria-label=&quot;on premise 방식과 cloud computing permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;On-premise 방식과 Cloud Computing&lt;/h2&gt;
@@ -4183,7 +4419,7 @@ public/index.html에 HTTPS 변환 메타태그를 추가 후 다시 확인해 �
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
   }
-&lt;/style&gt;</content:encoded></item><item><title><![CDATA[HTTP 헤더 분석]]></title><description><![CDATA[브라우저의 Http(Hyper Text Transfer Protocol) 헤더에서 서버와 클라이언트의 요청, 응답 과정에서 전송한 부가 정보를 확인할 수 있다. HTTP란? HTTP(Hyper Text Transfer Protocol…]]></description><link>https://yhuj79.github.io/Network/221004/</link><guid isPermaLink="false">https://yhuj79.github.io/Network/221004/</guid><pubDate>Tue, 04 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[HTTP 헤더 분석]]></title><description><![CDATA[브라우저의 Http(Hyper Text Transfer Protocol) 헤더에서 서버와 클라이언트의 요청, 응답 과정에서 전송한 부가 정보를 확인할 수 있다. HTTP란? HTTP(Hyper Text Transfer Protocol…]]></description><link>https://yhuj79.github.io/Computer Science/221004/</link><guid isPermaLink="false">https://yhuj79.github.io/Computer Science/221004/</guid><pubDate>Tue, 04 Oct 2022 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;브라우저의 Http(Hyper Text Transfer Protocol) 헤더에서 서버와 클라이언트의 요청, 응답 과정에서 전송한 부가 정보를 확인할 수 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;http란&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#http%EB%9E%80&quot; aria-label=&quot;http란 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;HTTP란?&lt;/h2&gt;
