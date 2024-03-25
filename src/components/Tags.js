@@ -8,6 +8,8 @@ const Tags = ({
   scrollToCenter,
   tagWhite,
   tagDark,
+  hover,
+  allTag,
 }) => {
   return tags.map((tag, index) => (
     <Tag
@@ -18,6 +20,8 @@ const Tags = ({
       scrollToCenter={scrollToCenter}
       key={`tag_${index}`}
       onClick={onClick}
+      hover={hover}
+      allTag={allTag}
     />
   ))
 }

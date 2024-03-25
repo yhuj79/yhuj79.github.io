@@ -80,9 +80,11 @@ export default ({ data, pageContext, location }) => {
               <div className="blog-tags" css={tw`mb-2`}>
                 <Tags
                   tagWhite={`#484848`}
-                  tagDark={`#FFF`}
+                  tagDark={`#E8E8E8`}
                   tags={frontmatter.tags}
                   onClick={handleTagClick}
+                  hover={true}
+                  allTag={false}
                 />
               </div>
             </Wrapper>

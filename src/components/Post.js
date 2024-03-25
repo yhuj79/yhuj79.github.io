@@ -19,11 +19,13 @@ const Post = ({ post }) => {
     <>
       <div
         css={css`
-          background-color: ${isDarkMode ? "#2c2c2c" : "#FFFFFF"};
+          background-color: ${isDarkMode ? "#2C2C2C" : "#FFFFFF"};
+          box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
           border-radius: 8px;
           animation: ${fadein} 500ms;
           transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
           &:hover {
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
             --transform-scale-x: 1.02;
             --transform-scale-y: 1.02;
           }
@@ -61,9 +63,11 @@ const Post = ({ post }) => {
             <div css={tw`my-4`}>
               <Tags
                 tagWhite={`#484848`}
-                tagDark={`#F2F2F2`}
+                tagDark={`#E8E8E8`}
                 tags={post.node.frontmatter.tags}
                 onClick={() => {}}
+                hover={false}
+                allTag={false}
               />
             </div>
             <div

@@ -16,9 +16,7 @@ const Nav = () => {
   const [isVisible, setIsVisible] = useState(false)
 
   const backgroundCSS = css`
-    background-color: ${isDarkMode
-      ? darkModeColor.mainColor1
-      : whiteModeColor.mainColor1};
+    background-color: ${isDarkMode ? "#1C1C1C" : "#F8F8F8"};
     border-bottom: ${isDarkMode ? "1px solid #404040" : "1px solid #D8D8D8"};
   `
 

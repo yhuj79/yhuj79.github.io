@@ -59,10 +59,10 @@ const CategoryMenu = ({ path }) => {
                     decodeURI(path) === `/${category.relativePath}/` &&
                     `
                         font-size: 0.95rem;
-                        color: ${isDarkMode ? "#EEEEEE" : "#333333"};
+                        color: ${isDarkMode ? "#EEEEEE" : "#000000"};
                         `}
                         &:hover {
-                      color: ${isDarkMode ? "#EEEEEE" : "#333333"};
+                      color: ${isDarkMode ? "#EEEEEE" : "#000000"};
                     }
                   `}
                 >
@@ -149,10 +149,10 @@ const CategoryMenu = ({ path }) => {
                     decodeURI(path) === `/${category.relativePath}/` &&
                     `
                         font-size: 0.95rem;
-                        color: ${isDarkMode ? "#EEEEEE" : "#333333"};
+                        color: ${isDarkMode ? "#EEEEEE" : "#000000"};
                         `}
                         &:hover {
-                      color: ${isDarkMode ? "#EEEEEE" : "#333333"};
+                      color: ${isDarkMode ? "#EEEEEE" : "#000000"};
                     }
                   `}
                 >

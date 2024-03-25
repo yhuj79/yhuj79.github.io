@@ -10,6 +10,8 @@ const Tag = ({
   scrollToCenter,
   tagWhite,
   tagDark,
+  hover,
+  allTag,
 }) => {
   const { isDarkMode } = useContext(ThemeContext)
   const tabRef = useRef(null)
@@ -37,6 +39,19 @@ const Tag = ({
         ${selectedTag === tag ? `background-color` : `color`}: ${isDarkMode
           ? darkModeColor.textColor1
           : whiteModeColor.textColor1};
+        ${selectedTag !== tag &&
+        hover &&
+        `&:hover {
+          background-color: ${isDarkMode ? "#555555" : "#D6D6D6"};
+        }`}
+        ${selectedTag !== tag &&
+        allTag &&
+        `&:hover {
+          background-color: ${isDarkMode ? "#79AAFF" : "#0066CC"};
+          color: ${
+            isDarkMode ? whiteModeColor.textColor1 : darkModeColor.textColor1
+          };
+        }`}
       `}
       onClick={handleClick}
     >

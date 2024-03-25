@@ -34,6 +34,7 @@ const TagSelector = ({ onTagClick, state, tags }) => {
         display: flex;
         padding: 0.5rem;
         background-color: ${isDarkMode ? "#2C2C2C" : "#FFF"};
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
@@ -57,6 +58,8 @@ const TagSelector = ({ onTagClick, state, tags }) => {
           index={"default"}
           onClick={onTagClick}
           scrollToCenter={scrollToCenter}
+          hover={false}
+          allTag={true}
         />
       </div>
       <div
@@ -72,11 +75,12 @@ const TagSelector = ({ onTagClick, state, tags }) => {
       >
         <Tags
           tagWhite={`#484848`}
-          tagDark={`#F2F2F2`}
+          tagDark={`#E8E8E8`}
           tags={tags}
           onClick={onTagClick}
           tag={state.tag}
           scrollToCenter={scrollToCenter}
+          hover={true}
         />
       </div>
     </div>
