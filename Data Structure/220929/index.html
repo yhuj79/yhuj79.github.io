@@ -87,24 +87,24 @@
 따라서 마지막으로 들어온 값, 나중에 넣은 값이 먼저 나오게 된다.</p>
 <p>Stack은 <code>push()</code>와 <code>pop()</code>을 사용하여 javascript로 쉽게 구현할 수 있는데,</p>
 <pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// stack</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">stack</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> []</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">stack</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> [];</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">function</span><span class="mtk1"> </span><span class="mtk3">addStack</span><span class="mtk1">(</span><span class="mtk4 mtki">item</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk11">stack</span><span class="mtk1">.</span><span class="mtk3">push</span><span class="mtk1">(</span><span class="mtk4">item</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk11">stack</span><span class="mtk1">.</span><span class="mtk3">push</span><span class="mtk1">(</span><span class="mtk4">item</span><span class="mtk1">);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">function</span><span class="mtk1"> </span><span class="mtk3">delStack</span><span class="mtk1">() {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk11">stack</span><span class="mtk1">.</span><span class="mtk3">pop</span><span class="mtk1">()</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk11">stack</span><span class="mtk1">.</span><span class="mtk3">pop</span><span class="mtk1">();</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addStack</span><span class="mtk1">(</span><span class="mtk7">1</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addStack</span><span class="mtk1">(</span><span class="mtk7">2</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addStack</span><span class="mtk1">(</span><span class="mtk7">3</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addStack</span><span class="mtk1">(</span><span class="mtk7">4</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addStack</span><span class="mtk1">(</span><span class="mtk7">1</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addStack</span><span class="mtk1">(</span><span class="mtk7">2</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addStack</span><span class="mtk1">(</span><span class="mtk7">3</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addStack</span><span class="mtk1">(</span><span class="mtk7">4</span><span class="mtk1">);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">delStack</span><span class="mtk1">()</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">delStack</span><span class="mtk1">();</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk6">`stack = </span><span class="mtk9">${</span><span class="mtk4">stack</span><span class="mtk9">}</span><span class="mtk6">`</span><span class="mtk1">)</span></span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk6">`stack = </span><span class="mtk9">${</span><span class="mtk4">stack</span><span class="mtk9">}</span><span class="mtk6">`</span><span class="mtk1">);</span></span></span></code></pre>
 <p>javascript의 <code>pop()</code> 함수는 배열의 가장 맨 끝 값을 제거해 준다.<br>
 addStack으로 값을 추가, delStack은 가장 마지막에 push되었던 값 4를 제거하며 최종적으로 1,2,3이 남아있는 것을 볼 수 있다.</p>
 <p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/220929/stack2.png" alt="stack2"></p>
@@ -122,24 +122,24 @@ addStack으로 값을 추가, delStack은 가장 마지막에 push되었던 값 
 <p><strong>Queue</strong>는 한쪽으로 데이터를 넣고 다른 쪽으로 데이터를 가져오는 구조이다.</p>
 <p>맨 처음 입력된 데이터가 먼저 나오게 된다. <strong>First In First Out(FIFO), Last In Last Out(LILO)</strong> 형식으로 불린다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// queue</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">queue</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> []</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">queue</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> [];</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">function</span><span class="mtk1"> </span><span class="mtk3">addQueue</span><span class="mtk1">(</span><span class="mtk4 mtki">item</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk11">queue</span><span class="mtk1">.</span><span class="mtk3">push</span><span class="mtk1">(</span><span class="mtk4">item</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk11">queue</span><span class="mtk1">.</span><span class="mtk3">push</span><span class="mtk1">(</span><span class="mtk4">item</span><span class="mtk1">);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">function</span><span class="mtk1"> </span><span class="mtk3">delQueue</span><span class="mtk1">() {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk11">queue</span><span class="mtk1">.</span><span class="mtk3">shift</span><span class="mtk1">()</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk11">queue</span><span class="mtk1">.</span><span class="mtk3">shift</span><span class="mtk1">();</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addQueue</span><span class="mtk1">(</span><span class="mtk7">1</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addQueue</span><span class="mtk1">(</span><span class="mtk7">2</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addQueue</span><span class="mtk1">(</span><span class="mtk7">3</span><span class="mtk1">)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addQueue</span><span class="mtk1">(</span><span class="mtk7">4</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addQueue</span><span class="mtk1">(</span><span class="mtk7">1</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addQueue</span><span class="mtk1">(</span><span class="mtk7">2</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addQueue</span><span class="mtk1">(</span><span class="mtk7">3</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">addQueue</span><span class="mtk1">(</span><span class="mtk7">4</span><span class="mtk1">);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">delQueue</span><span class="mtk1">()</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">delQueue</span><span class="mtk1">();</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk6">`queue = </span><span class="mtk9">${</span><span class="mtk4">queue</span><span class="mtk9">}</span><span class="mtk6">`</span><span class="mtk1">)</span></span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk6">`queue = </span><span class="mtk9">${</span><span class="mtk4">queue</span><span class="mtk9">}</span><span class="mtk6">`</span><span class="mtk1">);</span></span></span></code></pre>
 <p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/220929/queue2.png" alt="queue2"></p>
 <p>javascript의 <code>shift()</code> 함수는 배열의 가장 맨 앞 값을 제거해 준다. 결과는 2, 3, 4만 남게 된다.</p>
 <p>실제 Queue의 활용 예시는 다음과 같다.</p>
