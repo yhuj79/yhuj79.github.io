@@ -76,8 +76,8 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> * </span><span class="mtk9 mtki">@flow</span><span class="mtk5 mtki"> strict-local</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> */</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">React</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span><span class="mtk1">;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">type</span><span class="mtk1"> { </span><span class="mtk4">Node</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">React</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">type</span><span class="mtk1"> { </span><span class="mtk4">Node</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">SafeAreaView</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">ScrollView</span><span class="mtk1">,</span></span></span>
@@ -86,7 +86,7 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">Text</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">useColorScheme</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">View</span><span class="mtk1">,</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">} </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">} </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">Colors</span><span class="mtk1">,</span></span></span>
@@ -94,10 +94,10 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">Header</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">LearnMoreLinks</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">ReloadInstructions</span><span class="mtk1">,</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">} </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native/Libraries/NewAppScreen&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">} </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native/Libraries/NewAppScreen&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk3">Section</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> ({ </span><span class="mtk4 mtki">children</span><span class="mtk1">, </span><span class="mtk4 mtki">title</span><span class="mtk1"> }): </span><span class="mtk11">Node</span><span class="mtk1"> </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">isDarkMode</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useColorScheme</span><span class="mtk1">() </span><span class="mtk8">===</span><span class="mtk1"> </span><span class="mtk6">&quot;dark&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">isDarkMode</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useColorScheme</span><span class="mtk1">() </span><span class="mtk8">===</span><span class="mtk1"> </span><span class="mtk6">&quot;dark&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk11">View</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">sectionContainer</span><span class="mtk9">}</span><span class="mtk1">&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk11">Text</span></span></span>
@@ -121,15 +121,15 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk9">{</span><span class="mtk4">children</span><span class="mtk9">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;/</span><span class="mtk11">Text</span><span class="mtk1">&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  );</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">};</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk3">App</span><span class="mtk1">: () </span><span class="mtk9">=&gt;</span><span class="mtk1"> </span><span class="mtk11">Node</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">isDarkMode</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useColorScheme</span><span class="mtk1">() </span><span class="mtk8">===</span><span class="mtk1"> </span><span class="mtk6">&quot;dark&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">isDarkMode</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useColorScheme</span><span class="mtk1">() </span><span class="mtk8">===</span><span class="mtk1"> </span><span class="mtk6">&quot;dark&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">backgroundStyle</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">backgroundColor</span><span class="mtk1">: </span><span class="mtk4">isDarkMode</span><span class="mtk1"> </span><span class="mtk9">?</span><span class="mtk1"> </span><span class="mtk11">Colors</span><span class="mtk1">.</span><span class="mtk4">darker</span><span class="mtk1"> </span><span class="mtk9">:</span><span class="mtk1"> </span><span class="mtk11">Colors</span><span class="mtk1">.</span><span class="mtk4">lighter</span><span class="mtk1">,</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  };</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk11">SafeAreaView</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk4">backgroundStyle</span><span class="mtk9">}</span><span class="mtk1">&gt;</span></span></span>
@@ -161,8 +161,8 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &lt;/</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;/</span><span class="mtk11">ScrollView</span><span class="mtk1">&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk11">SafeAreaView</span><span class="mtk1">&gt;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  );</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">};</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">styles</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">StyleSheet</span><span class="mtk1">.</span><span class="mtk3">create</span><span class="mtk1">({</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">sectionContainer</span><span class="mtk1">: {</span></span></span>
@@ -181,20 +181,20 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">highlight</span><span class="mtk1">: {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontWeight</span><span class="mtk1">: </span><span class="mtk6">&quot;700&quot;</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">});</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">})</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span><span class="mtk1">;</span></span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
 <p>기본적으로 생성된 App.js 파일이다. 코드를 다음과 같이 정리해 주었다.</p>
-<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">React</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span><span class="mtk1">;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">View</span><span class="mtk1">, </span><span class="mtk4">Text</span><span class="mtk1">, </span><span class="mtk4">StyleSheet</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native&quot;</span><span class="mtk1">;</span></span></span>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">React</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">View</span><span class="mtk1">, </span><span class="mtk4">Text</span><span class="mtk1">, </span><span class="mtk4">StyleSheet</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk3">App</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk11">Text</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">title</span><span class="mtk9">}</span><span class="mtk1">&gt;Geolocation Tutorial&lt;/</span><span class="mtk11">Text</span><span class="mtk1">&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  );</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">};</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">styles</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">StyleSheet</span><span class="mtk1">.</span><span class="mtk3">create</span><span class="mtk1">({</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">title</span><span class="mtk1">: {</span></span></span>
@@ -204,9 +204,9 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">color</span><span class="mtk1">: </span><span class="mtk6">&quot;black&quot;</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontWeight</span><span class="mtk1">: </span><span class="mtk6">&quot;600&quot;</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">});</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">})</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span><span class="mtk1">;</span></span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
 <img alt="geo2" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo2.png" width="300">
 <h2 id="geolocation-service" style="position:relative;"><a href="#geolocation-service" aria-label="geolocation service permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Geolocation Service</h2>
 <p>모바일 디바이스의 현재 위치 좌표 값을 얻기 위해서는 <code>Geolocation Service</code>라는 라이브러리를 사용한다.</p>
@@ -219,22 +219,22 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">if</span><span class="mtk1"> (</span><span class="mtk11">Platform</span><span class="mtk1">.</span><span class="mtk4">OS</span><span class="mtk1"> </span><span class="mtk8">===</span><span class="mtk1"> </span><span class="mtk6">&quot;android&quot;</span><span class="mtk1">) {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">PermissionsAndroid</span><span class="mtk1">.</span><span class="mtk3">request</span><span class="mtk1">(</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">PermissionsAndroid</span><span class="mtk1">.</span><span class="mtk11">PERMISSIONS</span><span class="mtk1">.</span><span class="mtk4">ACCESS_FINE_LOCATION</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    );</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    )</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}, []);</span></span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}, [])</span></span></span></code></pre>
 <p>통상적으로 iOS와 안드로이드를 조건문을 통해 권한 처리를 하게 되는데, 현재 프로젝트는 안드로이드 권한 요청 처리만 해 두기로 하였다.</p>
-<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> [</span><span class="mtk11">currentLocation</span><span class="mtk1">, </span><span class="mtk11">setCurrentLocation</span><span class="mtk1">] </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useState</span><span class="mtk1">(</span><span class="mtk7">null</span><span class="mtk1">);</span></span></span>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> [</span><span class="mtk11">currentLocation</span><span class="mtk1">, </span><span class="mtk11">setCurrentLocation</span><span class="mtk1">] </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useState</span><span class="mtk1">(</span><span class="mtk7">null</span><span class="mtk1">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">useEffect</span><span class="mtk1">(() </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk5 mtki">// 위치 업데이트 설정</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">watchId</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">Geolocation</span><span class="mtk1">.</span><span class="mtk3">watchPosition</span><span class="mtk1">(</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    (</span><span class="mtk4 mtki">position</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">const</span><span class="mtk1"> { </span><span class="mtk11">latitude</span><span class="mtk1">, </span><span class="mtk11">longitude</span><span class="mtk1"> } </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">position</span><span class="mtk1">.</span><span class="mtk4">coords</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">const</span><span class="mtk1"> { </span><span class="mtk11">latitude</span><span class="mtk1">, </span><span class="mtk11">longitude</span><span class="mtk1"> } </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">position</span><span class="mtk1">.</span><span class="mtk4">coords</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk5 mtki">// currentLocation에 위도, 경도 저장</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk3">setCurrentLocation</span><span class="mtk1">({ </span><span class="mtk4">latitude</span><span class="mtk1">, </span><span class="mtk4">longitude</span><span class="mtk1"> });</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk3">setCurrentLocation</span><span class="mtk1">({ </span><span class="mtk4">latitude</span><span class="mtk1">, </span><span class="mtk4">longitude</span><span class="mtk1"> })</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    },</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    (</span><span class="mtk4 mtki">error</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk4">error</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk4">error</span><span class="mtk1">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    },</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">enableHighAccuracy</span><span class="mtk1">: </span><span class="mtk7">true</span><span class="mtk1">, </span><span class="mtk5 mtki">// 배터리를 더 소모하여 보다 정확한 위치 추적</span></span></span>
@@ -242,38 +242,38 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">maximumAge</span><span class="mtk1">: </span><span class="mtk7">0</span><span class="mtk1">, </span><span class="mtk5 mtki">// 한 번 찾은 위치 정보를 해당 초만큼 캐싱</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">distanceFilter</span><span class="mtk1">: </span><span class="mtk7">1</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  );</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk5 mtki">// 컴포넌트 언마운트 시 위치 업데이트 중지</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">Geolocation</span><span class="mtk1">.</span><span class="mtk3">clearWatch</span><span class="mtk1">(</span><span class="mtk4">watchId</span><span class="mtk1">);</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  };</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}, []);</span></span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">Geolocation</span><span class="mtk1">.</span><span class="mtk3">clearWatch</span><span class="mtk1">(</span><span class="mtk4">watchId</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}, [])</span></span></span></code></pre>
 <p>위치 좌표를 얻는 코드이다. <code>위도(latitude)</code>와 <code>경도(longitude)</code> 값을 받아 <code>currentLocation</code> 변수에 저장하였다. 이를 통해 좌표를 확인해 볼 수 있다.</p>
 <p>전체 코드와 출력 결과를 확인해 보면...</p>
-<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">React</span><span class="mtk1">, { </span><span class="mtk4">useEffect</span><span class="mtk1">, </span><span class="mtk4">useState</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span><span class="mtk1">;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">View</span><span class="mtk1">, </span><span class="mtk4">Text</span><span class="mtk1">, </span><span class="mtk4">StyleSheet</span><span class="mtk1">, </span><span class="mtk4">PermissionsAndroid</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native&quot;</span><span class="mtk1">;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">Geolocation</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native-geolocation-service&quot;</span><span class="mtk1">;</span></span></span>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">React</span><span class="mtk1">, { </span><span class="mtk4">useEffect</span><span class="mtk1">, </span><span class="mtk4">useState</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">View</span><span class="mtk1">, </span><span class="mtk4">Text</span><span class="mtk1">, </span><span class="mtk4">StyleSheet</span><span class="mtk1">, </span><span class="mtk4">PermissionsAndroid</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">Geolocation</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native-geolocation-service&quot;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk3">App</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> [</span><span class="mtk11">currentLocation</span><span class="mtk1">, </span><span class="mtk11">setCurrentLocation</span><span class="mtk1">] </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useState</span><span class="mtk1">(</span><span class="mtk7">null</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> [</span><span class="mtk11">currentLocation</span><span class="mtk1">, </span><span class="mtk11">setCurrentLocation</span><span class="mtk1">] </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useState</span><span class="mtk1">(</span><span class="mtk7">null</span><span class="mtk1">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk3">useEffect</span><span class="mtk1">(() </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">if</span><span class="mtk1"> (</span><span class="mtk11">Platform</span><span class="mtk1">.</span><span class="mtk4">OS</span><span class="mtk1"> </span><span class="mtk8">===</span><span class="mtk1"> </span><span class="mtk6">&quot;android&quot;</span><span class="mtk1">) {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">PermissionsAndroid</span><span class="mtk1">.</span><span class="mtk3">request</span><span class="mtk1">(</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">PermissionsAndroid</span><span class="mtk1">.</span><span class="mtk11">PERMISSIONS</span><span class="mtk1">.</span><span class="mtk4">ACCESS_FINE_LOCATION</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      );</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      )</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }, []);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }, [])</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk3">useEffect</span><span class="mtk1">(() </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">watchId</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">Geolocation</span><span class="mtk1">.</span><span class="mtk3">watchPosition</span><span class="mtk1">(</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      (</span><span class="mtk4 mtki">position</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk9">const</span><span class="mtk1"> { </span><span class="mtk11">latitude</span><span class="mtk1">, </span><span class="mtk11">longitude</span><span class="mtk1"> } </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">position</span><span class="mtk1">.</span><span class="mtk4">coords</span><span class="mtk1">;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk3">setCurrentLocation</span><span class="mtk1">({ </span><span class="mtk4">latitude</span><span class="mtk1">, </span><span class="mtk4">longitude</span><span class="mtk1"> });</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk9">const</span><span class="mtk1"> { </span><span class="mtk11">latitude</span><span class="mtk1">, </span><span class="mtk11">longitude</span><span class="mtk1"> } </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">position</span><span class="mtk1">.</span><span class="mtk4">coords</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk3">setCurrentLocation</span><span class="mtk1">({ </span><span class="mtk4">latitude</span><span class="mtk1">, </span><span class="mtk4">longitude</span><span class="mtk1"> })</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      },</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      (</span><span class="mtk4 mtki">error</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk4">error</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk4">error</span><span class="mtk1">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      },</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">enableHighAccuracy</span><span class="mtk1">: </span><span class="mtk7">true</span><span class="mtk1">,</span></span></span>
@@ -281,12 +281,12 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">maximumAge</span><span class="mtk1">: </span><span class="mtk7">0</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">distanceFilter</span><span class="mtk1">: </span><span class="mtk7">1</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      }</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    );</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    )</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">return</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">Geolocation</span><span class="mtk1">.</span><span class="mtk3">clearWatch</span><span class="mtk1">(</span><span class="mtk4">watchId</span><span class="mtk1">);</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    };</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }, []);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">Geolocation</span><span class="mtk1">.</span><span class="mtk3">clearWatch</span><span class="mtk1">(</span><span class="mtk4">watchId</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }, [])</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
@@ -299,8 +299,8 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &lt;</span><span class="mtk11">Text</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">title</span><span class="mtk9">}</span><span class="mtk1">&gt;location undefined&lt;/</span><span class="mtk11">Text</span><span class="mtk1">&gt;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      )</span><span class="mtk9">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  );</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">};</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">styles</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">StyleSheet</span><span class="mtk1">.</span><span class="mtk3">create</span><span class="mtk1">({</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">title</span><span class="mtk1">: {</span></span></span>
@@ -310,9 +310,9 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">color</span><span class="mtk1">: </span><span class="mtk6">&quot;black&quot;</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontWeight</span><span class="mtk1">: </span><span class="mtk6">&quot;600&quot;</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">});</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">})</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span><span class="mtk1">;</span></span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
 <table>
     <tbody><tr>
         <td>
