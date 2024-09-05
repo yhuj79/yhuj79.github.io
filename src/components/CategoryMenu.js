@@ -17,6 +17,7 @@ const CategoryMenu = ({ path }) => {
       query {
         categories: allDirectory(
           filter: { absolutePath: { regex: "/^((?!image).)*$/" } }
+          sort: { fields: relativePath, order: ASC }
         ) {
           nodes {
             relativePath
