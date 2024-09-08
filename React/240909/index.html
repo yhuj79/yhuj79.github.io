@@ -161,9 +161,9 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    },</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">dataLabels</span><span class="mtk1">: {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">enabled</span><span class="mtk1">: </span><span class="mtk7">false</span><span class="mtk1">, </span><span class="mtk5 mtki">// 데이터 레이블 표시 여부</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">offsetX</span><span class="mtk1">: </span><span class="mtk8">-</span><span class="mtk7">3</span><span class="mtk1">, </span><span class="mtk5 mtki">// 레이블의 X축 위치를 조정</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">offsetY</span><span class="mtk1">: </span><span class="mtk7">0</span><span class="mtk1">, </span><span class="mtk5 mtki">// 레이블의 Y축 위치를 조정</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">enabled</span><span class="mtk1">: </span><span class="mtk7">false</span><span class="mtk1">, </span><span class="mtk5 mtki">// 데이터 라벨 표시 여부</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">offsetX</span><span class="mtk1">: </span><span class="mtk8">-</span><span class="mtk7">3</span><span class="mtk1">, </span><span class="mtk5 mtki">// 라벨의 X축 위치를 조정</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">offsetY</span><span class="mtk1">: </span><span class="mtk7">0</span><span class="mtk1">, </span><span class="mtk5 mtki">// 라벨의 Y축 위치를 조정</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">stroke</span><span class="mtk1">: {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">curve</span><span class="mtk1">: </span><span class="mtk6">&quot;smooth&quot;</span><span class="mtk1">, </span><span class="mtk5 mtki">// 곡선형 라인 적용</span></span></span>
@@ -214,14 +214,14 @@
 <img alt="line-2" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/240909/line-2.gif">
 <p>ApexCharts 지원 툴 중 하나인 줌 기능이다. 구역을 확대해서 데이터를 확인할 수 있다. 불필요할 경우 옵션에서 설정을 끄면 된다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  dataLabels: {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    enabled: </span><span class="mtk7">true</span><span class="mtk1">, </span><span class="mtk5 mtki">// 데이터 레이블 표시 ON</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    enabled: </span><span class="mtk7">true</span><span class="mtk1">, </span><span class="mtk5 mtki">// 데이터 라벨 표시 ON</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    offsetX: </span><span class="mtk8">-</span><span class="mtk7">3</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    offsetY: </span><span class="mtk7">0</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span></code></pre>
 <img alt="line-2" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/240909/line-2.png">
-<p>데이터 레이블을 표시하면 위와 같이 나타나게 된다. 데이터 레이블이 차트 공간 끝에 걸려 잘리는 경우가 있으니 offset을 조절하거나 div를 따로 설정하여 처리해야 한다.</p>
+<p>데이터 라벨을 표시하면 위와 같이 나타나게 된다. 데이터 라벨이 차트 공간 끝에 걸려 잘리는 경우가 있으니 offset을 조절하거나 div를 따로 설정하여 처리해야 한다.</p>
 <h3 id="원형-차트pie-chart" style="position:relative;"><a href="#%EC%9B%90%ED%98%95-%EC%B0%A8%ED%8A%B8pie-chart" aria-label="원형 차트pie chart permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>원형 차트(Pie Chart)</h3>
-<p><strong>원형 차트</strong>는 비율을 나타내는 데 자주 사용된다. ApexCharts에서는 데이터를 섹터로 나누어 비율을 표시하고, 레이블과 중앙에 총합을 표시할 수 있다.</p>
+<p><strong>원형 차트</strong>는 비율을 나타내는 데 자주 사용된다. ApexCharts에서는 데이터를 섹터로 나누어 비율을 표시하고, 라벨과 중앙에 총합을 표시할 수 있다.</p>
 <pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">Chart</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-apexcharts&quot;</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// 차트에 표시될 데이터 설정</span></span></span>
@@ -234,7 +234,7 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">height</span><span class="mtk1">: </span><span class="mtk6">&quot;100%&quot;</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">type</span><span class="mtk1">: </span><span class="mtk6">&quot;pie&quot;</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">labels</span><span class="mtk1">: [</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">labels</span><span class="mtk1">: [ </span><span class="mtk5 mtki">// 원형 차트의 라벨 표시</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk6">&quot;Alpha&quot;</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk6">&quot;Beta&quot;</span><span class="mtk1">,</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk6">&quot;Gamma&quot;</span><span class="mtk1">,</span></span></span>
@@ -320,7 +320,7 @@
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">donut</span><span class="mtk1">: {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">size</span><span class="mtk1">: </span><span class="mtk6">&quot;55%&quot;</span><span class="mtk1">, </span><span class="mtk5 mtki">// 도넛 차트의 크기</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">labels</span><span class="mtk1">: {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">show</span><span class="mtk1">: </span><span class="mtk7">true</span><span class="mtk1">, </span><span class="mtk5 mtki">// 도넛 중앙에 레이블 표시</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">show</span><span class="mtk1">: </span><span class="mtk7">true</span><span class="mtk1">, </span><span class="mtk5 mtki">// 도넛 중앙에 라벨 표시</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">total</span><span class="mtk1">: {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk4">show</span><span class="mtk1">: </span><span class="mtk7">true</span><span class="mtk1">, </span><span class="mtk5 mtki">// 도넛 중앙에 총합 표시</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk4">label</span><span class="mtk1">: </span><span class="mtk6">&quot;All&quot;</span><span class="mtk1">, </span><span class="mtk5 mtki">// 총합에 대한 라벨 텍스트</span></span></span>
