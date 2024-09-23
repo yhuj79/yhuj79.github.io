@@ -1,6 +1,12 @@
-## Blog Link
+# yhuj79.github.io
+
+## Repository
 
 #### :ballot_box_with_check: <a target="_blank" rel="noopener noreferrer" href="https://yhuj79.github.io">https://yhuj79.github.io</a>
+
+#### :ballot_box_with_check: <a target="_blank" rel="noopener noreferrer" href="https://github.com/yhuj79/blog-assets">https://github.com/yhuj79/blog-assets</a>
+
+#### :ballot_box_with_check: <a target="_blank" rel="noopener noreferrer" href="https://github.com/yhuj79/blog-comments">https://github.com/yhuj79/blog-comments</a>
 
 <br>
 
