@@ -61,10 +61,10 @@
 </ul></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="by4vme">.css-by4vme{padding:0.3rem;}</style><img src="/static/Network-b6156c5eba8ddaa0c005add1a99b7e47.png" alt="Network" class="css-by4vme"/><div><style data-emotion-css="jpq9fv">.css-jpq9fv{font-size:1rem;word-break:break-word;}.css-jpq9fv h1 > a > svg,.css-jpq9fv h2 > a > svg,.css-jpq9fv h3 > a > svg,.css-jpq9fv h4 > a > svg,.css-jpq9fv h5 > a > svg,.css-jpq9fv h6 > a > svg{fill:#000;}.css-jpq9fv h1,.css-jpq9fv h2{font-size:1.25rem;font-weight:600;margin-top:1.5rem;margin-bottom:1.5rem;}.css-jpq9fv h3,.css-jpq9fv h4,.css-jpq9fv h5,.css-jpq9fv h6{font-size:1.125rem;margin-top:1.5rem;margin-bottom:1.5rem;font-weight:600;}@media (min-width:640px){.css-jpq9fv h1,.css-jpq9fv h2{font-size:1.5rem;}.css-jpq9fv h3,.css-jpq9fv h4,.css-jpq9fv h5,.css-jpq9fv h6{font-size:1.25rem;}}.css-jpq9fv a{color:#0042ED;}.css-jpq9fv a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-jpq9fv p{margin:0.3rem;margin-top:0.75rem;margin-bottom:0.75rem;}.css-jpq9fv strong{color:#000;}.css-jpq9fv ul,.css-jpq9fv ol{margin:0.3rem;margin-left:2rem;}.css-jpq9fv li > p,.css-jpq9fv li > ul,.css-jpq9fv li > ol{margin-bottom:0;}.css-jpq9fv ol{list-style-type:decimal;}.css-jpq9fv ul{list-style-type:disc;}.css-jpq9fv blockquote{padding:0.5rem;background-color:#fff;margin:0.3rem;margin-top:0.5rem;margin-bottom:0.5rem;border-left-width:4px;border-color:#404040;}.css-jpq9fv blockquote > p{margin:0.5rem;}.css-jpq9fv blockquote > h1,.css-jpq9fv blockquote > h2,.css-jpq9fv blockquote > h3,.css-jpq9fv blockquote > h4,.css-jpq9fv blockquote > h5{margin-top:0.5rem;margin-bottom:0.5rem;}.css-jpq9fv td,.css-jpq9fv th{padding:0;}.css-jpq9fv tr:nth-of-type(even){background-color:#fff;}.css-jpq9fv th{background-color:#fff;}.css-jpq9fv table{margin-bottom:1.5rem;display:block;max-width:-webkit-fit-content;max-width:-moz-fit-content;max-width:fit-content;margin:0 auto;overflow-x:auto;white-space:nowrap;}.css-jpq9fv p > code,.css-jpq9fv li > code{padding-top:0.1rem;padding-bottom:0.1rem;padding-right:0.25rem;padding-left:0.25rem;border-radius:0.25rem;color:#1D1D1D;background-color:#fff;white-space:pre-line;}.css-jpq9fv pre.grvsc-container{margin-top:24px;margin-bottom:24px;}.css-jpq9fv hr{margin-top:24px;margin-bottom:24px;height:1px;border:none;background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="markdown css-jpq9fv"><blockquote>
 <p>브라우저의 Http(Hyper Text Transfer Protocol) 헤더에서 서버와 클라이언트의 요청, 응답 과정에서 전송한 부가 정보를 확인할 수 있다.</p>
 </blockquote>
-<h2>HTTP란?</h2>
+<h2 id="http란" style="position:relative;"><a href="#http%EB%9E%80" aria-label="http란 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP란?</h2>
 <p><strong>HTTP(Hyper Text Transfer Protocol)</strong> 라는 영문 그대로 인터넷에서 하이퍼텍스트를 빠르게 교환하기 위한 프로토콜의 일종이다. 여기서 하이퍼텍스트는 링크를 통해 다른 문서로 이동할 수 있게 해주는 텍스트, 하이퍼링크를 나타내는 텍스트를 의미한다.</p>
 <p>HTTP는 OSI 7계층 중에 응용 계층(Application layer)의 프로토콜이며, TCP/IP Suite 위에서 작동한다. (OSI계층과 관련된 자세한 내용은 <a href="https://ko.wikipedia.org/wiki/OSI_%EB%AA%A8%ED%98%95" target="_blank" rel="noopener noreferrer">OSI_모형</a> 참고.) HTTP는 인터넷 할당 번호 관리 기관(IANA)의 가이드라인에 의거하여 80번 포트를 사용하며, 요청(Request)과 응답(Response)으로 구성되어 데이터를 주고받는다. 클라이언트가 80번 포트로 요청을 보내면, 서버에서 응답을 하는 방식이다.</p>
-<h2>HTTPS란?</h2>
+<h2 id="https란" style="position:relative;"><a href="#https%EB%9E%80" aria-label="https란 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTPS란?</h2>
 <p>기존의 HTTP는 암호화가 되지 않은 평문 데이터를 전송하는 프로토콜이라 비밀번호 등의 개인정보를 제 3자가 조회할 수 있었다. 이러한 문제를 해결하기 위해 HTTPS가 등장하게 되었다.</p>
 <blockquote>
 <p>HyperText Transfer Protocol over Secure Socket Layer<br>
@@ -73,17 +73,16 @@ HTTP over SSL<br>
 HTTP Secure</p>
 </blockquote>
 <p>영문에서 알 수 있듯이 제 3자가 정보를 볼 수 없도록 암호화가 첨가되었다. 80번 포트가 아닌 443번 포트를 사용하며, 보안 소켓 계층(SECURE SOCKETS LAYER)을 사용한다. 이 SSL 인증서는 사용자가 사이트에서 제공하는 정보를 암호화하는데, 제 3자가 개인정보에 접근했을 경우 데이터가 이미 암호화된 상태이기 때문에 확인이 불가능하다. 전송 계층 보안(Transport Layer Security) 또한 사용되는데, 클라이언트와 서버 간의 커뮤니케이션을 암호화해준다.</p>
-<h2>네트워크 헤더</h2>
+<h2 id="네트워크-헤더" style="position:relative;"><a href="#%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%97%A4%EB%8D%94" aria-label="네트워크 헤더 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>네트워크 헤더</h2>
 <p>브라우저 개발자 도구의 네트워크 탭에서 헤더를 확인할 수 있는데, 요청과 응답의 부가적인 정보가 명시되어 있다. 구글과 함께 국내 트래픽 1위를 다투고 있는 네이버의 헤더 내용을 분석해 보았다.</p>
 <p>헤더는 <strong>일반, 응답, 요청</strong> 3가지로 분류되어 있다.</p>
-<pre><code>▾ 일반
-
-요청 URL: https://www.naver.com/
-요청 메서드: GET
-상태 코드: 200
-원격 주소: xxx.xxx.xxx.xxx:xxx
-리퍼러 정책: unsafe-url
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">▾ 일반</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">요청 URL: https://www.naver.com/</span></span>
+<span class="grvsc-line"><span class="grvsc-source">요청 메서드: GET</span></span>
+<span class="grvsc-line"><span class="grvsc-source">상태 코드: 200</span></span>
+<span class="grvsc-line"><span class="grvsc-source">원격 주소: xxx.xxx.xxx.xxx:xxx</span></span>
+<span class="grvsc-line"><span class="grvsc-source">리퍼러 정책: unsafe-url</span></span></code></pre>
 <p><strong>요청 URL</strong> : 페이지의 URL.</p>
 <p><strong>요청 메서드</strong> : 해당 주소에 대한 동작(GET, POST, PUT, PATCH, DELETE 등등...).</p>
 <p><strong>상태 코드</strong> : 응답 상태를 3자리 숫자로 표시.</p>
@@ -151,36 +150,35 @@ x-xss-protection: 1; mode=block</p>
 <li><code>ALLOW-FROM https://www.example.com/</code> : 신뢰할 수 있는 출처인 경우 가능.</li>
 </ul>
 <blockquote>
-<h4>클릭 재킹(Click Jacking)이란?</h4>
+<h4 id="클릭-재킹click-jacking이란" style="position:relative;"><a href="#%ED%81%B4%EB%A6%AD-%EC%9E%AC%ED%82%B9click-jacking%EC%9D%B4%EB%9E%80" aria-label="클릭 재킹click jacking이란 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>클릭 재킹(Click Jacking)이란?</h4>
 <p>HTML 삽입 취약점이 존재할 경우 iframe과 같은 태그를 삽입하여 사용자의 의도와 다른 클릭 이벤트를 실행시키거나, 순간적으로 수백, 수천 개의 request를 발생시켜 디도스를 발생시킬 수 있는 해킹 기법.</p>
 </blockquote>
 <p><strong>x-xss-protection</strong> : 위의 클릭 재킹(Click Jacking) 공격을 감지했을 경우 페이지 로드를 중지하는 기능을 가짐. 그러나 현재 비표준으로 분류되어 향후 변동 가능성이 있음.</p>
 <p> </p>
-<pre><code>▾ 요청 헤더
-
-:authority: www.naver.com
-:method: GET
-:path: /
-:scheme: https
-accept: text/html,application/xhtml+xml,application/xml;q=0.9,
-accept-encoding: gzip, deflate, br
-accept-language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7
-cache-control: max-age=0
-cookie: NNB=OOOOOOOOOOOOO; (생략)
-referer: https://www.naver.com/
-sec-ch-ua: "Google Chrome";v="105", "Not)A;Brand";v="8",
-    "Chromium";v="105"
-sec-ch-ua-mobile: ?0
-sec-ch-ua-platform: "macOS"
-sec-fetch-dest: document
-sec-fetch-mode: navigate
-sec-fetch-site: same-origin
-sec-fetch-user: ?1
-upgrade-insecure-requests: 1
-user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
-            AppleWebKit/537.36 (KHTML, like Gecko)
-            Chrome/105.0.0.0 Safari/537.36
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">▾ 요청 헤더</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">:authority: www.naver.com</span></span>
+<span class="grvsc-line"><span class="grvsc-source">:method: GET</span></span>
+<span class="grvsc-line"><span class="grvsc-source">:path: /</span></span>
+<span class="grvsc-line"><span class="grvsc-source">:scheme: https</span></span>
+<span class="grvsc-line"><span class="grvsc-source">accept: text/html,application/xhtml+xml,application/xml;q=0.9,</span></span>
+<span class="grvsc-line"><span class="grvsc-source">accept-encoding: gzip, deflate, br</span></span>
+<span class="grvsc-line"><span class="grvsc-source">accept-language: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7</span></span>
+<span class="grvsc-line"><span class="grvsc-source">cache-control: max-age=0</span></span>
+<span class="grvsc-line"><span class="grvsc-source">cookie: NNB=OOOOOOOOOOOOO; (생략)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">referer: https://www.naver.com/</span></span>
+<span class="grvsc-line"><span class="grvsc-source">sec-ch-ua: &quot;Google Chrome&quot;;v=&quot;105&quot;, &quot;Not)A;Brand&quot;;v=&quot;8&quot;,</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    &quot;Chromium&quot;;v=&quot;105&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">sec-ch-ua-mobile: ?0</span></span>
+<span class="grvsc-line"><span class="grvsc-source">sec-ch-ua-platform: &quot;macOS&quot;</span></span>
+<span class="grvsc-line"><span class="grvsc-source">sec-fetch-dest: document</span></span>
+<span class="grvsc-line"><span class="grvsc-source">sec-fetch-mode: navigate</span></span>
+<span class="grvsc-line"><span class="grvsc-source">sec-fetch-site: same-origin</span></span>
+<span class="grvsc-line"><span class="grvsc-source">sec-fetch-user: ?1</span></span>
+<span class="grvsc-line"><span class="grvsc-source">upgrade-insecure-requests: 1</span></span>
+<span class="grvsc-line"><span class="grvsc-source">user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">            AppleWebKit/537.36 (KHTML, like Gecko)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">            Chrome/105.0.0.0 Safari/537.36</span></span></code></pre>
 <p><strong>accept</strong> : 요청을 보낼 때 데이터의 타입(MIME)을 명시할 때 사용.</p>
 <p><strong>accept-encoding</strong> : 원본 미디어 유형 압축 방식.</p>
 <p><strong>cookie</strong> : 서버로부터 받은 쿠키를 다시 서버에게 전송.</p>
@@ -200,12 +198,110 @@ user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)
 <p><strong>upgrade-insecure-requests</strong> : 암호화되고 인증된 응답에 대한 클라이언트의 기본 설정과 CSP 지시문을 성공적으로 처리할 수 있음을 나타내는 신호를 서버에 전송.</p>
 <p><strong>user-agent</strong> : HTTP 요청을 보내는 디바이스, 브라우저 등의 사용자 소프트웨어 식별 정보.</p>
 <hr>
-<h2>Reference</h2>
+<h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <p><a href="https://www.zerocho.com/category/HTTP" target="_blank" rel="noopener noreferrer">HTTP - ZeroCho Blog</a></p>
 <p><a href="https://www.whatap.io/ko/blog/40/" target="_blank" rel="noopener noreferrer">HTTP 상태 코드 정리 | 와탭 블로그</a></p>
 <p><a href="https://www.cloudflare.com/ko-kr/learning/ssl/transport-layer-security-tls/" target="_blank" rel="noopener noreferrer">TLS란? | 네트워크 보안 프로토콜 | Cloudflare</a></p>
 <p><a href="https://csbankstorage.blogspot.com/2016/11/http_10.html" target="_blank" rel="noopener noreferrer">HTTP 프로토콜 ~ CS_Bank</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank" rel="noopener noreferrer">HTTP | MDN</a></p></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1pgmiy6">.css-1pgmiy6{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="css-1pgmiy6"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 e1yummiu0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="6cgvfx">.css-6cgvfx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:left;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-left-width:4px;border-color:#404040;}.css-6cgvfx:hover{background-color:#DDD;}</style><a rel="prev" class="css-6cgvfx" href="/Data Structure/220929/"><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></div><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="kk4m4x">.css-kk4m4x{color:#1D1D1D;}</style><p class="css-kk4m4x">이전 포스트</p><p>Stack, Queue</p></div></a></div><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="1qhu0pg">.css-1qhu0pg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-right-width:4px;border-color:#404040;}.css-1qhu0pg:hover{background-color:#DDD;}</style><a rel="next" class="css-1qhu0pg" href="/Javascript/221013/"><div class="css-v38or"><p class="css-kk4m4x">다음 포스트</p><p>동적 타입 언어</p></div><div class="css-19o7xeo"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e7xb9g90"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e7xb9g91"><style data-emotion-css="lg558f">.css-lg558f{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(42,67,101,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-lg558f{margin-bottom:1rem;}}</style><div class="css-lg558f gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAB5y57T1wKEB//xAAWEAEBAQAAAAAAAAAAAAAAAAADIAH/2gAIAQEAAQUChF1J/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAQEBAAAAAAAAAAAAAAAAASARIf/aAAgBAQAGPwKDQ5P/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQIFFx/9oACAEBAAE/IdjEZfcPHVQnH//aAAwDAQACAAMAAAAQ/wDovv/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAAICAgMAAAAAAAAAAAAAAAERABAxQSFRcf/aAAgBAQABPxCIjO64sIWsDAUux4DryzX/2Q==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank" rel="noopener noreferrer">HTTP | MDN</a></p>
+<style class="grvsc-styles">
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line > * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: ' ';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+</style></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1pgmiy6">.css-1pgmiy6{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="css-1pgmiy6"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 e1yummiu0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="6cgvfx">.css-6cgvfx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:left;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-left-width:4px;border-color:#404040;}.css-6cgvfx:hover{background-color:#DDD;}</style><a rel="prev" class="css-6cgvfx" href="/Data Structure/220929/"><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></div><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="kk4m4x">.css-kk4m4x{color:#1D1D1D;}</style><p class="css-kk4m4x">이전 포스트</p><p>Stack, Queue</p></div></a></div><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="1qhu0pg">.css-1qhu0pg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-right-width:4px;border-color:#404040;}.css-1qhu0pg:hover{background-color:#DDD;}</style><a rel="next" class="css-1qhu0pg" href="/Javascript/221013/"><div class="css-v38or"><p class="css-kk4m4x">다음 포스트</p><p>동적 타입 언어</p></div><div class="css-19o7xeo"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e7xb9g90"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e7xb9g91"><style data-emotion-css="lg558f">.css-lg558f{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(42,67,101,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-lg558f{margin-bottom:1rem;}}</style><div class="css-lg558f gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAB5y57T1wKEB//xAAWEAEBAQAAAAAAAAAAAAAAAAADIAH/2gAIAQEAAQUChF1J/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAQEBAAAAAAAAAAAAAAAAASARIf/aAAgBAQAGPwKDQ5P/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQIFFx/9oACAEBAAE/IdjEZfcPHVQnH//aAAwDAQACAAMAAAAQ/wDovv/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAAICAgMAAAAAAAAAAAAAAAERABAxQSFRcf/aAAgBAQABPxCIjO64sIWsDAUux4DryzX/2Q==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/cc017/profile.jpg 1.5x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/0c30b/profile.jpg 2x" /><img loading="lazy" width="128" height="128" srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/cc017/profile.jpg 1.5x,

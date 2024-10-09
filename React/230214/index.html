@@ -65,200 +65,298 @@
 <p>React-Quill은 간편하게 사용할 수 있는 Rich Text Editor이다.</p>
 <p>하이퍼링크, 글꼴, 색상, 스타일, 이미지 등의 양식을 쉽게 구성할 수 있다.</p>
 </blockquote>
-<h2>React-Quill 구성하기</h2>
+<h2 id="react-quill-구성하기" style="position:relative;"><a href="#react-quill-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0" aria-label="react quill 구성하기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>React-Quill 구성하기</h2>
 <p>React App에 <code>react-quill</code>을 설치한다.</p>
-<pre><code class="language-bash">$ yarn add react-quill
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="bash" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn add react-quill</span></span></span></code></pre>
 <p><code>App.js</code>에 다음과 같이 Quill 에디터를 구성하였다.<br>
 상단 버튼을 클릭하면 콘솔에서 에디터의 value를 확인할 수 있게 만들었다.</p>
-<pre><code class="language-javascript">// src/App.js
-import { useMemo, useRef, useState } from "react"
-import "react-quill/dist/quill.snow.css"
-import ReactQuill from "react-quill"
-
-function App() {
-  const quillRef = useRef()
-  const [content, setContent] = useState("")
-
-  // quill에서 사용할 모듈
-  // useMemo를 사용하여 modules가 렌더링 시 에디터가 사라지는 버그를 방지
-  const modules = useMemo(() => {
-    return {
-      toolbar: {
-        container: [
-          [{ header: [1, 2, 3, false] }],
-          ["bold", "italic", "underline", "strike"],
-          ["blockquote"],
-          [{ list: "ordered" }, { list: "bullet" }],
-          [{ color: [] }, { background: [] }],
-          [{ align: [] }, "link", "image"],
-        ],
-      },
-    }
-  }, [])
-
-  return (
-    &#x3C;div style={{ margin: "50px" }}>
-      &#x3C;button onClick={() => console.log(content)}>Value&#x3C;/button>
-      &#x3C;ReactQuill
-        style={{ width: "600px", height: "600px" }}
-        placeholder="Quill Content"
-        theme="snow"
-        ref={quillRef}
-        value={content}
-        onChange={setContent}
-        modules={modules}
-      />
-    &#x3C;/div>
-  )
-}
-
-export default App
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// src/App.js</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">useMemo</span><span class="mtk1">, </span><span class="mtk4">useRef</span><span class="mtk1">, </span><span class="mtk4">useState</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk6">&quot;react-quill/dist/quill.snow.css&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">ReactQuill</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-quill&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">function</span><span class="mtk1"> </span><span class="mtk3">App</span><span class="mtk1">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">quillRef</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useRef</span><span class="mtk1">()</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> [</span><span class="mtk11">content</span><span class="mtk1">, </span><span class="mtk11">setContent</span><span class="mtk1">] </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useState</span><span class="mtk1">(</span><span class="mtk6">&quot;&quot;</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk5 mtki">// quill에서 사용할 모듈</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk5 mtki">// useMemo를 사용하여 modules가 렌더링 시 에디터가 사라지는 버그를 방지</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">modules</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useMemo</span><span class="mtk1">(() </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">return</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">toolbar</span><span class="mtk1">: {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">container</span><span class="mtk1">: [</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          [{ </span><span class="mtk4">header</span><span class="mtk1">: [</span><span class="mtk7">1</span><span class="mtk1">, </span><span class="mtk7">2</span><span class="mtk1">, </span><span class="mtk7">3</span><span class="mtk1">, </span><span class="mtk7">false</span><span class="mtk1">] }],</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          [</span><span class="mtk6">&quot;bold&quot;</span><span class="mtk1">, </span><span class="mtk6">&quot;italic&quot;</span><span class="mtk1">, </span><span class="mtk6">&quot;underline&quot;</span><span class="mtk1">, </span><span class="mtk6">&quot;strike&quot;</span><span class="mtk1">],</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          [</span><span class="mtk6">&quot;blockquote&quot;</span><span class="mtk1">],</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          [{ </span><span class="mtk4">list</span><span class="mtk1">: </span><span class="mtk6">&quot;ordered&quot;</span><span class="mtk1"> }, { </span><span class="mtk4">list</span><span class="mtk1">: </span><span class="mtk6">&quot;bullet&quot;</span><span class="mtk1"> }],</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          [{ </span><span class="mtk4">color</span><span class="mtk1">: [] }, { </span><span class="mtk4">background</span><span class="mtk1">: [] }],</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          [{ </span><span class="mtk4">align</span><span class="mtk1">: [] }, </span><span class="mtk6">&quot;link&quot;</span><span class="mtk1">, </span><span class="mtk6">&quot;image&quot;</span><span class="mtk1">],</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        ],</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }, [])</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk4">div</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk1">{ </span><span class="mtk4">margin</span><span class="mtk1">: </span><span class="mtk6">&quot;50px&quot;</span><span class="mtk1"> }</span><span class="mtk9">}</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk4">button</span><span class="mtk1"> </span><span class="mtk7 mtki">onClick</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk1">() </span><span class="mtk9">=&gt;</span><span class="mtk1"> </span><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk4">content</span><span class="mtk1">)</span><span class="mtk9">}</span><span class="mtk1">&gt;Value&lt;/</span><span class="mtk4">button</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk11">ReactQuill</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk1">{ </span><span class="mtk4">width</span><span class="mtk1">: </span><span class="mtk6">&quot;600px&quot;</span><span class="mtk1">, </span><span class="mtk4">height</span><span class="mtk1">: </span><span class="mtk6">&quot;600px&quot;</span><span class="mtk1"> }</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">placeholder</span><span class="mtk8">=</span><span class="mtk6">&quot;Quill Content&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">theme</span><span class="mtk8">=</span><span class="mtk6">&quot;snow&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">ref</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk4">quillRef</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">value</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk4">content</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">onChange</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk4">setContent</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">modules</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk4">modules</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      /&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk4">div</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
 <p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/quill_1.gif" alt="quill_1"></p>
 <p>Html 형태의 문자열이 content 값에 들어왔다.<br>
 이 포스팅에서 CRUD까지 다루진 않지만 만약 DB에 저장된 content 값을 출력하고자 한다면 다음과 같이 <code>dangerouslySetInnerHTML</code>, <code>DOMPurify</code>를 사용하면 된다.</p>
-<pre><code class="language-bash">$ yarn add isomorphic-dompurify
-</code></pre>
-<pre><code class="language-javascript">// src/ReadQuill.js
-import DOMPurify from "isomorphic-dompurify"
-import "react-quill/dist/quill.core.css"
-
-function ReadQuill() {
-  const content = "&#x3C;h1>안녕하세요!&#x3C;/h1>&#x3C;h2>안녕하세요!&#x3C;/h2>&#x3C;h3>안녕하세요!&#x3C;/h3>"
-  return (
-    &#x3C;div
-      className="view ql-editor" // react-quill css
-      dangerouslySetInnerHTML={{
-        __html: DOMPurify.sanitize(content),
-      }}
-    />
-  )
-}
-
-export default ReadQuill
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="bash" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn add isomorphic-dompurify</span></span></span></code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// src/ReadQuill.js</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">DOMPurify</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;isomorphic-dompurify&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk6">&quot;react-quill/dist/quill.core.css&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">function</span><span class="mtk1"> </span><span class="mtk3">ReadQuill</span><span class="mtk1">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">content</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk6">&quot;&lt;h1&gt;안녕하세요!&lt;/h1&gt;&lt;h2&gt;안녕하세요!&lt;/h2&gt;&lt;h3&gt;안녕하세요!&lt;/h3&gt;&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk4">div</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk7 mtki">className</span><span class="mtk8">=</span><span class="mtk6">&quot;view ql-editor&quot;</span><span class="mtk1"> </span><span class="mtk5 mtki">// react-quill css</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk7 mtki">dangerouslySetInnerHTML</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">__html</span><span class="mtk1">: </span><span class="mtk11">DOMPurify</span><span class="mtk1">.</span><span class="mtk3">sanitize</span><span class="mtk1">(</span><span class="mtk4">content</span><span class="mtk1">),</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      }</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    /&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">ReadQuill</span></span></span></code></pre>
 <p>이렇게 dangerouslySetInnerHTML을 사용하여 직접적으로 HTML을 설정하는 것은 <a href="https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8_%EA%B0%84_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8C%85" target="_blank" rel="noopener noreferrer">Cross Site Scripting(XSS)</a>에 취약하다고 한다. 그래서 XSS 공격을 방지하는 dompurify와 같은 sanitization library와 함께 사용해 주었다.</p>
-<h2>에디터에 이미지를 올리면?</h2>
+<h2 id="에디터에-이미지를-올리면" style="position:relative;"><a href="#%EC%97%90%EB%94%94%ED%84%B0%EC%97%90-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A5%BC-%EC%98%AC%EB%A6%AC%EB%A9%B4" aria-label="에디터에 이미지를 올리면 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>에디터에 이미지를 올리면?</h2>
 <p>일반적인 텍스트가 입력되면 content값은 그렇게 크지 않지만, 이미지가 들어오게 될 경우 문제가 생긴다. 이미지를 에디터에 올려보고 value를 체크해보자.</p>
 <p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/quill_2.gif" alt="quill_2"></p>
-<pre><code class="language-html">&#x3C;img src="data:image/png;base64, 엄청나게 긴 base64 value...
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="html" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">&lt;</span><span class="mtk4">img</span><span class="mtk1"> </span><span class="mtk7">src</span><span class="mtk1">=</span><span class="mtk6">&quot;data:image/png;base64, 엄청나게 긴 base64 value...</span></span></span></code></pre>
 <p>React-Quill은 이미지를 올리게 되면 8비트 이진 데이터를 문자 코드에 영향을 받지 않는 공통 ASCII 문자열로 바꾼다. (<a href="https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EC%8A%A464" target="_blank" rel="noopener noreferrer">base64</a>) 따라서 위와 같은 base64 인코딩이 된 형태로 이미지가 저장된다. 이렇게 value에 담긴 값을 DB에 저장하려 하면 전송에 실패하게 된다.</p>
-<h2>Firebase Storage로 이미지 처리하기</h2>
+<h2 id="firebase-storage로-이미지-처리하기" style="position:relative;"><a href="#firebase-storage%EB%A1%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0" aria-label="firebase storage로 이미지 처리하기 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Firebase Storage로 이미지 처리하기</h2>
 <p>이미지 업로드 시 base64 문자열이 들어가는 방식 대신 이미지가 <code>Firebase Storage</code>에 저장이 되고, 저장된 이미지 URL을 에디터에 삽입하는 방식으로 구현하려고 한다.</p>
 <p><a href="https://console.firebase.google.com/" target="_blank" rel="noopener noreferrer">Firebase Console</a>에서 새 프로젝트를 생성한다.</p>
 <p><code>Firebase 프로젝트 생성</code> > <code>웹 앱 추가</code> > <code>Storage</code> > <code>시작하기 (지역 : asia-east1)</code></p>
 <table>
-  <tr>
-    <td valign="top"><img alt="fb1" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb1.png"/></td>
-    <td valign="top"><img alt="fb2" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb2.png"/></td>
+  <tbody><tr>
+    <td valign="top"><img alt="fb1" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb1.png"></td>
+    <td valign="top"><img alt="fb2" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb2.png"></td>
   </tr>
   <tr>
-    <td valign="top"><img alt="fb3" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb3.png"/></td>
-    <td valign="top"><img alt="fb4" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb4.png"/></td>
+    <td valign="top"><img alt="fb3" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb3.png"></td>
+    <td valign="top"><img alt="fb4" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/fb4.png"></td>
   </tr>
-</table>
+</tbody></table>
 <p>프로젝트에 <code>firebase</code>를 설치하고 SDK를 작성한다.</p>
-<pre><code class="language-bash">$ yarn add firebase
-</code></pre>
-<pre><code class="language-javascript">// src/Firebase.js
-// Import the functions you need from the SDKs you need
-import { initializeApp, getApp, getApps } from "firebase/app"
-import { getStorage } from "firebase/storage"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "xxxxxxxxxxxxxxxxxx",
-  authDomain: "xxxxxxxxxxxxxxxxxx",
-  projectId: "xxxxxxxxxxxxxxxxxx",
-  storageBucket: "xxxxxxxxxxxxxxxxxx",
-  messagingSenderId: "xxxxxxxxxxxxxxxxxx",
-  appId: "xxxxxxxxxxxxxxxxxx",
-}
-
-// Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp()
-export const storage = getStorage()
-export default app
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="bash" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn add firebase</span></span></span></code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// src/Firebase.js</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// Import the functions you need from the SDKs you need</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">initializeApp</span><span class="mtk1">, </span><span class="mtk4">getApp</span><span class="mtk1">, </span><span class="mtk4">getApps</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;firebase/app&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">getStorage</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;firebase/storage&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// TODO: Add SDKs for Firebase products that you want to use</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// https://firebase.google.com/docs/web/setup#available-libraries</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// Your web app&#39;s Firebase configuration</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">firebaseConfig</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">apiKey</span><span class="mtk1">: </span><span class="mtk6">&quot;xxxxxxxxxxxxxxxxxx&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">authDomain</span><span class="mtk1">: </span><span class="mtk6">&quot;xxxxxxxxxxxxxxxxxx&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">projectId</span><span class="mtk1">: </span><span class="mtk6">&quot;xxxxxxxxxxxxxxxxxx&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">storageBucket</span><span class="mtk1">: </span><span class="mtk6">&quot;xxxxxxxxxxxxxxxxxx&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">messagingSenderId</span><span class="mtk1">: </span><span class="mtk6">&quot;xxxxxxxxxxxxxxxxxx&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">appId</span><span class="mtk1">: </span><span class="mtk6">&quot;xxxxxxxxxxxxxxxxxx&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// Initialize Firebase</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">app</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk8">!</span><span class="mtk3">getApps</span><span class="mtk1">().</span><span class="mtk4">length</span><span class="mtk1"> </span><span class="mtk9">?</span><span class="mtk1"> </span><span class="mtk3">initializeApp</span><span class="mtk1">(</span><span class="mtk4">firebaseConfig</span><span class="mtk1">) </span><span class="mtk9">:</span><span class="mtk1"> </span><span class="mtk3">getApp</span><span class="mtk1">()</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">storage</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">getStorage</span><span class="mtk1">()</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">app</span></span></span></code></pre>
 <p>Storage의 업로드 및 읽기 권한 설정을 위해 <code>firebase-tools</code>를 설치하고 로그인 및 초기 설정을 진행한다.</p>
-<pre><code class="language-bash">$ yarn add firebase-tools
-$ firebase login
-$ firebase init
-    -> Storage: Configure a security rules fileㅤfor Cloud Storage
-    -> Use an existing project
-    -> 프로젝트 선택
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="bash" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn add firebase-tools</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ firebase login</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ firebase init</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    -&gt; Storage: Configure a security rules fileㅤfor Cloud Storage</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    -&gt; Use an existing project</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    -&gt; 프로젝트 선택</span></span></span></code></pre>
 <p>프로젝트에 생성된 <code>storage.rules</code> 파일을 다음과 같이 수정한다.<br>
 수정 후 <code>firebase deploy --only storage</code> 로 적용하면 권한이 부여된다.</p>
-<pre><code class="language-bash"># /storage.rules
-rules_version = '2';
-service firebase.storage {
-  match /b/{bucket}/o {
-    match /{allPaths=**} {
-      allow read, write: if true;
-    }
-  }
-}
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="bash" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"># /storage.rules</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">rules_version = </span><span class="mtk6">&#39;2&#39;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">service firebase.storage {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  match /b/{bucket}/o {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    match /{allPaths=**} {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      allow read, write: </span><span class="mtk9">if</span><span class="mtk1"> </span><span class="mtk8">true</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <p>modules에 설정할 이미지 핸들러를 작성하였다.<br>
 이미지 선택이 완료되면 Firebase Storage에 파일명 <code>image/Date.now()</code>로 저장이 되고, <code>getDownloadURL</code> 메서드로 받은 이미지 URL을 에디터에 삽입하는 흐름이다.</p>
 <p>(<code>Date.now()</code> 메서드는 UTC 기준으로 1970년 1월 1일 0시 0분 0초부터 현재까지 경과된 밀리 초를 반환한다.)</p>
-<pre><code class="language-javascript">// src/App.js
-...
-...
-import {storage} from "./Firebase";
-import { uploadBytes, getDownloadURL, ref } from "firebase/storage";
-...
-...
-  // 이미지 핸들러
-  const imageHandler = () => {
-    const input = document.createElement("input");
-    input.setAttribute("type", "file");
-    input.setAttribute("accept", "image/*");
-    input.click();
-
-    input.addEventListener("change", async () => {
-      const editor = quillRef.current.getEditor();
-      const file = input.files[0];
-      const range = editor.getSelection(true);
-
-      try {
-        // 파일명을 "image/Date.now()"로 저장
-        const storageRef = ref(
-          storage,
-          `image/${Date.now()}`
-        );
-        // Firebase Method : uploadBytes, getDownloadURL
-        await uploadBytes(storageRef, file).then((snapshot) => {
-          getDownloadURL(snapshot.ref).then((url) => {
-            // 이미지 URL 에디터에 삽입
-            editor.insertEmbed(range.index, "image", url);
-            // URL 삽입 후 커서를 이미지 뒷 칸으로 이동
-            editor.setSelection(range.index + 1);
-          });
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    });
-  };
-...
-...
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="9"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// src/App.js</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> {</span><span class="mtk4">storage</span><span class="mtk1">} </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;./Firebase&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">uploadBytes</span><span class="mtk1">, </span><span class="mtk4">getDownloadURL</span><span class="mtk1">, </span><span class="mtk4">ref</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;firebase/storage&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk5 mtki">// 이미지 핸들러</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk3">imageHandler</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">input</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">document</span><span class="mtk1">.</span><span class="mtk3">createElement</span><span class="mtk1">(</span><span class="mtk6">&quot;input&quot;</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">input</span><span class="mtk1">.</span><span class="mtk3">setAttribute</span><span class="mtk1">(</span><span class="mtk6">&quot;type&quot;</span><span class="mtk1">, </span><span class="mtk6">&quot;file&quot;</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">input</span><span class="mtk1">.</span><span class="mtk3">setAttribute</span><span class="mtk1">(</span><span class="mtk6">&quot;accept&quot;</span><span class="mtk1">, </span><span class="mtk6">&quot;image/*&quot;</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">input</span><span class="mtk1">.</span><span class="mtk3">click</span><span class="mtk1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">input</span><span class="mtk1">.</span><span class="mtk3">addEventListener</span><span class="mtk1">(</span><span class="mtk6">&quot;change&quot;</span><span class="mtk1">, </span><span class="mtk9">async</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">editor</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">quillRef</span><span class="mtk1">.</span><span class="mtk11">current</span><span class="mtk1">.</span><span class="mtk3">getEditor</span><span class="mtk1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">file</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">input</span><span class="mtk1">.</span><span class="mtk4">files</span><span class="mtk1">[</span><span class="mtk7">0</span><span class="mtk1">];</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">range</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">editor</span><span class="mtk1">.</span><span class="mtk3">getSelection</span><span class="mtk1">(</span><span class="mtk7">true</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">try</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk5 mtki">// 파일명을 &quot;image/Date.now()&quot;로 저장</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">storageRef</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">ref</span><span class="mtk1">(</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">storage</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk6">`image/</span><span class="mtk9">${</span><span class="mtk11">Date</span><span class="mtk1">.</span><span class="mtk3">now</span><span class="mtk1">()</span><span class="mtk9">}</span><span class="mtk6">`</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        );</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk5 mtki">// Firebase Method : uploadBytes, getDownloadURL</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk9">await</span><span class="mtk1"> </span><span class="mtk3">uploadBytes</span><span class="mtk1">(</span><span class="mtk4">storageRef</span><span class="mtk1">, </span><span class="mtk4">file</span><span class="mtk1">).</span><span class="mtk3">then</span><span class="mtk1">((</span><span class="mtk4 mtki">snapshot</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk3">getDownloadURL</span><span class="mtk1">(</span><span class="mtk11">snapshot</span><span class="mtk1">.</span><span class="mtk4">ref</span><span class="mtk1">).</span><span class="mtk3">then</span><span class="mtk1">((</span><span class="mtk4 mtki">url</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk5 mtki">// 이미지 URL 에디터에 삽입</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk11">editor</span><span class="mtk1">.</span><span class="mtk3">insertEmbed</span><span class="mtk1">(</span><span class="mtk11">range</span><span class="mtk1">.</span><span class="mtk4">index</span><span class="mtk1">, </span><span class="mtk6">&quot;image&quot;</span><span class="mtk1">, </span><span class="mtk4">url</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk5 mtki">// URL 삽입 후 커서를 이미지 뒷 칸으로 이동</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk11">editor</span><span class="mtk1">.</span><span class="mtk3">setSelection</span><span class="mtk1">(</span><span class="mtk11">range</span><span class="mtk1">.</span><span class="mtk4">index</span><span class="mtk1"> </span><span class="mtk8">+</span><span class="mtk1"> </span><span class="mtk7">1</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          });</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        });</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      } </span><span class="mtk9">catch</span><span class="mtk1"> (</span><span class="mtk4">error</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk4">error</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    });</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  };</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">...</span></span></span></code></pre>
 <p>Storage에 성공적으로 업로드 되었고, 이미지 URL 또한 에디터에 잘 반영이 되었다.</p>
 <p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/quill_3.gif" alt="quill_3"></p>
 <p><img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230214/quill_4.png" alt="quill_4"></p>
 <hr>
-<h2>Reference</h2>
+<h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <p><a href="https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8_%EA%B0%84_%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8C%85" target="_blank" rel="noopener noreferrer">사이트 간 스크립팅 - 위키백과, 우리 모두의 백과사전</a></p>
 <p><a href="https://mingeesuh.tistory.com/entry/Quill-React-%EC%97%90%EB%94%94%ED%84%B0-%EC%82%AC%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%97%85%EB%A1%9C%EB%93%9C-%EB%B0%8F-%EC%82%AC%EC%9D%B4%EC%A6%88-%EC%A1%B0%EC%A0%88" target="_blank" rel="noopener noreferrer">Quill React 에디터 사용해보기 (이미지 업로드 및 사이즈 조절)</a></p>
 <p><a href="https://mingeesuh.tistory.com/entry/Firebase-%EC%9B%B9-%ED%8C%8C%EC%9D%B4%EC%96%B4%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%97%85%EB%A1%9C%EB%93%9C-%EB%B0%8F-%EB%A7%81%ED%81%AC-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0" target="_blank" rel="noopener noreferrer">[Firebase 웹] 파이어베이스 스토리지 이미지 업로드 및 링크 가져오기</a></p>
 <p><a href="https://12ahn22.tistory.com/entry/Quill-%EC%97%90%EB%94%94%ED%84%B0-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%B2%98%EB%A6%AC%ED%95%98%EA%B8%B0" target="_blank" rel="noopener noreferrer">Quill 에디터 - 이미지 처리하기</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now" target="_blank" rel="noopener noreferrer">Date.now() - JavaScript | MDN</a></p></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1pgmiy6">.css-1pgmiy6{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="css-1pgmiy6"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 e1yummiu0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="6cgvfx">.css-6cgvfx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:left;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-left-width:4px;border-color:#404040;}.css-6cgvfx:hover{background-color:#DDD;}</style><a rel="prev" class="css-6cgvfx" href="/Javascript/230125/"><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></div><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="kk4m4x">.css-kk4m4x{color:#1D1D1D;}</style><p class="css-kk4m4x">이전 포스트</p><p>구조 분해 할당</p></div></a></div><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="1qhu0pg">.css-1qhu0pg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-right-width:4px;border-color:#404040;}.css-1qhu0pg:hover{background-color:#DDD;}</style><a rel="next" class="css-1qhu0pg" href="/Algorithm/230224/"><div class="css-v38or"><p class="css-kk4m4x">다음 포스트</p><p>시간 복잡도, Big-O(빅오) 표기법</p></div><div class="css-19o7xeo"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e7xb9g90"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e7xb9g91"><style data-emotion-css="lg558f">.css-lg558f{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(42,67,101,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-lg558f{margin-bottom:1rem;}}</style><div class="css-lg558f gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAB5y57T1wKEB//xAAWEAEBAQAAAAAAAAAAAAAAAAADIAH/2gAIAQEAAQUChF1J/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAQEBAAAAAAAAAAAAAAAAASARIf/aAAgBAQAGPwKDQ5P/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQIFFx/9oACAEBAAE/IdjEZfcPHVQnH//aAAwDAQACAAMAAAAQ/wDovv/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAAICAgMAAAAAAAAAAAAAAAERABAxQSFRcf/aAAgBAQABPxCIjO64sIWsDAUux4DryzX/2Q==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now" target="_blank" rel="noopener noreferrer">Date.now() - JavaScript | MDN</a></p>
+<style class="grvsc-styles">
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line > * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: ' ';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .mtki { font-style: italic; }
+  .one-dark-pro .mtk1 { color: #ABB2BF; }
+  .one-dark-pro .mtk5 { color: #7F848E; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk6 { color: #98C379; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk11 { color: #E5C07B; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .mtk7 { color: #D19A66; }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+</style></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1pgmiy6">.css-1pgmiy6{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="css-1pgmiy6"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 e1yummiu0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="6cgvfx">.css-6cgvfx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:left;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-left-width:4px;border-color:#404040;}.css-6cgvfx:hover{background-color:#DDD;}</style><a rel="prev" class="css-6cgvfx" href="/Javascript/230125/"><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></div><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="kk4m4x">.css-kk4m4x{color:#1D1D1D;}</style><p class="css-kk4m4x">이전 포스트</p><p>구조 분해 할당</p></div></a></div><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="1qhu0pg">.css-1qhu0pg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-right-width:4px;border-color:#404040;}.css-1qhu0pg:hover{background-color:#DDD;}</style><a rel="next" class="css-1qhu0pg" href="/Algorithm/230224/"><div class="css-v38or"><p class="css-kk4m4x">다음 포스트</p><p>시간 복잡도, Big-O(빅오) 표기법</p></div><div class="css-19o7xeo"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e7xb9g90"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e7xb9g91"><style data-emotion-css="lg558f">.css-lg558f{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(42,67,101,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-lg558f{margin-bottom:1rem;}}</style><div class="css-lg558f gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAB5y57T1wKEB//xAAWEAEBAQAAAAAAAAAAAAAAAAADIAH/2gAIAQEAAQUChF1J/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAQEBAAAAAAAAAAAAAAAAASARIf/aAAgBAQAGPwKDQ5P/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQIFFx/9oACAEBAAE/IdjEZfcPHVQnH//aAAwDAQACAAMAAAAQ/wDovv/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAAICAgMAAAAAAAAAAAAAAAERABAxQSFRcf/aAAgBAQABPxCIjO64sIWsDAUux4DryzX/2Q==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/cc017/profile.jpg 1.5x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/0c30b/profile.jpg 2x" /><img loading="lazy" width="128" height="128" srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/cc017/profile.jpg 1.5x,

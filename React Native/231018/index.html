@@ -60,292 +60,391 @@
 </ul></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="by4vme">.css-by4vme{padding:0.3rem;}</style><img src="/static/React Native-b5b7bc9bb0d6c0726c619b06eb839367.png" alt="React Native" class="css-by4vme"/><div><style data-emotion-css="jpq9fv">.css-jpq9fv{font-size:1rem;word-break:break-word;}.css-jpq9fv h1 > a > svg,.css-jpq9fv h2 > a > svg,.css-jpq9fv h3 > a > svg,.css-jpq9fv h4 > a > svg,.css-jpq9fv h5 > a > svg,.css-jpq9fv h6 > a > svg{fill:#000;}.css-jpq9fv h1,.css-jpq9fv h2{font-size:1.25rem;font-weight:600;margin-top:1.5rem;margin-bottom:1.5rem;}.css-jpq9fv h3,.css-jpq9fv h4,.css-jpq9fv h5,.css-jpq9fv h6{font-size:1.125rem;margin-top:1.5rem;margin-bottom:1.5rem;font-weight:600;}@media (min-width:640px){.css-jpq9fv h1,.css-jpq9fv h2{font-size:1.5rem;}.css-jpq9fv h3,.css-jpq9fv h4,.css-jpq9fv h5,.css-jpq9fv h6{font-size:1.25rem;}}.css-jpq9fv a{color:#0042ED;}.css-jpq9fv a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-jpq9fv p{margin:0.3rem;margin-top:0.75rem;margin-bottom:0.75rem;}.css-jpq9fv strong{color:#000;}.css-jpq9fv ul,.css-jpq9fv ol{margin:0.3rem;margin-left:2rem;}.css-jpq9fv li > p,.css-jpq9fv li > ul,.css-jpq9fv li > ol{margin-bottom:0;}.css-jpq9fv ol{list-style-type:decimal;}.css-jpq9fv ul{list-style-type:disc;}.css-jpq9fv blockquote{padding:0.5rem;background-color:#fff;margin:0.3rem;margin-top:0.5rem;margin-bottom:0.5rem;border-left-width:4px;border-color:#404040;}.css-jpq9fv blockquote > p{margin:0.5rem;}.css-jpq9fv blockquote > h1,.css-jpq9fv blockquote > h2,.css-jpq9fv blockquote > h3,.css-jpq9fv blockquote > h4,.css-jpq9fv blockquote > h5{margin-top:0.5rem;margin-bottom:0.5rem;}.css-jpq9fv td,.css-jpq9fv th{padding:0;}.css-jpq9fv tr:nth-of-type(even){background-color:#fff;}.css-jpq9fv th{background-color:#fff;}.css-jpq9fv table{margin-bottom:1.5rem;display:block;max-width:-webkit-fit-content;max-width:-moz-fit-content;max-width:fit-content;margin:0 auto;overflow-x:auto;white-space:nowrap;}.css-jpq9fv p > code,.css-jpq9fv li > code{padding-top:0.1rem;padding-bottom:0.1rem;padding-right:0.25rem;padding-left:0.25rem;border-radius:0.25rem;color:#1D1D1D;background-color:#fff;white-space:pre-line;}.css-jpq9fv pre.grvsc-container{margin-top:24px;margin-bottom:24px;}.css-jpq9fv hr{margin-top:24px;margin-bottom:24px;height:1px;border:none;background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="markdown css-jpq9fv"><blockquote>
 <p>요즘 앱을 사용하다 보면 위치 권한을 물어보는 경우가 상당히 많다. 사용자 위치 변화에 따라 특정 정보를 제공하거나 위치 정보 자체를 사용하는 무선 콘텐츠 서비스들이 굉장히 다양하다. React Native에서도 사용자의 위치 좌표를 출력받을 수 있는 라이브러리를 간단히 사용해 볼 수 있었는데, 바로 <strong>Geolocation Service</strong>이다.</p>
 </blockquote>
-<h2>프로젝트 환경 설정</h2>
+<h2 id="프로젝트-환경-설정" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95" aria-label="프로젝트 환경 설정 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 환경 설정</h2>
 <p><code>React Native CLI</code>를 사용, 버전은 <code>0.68.2</code>로 설정했다.</p>
-<pre><code class="language-bash"># 앱 설치
-$ react-native init --version 0.68.2 프로젝트명
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="bash" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"># 앱 설치</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ react-native init --version 0.68.2 프로젝트명</span></span></span></code></pre>
 <p>안드로이드 에뮬레이터를 통해 진행했다. 디바이스는 기존에 갤럭시 S21로 세팅되어 있으며, 다음 명령어로 프로젝트를 실행했다.</p>
-<pre><code class="language-bash">$ react-native run-android
-</code></pre>
-<img alt='geo1' src='https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo1.png'>
+<pre class="grvsc-container one-dark-pro" data-language="bash" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ react-native run-android</span></span></span></code></pre>
+<img alt="geo1" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo1.png">
 <p>에뮬레이터가 실행되면 위처럼 설정되어 있던 기본 화면이 나온다.</p>
-<pre><code class="language-javascript">/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from "react"
-import type { Node } from "react"
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from "react-native"
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from "react-native/Libraries/NewAppScreen"
-
-const Section = ({ children, title }): Node => {
-  const isDarkMode = useColorScheme() === "dark"
-  return (
-    &#x3C;View style={styles.sectionContainer}>
-      &#x3C;Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}
-      >
-        {title}
-      &#x3C;/Text>
-      &#x3C;Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}
-      >
-        {children}
-      &#x3C;/Text>
-    &#x3C;/View>
-  )
-}
-
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === "dark"
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  }
-
-  return (
-    &#x3C;SafeAreaView style={backgroundStyle}>
-      &#x3C;StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
-      &#x3C;ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}
-      >
-        &#x3C;Header />
-        &#x3C;View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}
-        >
-          &#x3C;Section title="Step One">
-            Edit &#x3C;Text style={styles.highlight}>App.js&#x3C;/Text> to change this
-            screen and then come back to see your edits.
-          &#x3C;/Section>
-          &#x3C;Section title="See Your Changes">
-            &#x3C;ReloadInstructions />
-          &#x3C;/Section>
-          &#x3C;Section title="Debug">
-            &#x3C;DebugInstructions />
-          &#x3C;/Section>
-          &#x3C;Section title="Learn More">
-            Read the docs to discover what to do next:
-          &#x3C;/Section>
-          &#x3C;LearnMoreLinks />
-        &#x3C;/View>
-      &#x3C;/ScrollView>
-    &#x3C;/SafeAreaView>
-  )
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: "600",
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: "400",
-  },
-  highlight: {
-    fontWeight: "700",
-  },
-})
-
-export default App
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">/**</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> * Sample React Native App</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> * https://github.com/facebook/react-native</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> *</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> * </span><span class="mtk9 mtki">@format</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> * </span><span class="mtk9 mtki">@flow</span><span class="mtk5 mtki"> strict-local</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki"> */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">React</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">type</span><span class="mtk1"> { </span><span class="mtk4">Node</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">SafeAreaView</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">ScrollView</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">StatusBar</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">StyleSheet</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">Text</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">useColorScheme</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">View</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">} </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">Colors</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">DebugInstructions</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">Header</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">LearnMoreLinks</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">ReloadInstructions</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">} </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native/Libraries/NewAppScreen&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk3">Section</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> ({ </span><span class="mtk4 mtki">children</span><span class="mtk1">, </span><span class="mtk4 mtki">title</span><span class="mtk1"> }): </span><span class="mtk11">Node</span><span class="mtk1"> </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">isDarkMode</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useColorScheme</span><span class="mtk1">() </span><span class="mtk8">===</span><span class="mtk1"> </span><span class="mtk6">&quot;dark&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk11">View</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">sectionContainer</span><span class="mtk9">}</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk11">Text</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk1">[</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">sectionTitle</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk4">color</span><span class="mtk1">: </span><span class="mtk4">isDarkMode</span><span class="mtk1"> </span><span class="mtk9">?</span><span class="mtk1"> </span><span class="mtk11">Colors</span><span class="mtk1">.</span><span class="mtk4">white</span><span class="mtk1"> </span><span class="mtk9">:</span><span class="mtk1"> </span><span class="mtk11">Colors</span><span class="mtk1">.</span><span class="mtk4">black</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        ]</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk9">{</span><span class="mtk4">title</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;/</span><span class="mtk11">Text</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk11">Text</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk1">[</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">sectionDescription</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk4">color</span><span class="mtk1">: </span><span class="mtk4">isDarkMode</span><span class="mtk1"> </span><span class="mtk9">?</span><span class="mtk1"> </span><span class="mtk11">Colors</span><span class="mtk1">.</span><span class="mtk4">light</span><span class="mtk1"> </span><span class="mtk9">:</span><span class="mtk1"> </span><span class="mtk11">Colors</span><span class="mtk1">.</span><span class="mtk4">dark</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        ]</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk9">{</span><span class="mtk4">children</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;/</span><span class="mtk11">Text</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk3">App</span><span class="mtk1">: () </span><span class="mtk9">=&gt;</span><span class="mtk1"> </span><span class="mtk11">Node</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">isDarkMode</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useColorScheme</span><span class="mtk1">() </span><span class="mtk8">===</span><span class="mtk1"> </span><span class="mtk6">&quot;dark&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">backgroundStyle</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">backgroundColor</span><span class="mtk1">: </span><span class="mtk4">isDarkMode</span><span class="mtk1"> </span><span class="mtk9">?</span><span class="mtk1"> </span><span class="mtk11">Colors</span><span class="mtk1">.</span><span class="mtk4">darker</span><span class="mtk1"> </span><span class="mtk9">:</span><span class="mtk1"> </span><span class="mtk11">Colors</span><span class="mtk1">.</span><span class="mtk4">lighter</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk11">SafeAreaView</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk4">backgroundStyle</span><span class="mtk9">}</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk11">StatusBar</span><span class="mtk1"> </span><span class="mtk7 mtki">barStyle</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk4">isDarkMode</span><span class="mtk1"> </span><span class="mtk9">?</span><span class="mtk1"> </span><span class="mtk6">&quot;light-content&quot;</span><span class="mtk1"> </span><span class="mtk9">:</span><span class="mtk1"> </span><span class="mtk6">&quot;dark-content&quot;</span><span class="mtk9">}</span><span class="mtk1"> /&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk11">ScrollView</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">contentInsetAdjustmentBehavior</span><span class="mtk8">=</span><span class="mtk6">&quot;automatic&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk4">backgroundStyle</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &lt;</span><span class="mtk11">Header</span><span class="mtk1"> /&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &lt;</span><span class="mtk11">View</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            </span><span class="mtk4">backgroundColor</span><span class="mtk1">: </span><span class="mtk4">isDarkMode</span><span class="mtk1"> </span><span class="mtk9">?</span><span class="mtk1"> </span><span class="mtk11">Colors</span><span class="mtk1">.</span><span class="mtk4">black</span><span class="mtk1"> </span><span class="mtk9">:</span><span class="mtk1"> </span><span class="mtk11">Colors</span><span class="mtk1">.</span><span class="mtk4">white</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          }</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          &lt;</span><span class="mtk11">Section</span><span class="mtk1"> </span><span class="mtk7 mtki">title</span><span class="mtk8">=</span><span class="mtk6">&quot;Step One&quot;</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            Edit &lt;</span><span class="mtk11">Text</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">highlight</span><span class="mtk9">}</span><span class="mtk1">&gt;App.js&lt;/</span><span class="mtk11">Text</span><span class="mtk1">&gt; to change this</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            screen and then come back to see your edits.</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          &lt;/</span><span class="mtk11">Section</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          &lt;</span><span class="mtk11">Section</span><span class="mtk1"> </span><span class="mtk7 mtki">title</span><span class="mtk8">=</span><span class="mtk6">&quot;See Your Changes&quot;</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            &lt;</span><span class="mtk11">ReloadInstructions</span><span class="mtk1"> /&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          &lt;/</span><span class="mtk11">Section</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          &lt;</span><span class="mtk11">Section</span><span class="mtk1"> </span><span class="mtk7 mtki">title</span><span class="mtk8">=</span><span class="mtk6">&quot;Debug&quot;</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            &lt;</span><span class="mtk11">DebugInstructions</span><span class="mtk1"> /&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          &lt;/</span><span class="mtk11">Section</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          &lt;</span><span class="mtk11">Section</span><span class="mtk1"> </span><span class="mtk7 mtki">title</span><span class="mtk8">=</span><span class="mtk6">&quot;Learn More&quot;</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">            Read the docs to discover what to do next:</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          &lt;/</span><span class="mtk11">Section</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          &lt;</span><span class="mtk11">LearnMoreLinks</span><span class="mtk1"> /&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &lt;/</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;/</span><span class="mtk11">ScrollView</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk11">SafeAreaView</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">styles</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">StyleSheet</span><span class="mtk1">.</span><span class="mtk3">create</span><span class="mtk1">({</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">sectionContainer</span><span class="mtk1">: {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">marginTop</span><span class="mtk1">: </span><span class="mtk7">32</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">paddingHorizontal</span><span class="mtk1">: </span><span class="mtk7">24</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">sectionTitle</span><span class="mtk1">: {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontSize</span><span class="mtk1">: </span><span class="mtk7">24</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontWeight</span><span class="mtk1">: </span><span class="mtk6">&quot;600&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">sectionDescription</span><span class="mtk1">: {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">marginTop</span><span class="mtk1">: </span><span class="mtk7">8</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontSize</span><span class="mtk1">: </span><span class="mtk7">18</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontWeight</span><span class="mtk1">: </span><span class="mtk6">&quot;400&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">highlight</span><span class="mtk1">: {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontWeight</span><span class="mtk1">: </span><span class="mtk6">&quot;700&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">})</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
 <p>기본적으로 생성된 App.js 파일이다. 코드를 다음과 같이 정리해 주었다.</p>
-<pre><code class="language-javascript">import React from "react"
-import { View, Text, StyleSheet } from "react-native"
-
-const App = () => {
-  return (
-    &#x3C;View>
-      &#x3C;Text style={styles.title}>Geolocation Tutorial&#x3C;/Text>
-    &#x3C;/View>
-  )
-}
-
-const styles = StyleSheet.create({
-  title: {
-    textAlign: "center",
-    fontSize: 25,
-    margin: 15,
-    color: "black",
-    fontWeight: "600",
-  },
-})
-
-export default App
-</code></pre>
-<img alt='geo2' src='https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo2.png' width='300'>
-<h2>Geolocation Service</h2>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">React</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">View</span><span class="mtk1">, </span><span class="mtk4">Text</span><span class="mtk1">, </span><span class="mtk4">StyleSheet</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk3">App</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk11">Text</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">title</span><span class="mtk9">}</span><span class="mtk1">&gt;Geolocation Tutorial&lt;/</span><span class="mtk11">Text</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">styles</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">StyleSheet</span><span class="mtk1">.</span><span class="mtk3">create</span><span class="mtk1">({</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">title</span><span class="mtk1">: {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">textAlign</span><span class="mtk1">: </span><span class="mtk6">&quot;center&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontSize</span><span class="mtk1">: </span><span class="mtk7">25</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">margin</span><span class="mtk1">: </span><span class="mtk7">15</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">color</span><span class="mtk1">: </span><span class="mtk6">&quot;black&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontWeight</span><span class="mtk1">: </span><span class="mtk6">&quot;600&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">})</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
+<img alt="geo2" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo2.png" width="300">
+<h2 id="geolocation-service" style="position:relative;"><a href="#geolocation-service" aria-label="geolocation service permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Geolocation Service</h2>
 <p>모바일 디바이스의 현재 위치 좌표 값을 얻기 위해서는 <code>Geolocation Service</code>라는 라이브러리를 사용한다.</p>
-<pre><code class="language-bash">$ yarn add react-native-geolocation-service
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="bash" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ yarn add react-native-geolocation-service</span></span></span></code></pre>
 <p>이 기능은 위치 정보를 얻는 민감한 기능에 해당하므로 사용자의 동의를 받는 절차를 생성해야 한다. 안드로이드에서 제공하는 권한 부여 방식은 <code>android/app/src/main/AndroidManifest.xml</code> 에서 다음 코드를 추가하면 된다.</p>
-<pre><code class="language-xml">&#x3C;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-&#x3C;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="xml" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">&lt;</span><span class="mtk4">uses-permission</span><span class="mtk1"> </span><span class="mtk7">android:name</span><span class="mtk1">=</span><span class="mtk6">&quot;android.permission.ACCESS_COARSE_LOCATION&quot;</span><span class="mtk1"> /&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">&lt;</span><span class="mtk4">uses-permission</span><span class="mtk1"> </span><span class="mtk7">android:name</span><span class="mtk1">=</span><span class="mtk6">&quot;android.permission.ACCESS_FINE_LOCATION&quot;</span><span class="mtk1"> /&gt;</span></span></span></code></pre>
 <p>이제 Geolocation Service를 통해 얻은 좌표를 앱에 출력해보자. 먼저 권한 요청을 처리해주는 코드를 작성했다.</p>
-<pre><code class="language-javascript">useEffect(() => {
-  if (Platform.OS === "android") {
-    PermissionsAndroid.request(
-      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
-    )
-  }
-}, [])
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">useEffect</span><span class="mtk1">(() </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">if</span><span class="mtk1"> (</span><span class="mtk11">Platform</span><span class="mtk1">.</span><span class="mtk4">OS</span><span class="mtk1"> </span><span class="mtk8">===</span><span class="mtk1"> </span><span class="mtk6">&quot;android&quot;</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">PermissionsAndroid</span><span class="mtk1">.</span><span class="mtk3">request</span><span class="mtk1">(</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">PermissionsAndroid</span><span class="mtk1">.</span><span class="mtk11">PERMISSIONS</span><span class="mtk1">.</span><span class="mtk4">ACCESS_FINE_LOCATION</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}, [])</span></span></span></code></pre>
 <p>통상적으로 iOS와 안드로이드를 조건문을 통해 권한 처리를 하게 되는데, 현재 프로젝트는 안드로이드 권한 요청 처리만 해 두기로 하였다.</p>
-<pre><code class="language-javascript">const [currentLocation, setCurrentLocation] = useState(null)
-
-useEffect(() => {
-  // 위치 업데이트 설정
-  const watchId = Geolocation.watchPosition(
-    (position) => {
-      const { latitude, longitude } = position.coords
-      // currentLocation에 위도, 경도 저장
-      setCurrentLocation({ latitude, longitude })
-    },
-    (error) => {
-      console.log(error)
-    },
-    {
-      enableHighAccuracy: true, // 배터리를 더 소모하여 보다 정확한 위치 추적
-      timeout: 20000,
-      maximumAge: 0, // 한 번 찾은 위치 정보를 해당 초만큼 캐싱
-      distanceFilter: 1,
-    }
-  )
-
-  // 컴포넌트 언마운트 시 위치 업데이트 중지
-  return () => {
-    Geolocation.clearWatch(watchId)
-  }
-}, [])
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> [</span><span class="mtk11">currentLocation</span><span class="mtk1">, </span><span class="mtk11">setCurrentLocation</span><span class="mtk1">] </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useState</span><span class="mtk1">(</span><span class="mtk7">null</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">useEffect</span><span class="mtk1">(() </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk5 mtki">// 위치 업데이트 설정</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">watchId</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">Geolocation</span><span class="mtk1">.</span><span class="mtk3">watchPosition</span><span class="mtk1">(</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    (</span><span class="mtk4 mtki">position</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">const</span><span class="mtk1"> { </span><span class="mtk11">latitude</span><span class="mtk1">, </span><span class="mtk11">longitude</span><span class="mtk1"> } </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">position</span><span class="mtk1">.</span><span class="mtk4">coords</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk5 mtki">// currentLocation에 위도, 경도 저장</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk3">setCurrentLocation</span><span class="mtk1">({ </span><span class="mtk4">latitude</span><span class="mtk1">, </span><span class="mtk4">longitude</span><span class="mtk1"> })</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    (</span><span class="mtk4 mtki">error</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk4">error</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">enableHighAccuracy</span><span class="mtk1">: </span><span class="mtk7">true</span><span class="mtk1">, </span><span class="mtk5 mtki">// 배터리를 더 소모하여 보다 정확한 위치 추적</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">timeout</span><span class="mtk1">: </span><span class="mtk7">20000</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">maximumAge</span><span class="mtk1">: </span><span class="mtk7">0</span><span class="mtk1">, </span><span class="mtk5 mtki">// 한 번 찾은 위치 정보를 해당 초만큼 캐싱</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">distanceFilter</span><span class="mtk1">: </span><span class="mtk7">1</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk5 mtki">// 컴포넌트 언마운트 시 위치 업데이트 중지</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">Geolocation</span><span class="mtk1">.</span><span class="mtk3">clearWatch</span><span class="mtk1">(</span><span class="mtk4">watchId</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}, [])</span></span></span></code></pre>
 <p>위치 좌표를 얻는 코드이다. <code>위도(latitude)</code>와 <code>경도(longitude)</code> 값을 받아 <code>currentLocation</code> 변수에 저장하였다. 이를 통해 좌표를 확인해 볼 수 있다.</p>
 <p>전체 코드와 출력 결과를 확인해 보면...</p>
-<pre><code class="language-javascript">import React, { useEffect, useState } from "react"
-import { View, Text, StyleSheet, PermissionsAndroid } from "react-native"
-import Geolocation from "react-native-geolocation-service"
-
-const App = () => {
-  const [currentLocation, setCurrentLocation] = useState(null)
-
-  useEffect(() => {
-    if (Platform.OS === "android") {
-      PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION
-      )
-    }
-  }, [])
-
-  useEffect(() => {
-    const watchId = Geolocation.watchPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords
-        setCurrentLocation({ latitude, longitude })
-      },
-      (error) => {
-        console.log(error)
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 20000,
-        maximumAge: 0,
-        distanceFilter: 1,
-      }
-    )
-
-    return () => {
-      Geolocation.clearWatch(watchId)
-    }
-  }, [])
-
-  return (
-    &#x3C;View>
-      &#x3C;Text style={styles.title}>Geolocation Tutorial&#x3C;/Text>
-      {currentLocation ? (
-        &#x3C;Text style={styles.title}>
-          {currentLocation.latitude} / {currentLocation.longitude}
-        &#x3C;/Text>
-      ) : (
-        &#x3C;Text style={styles.title}>location undefined&#x3C;/Text>
-      )}
-    &#x3C;/View>
-  )
-}
-
-const styles = StyleSheet.create({
-  title: {
-    textAlign: "center",
-    fontSize: 25,
-    margin: 15,
-    color: "black",
-    fontWeight: "600",
-  },
-})
-
-export default App
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">React</span><span class="mtk1">, { </span><span class="mtk4">useEffect</span><span class="mtk1">, </span><span class="mtk4">useState</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">View</span><span class="mtk1">, </span><span class="mtk4">Text</span><span class="mtk1">, </span><span class="mtk4">StyleSheet</span><span class="mtk1">, </span><span class="mtk4">PermissionsAndroid</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">Geolocation</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-native-geolocation-service&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk3">App</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">const</span><span class="mtk1"> [</span><span class="mtk11">currentLocation</span><span class="mtk1">, </span><span class="mtk11">setCurrentLocation</span><span class="mtk1">] </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk3">useState</span><span class="mtk1">(</span><span class="mtk7">null</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk3">useEffect</span><span class="mtk1">(() </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">if</span><span class="mtk1"> (</span><span class="mtk11">Platform</span><span class="mtk1">.</span><span class="mtk4">OS</span><span class="mtk1"> </span><span class="mtk8">===</span><span class="mtk1"> </span><span class="mtk6">&quot;android&quot;</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">PermissionsAndroid</span><span class="mtk1">.</span><span class="mtk3">request</span><span class="mtk1">(</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">PermissionsAndroid</span><span class="mtk1">.</span><span class="mtk11">PERMISSIONS</span><span class="mtk1">.</span><span class="mtk4">ACCESS_FINE_LOCATION</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }, [])</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk3">useEffect</span><span class="mtk1">(() </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">watchId</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">Geolocation</span><span class="mtk1">.</span><span class="mtk3">watchPosition</span><span class="mtk1">(</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      (</span><span class="mtk4 mtki">position</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk9">const</span><span class="mtk1"> { </span><span class="mtk11">latitude</span><span class="mtk1">, </span><span class="mtk11">longitude</span><span class="mtk1"> } </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">position</span><span class="mtk1">.</span><span class="mtk4">coords</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk3">setCurrentLocation</span><span class="mtk1">({ </span><span class="mtk4">latitude</span><span class="mtk1">, </span><span class="mtk4">longitude</span><span class="mtk1"> })</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      (</span><span class="mtk4 mtki">error</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">console</span><span class="mtk1">.</span><span class="mtk3">log</span><span class="mtk1">(</span><span class="mtk4">error</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">enableHighAccuracy</span><span class="mtk1">: </span><span class="mtk7">true</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">timeout</span><span class="mtk1">: </span><span class="mtk7">20000</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">maximumAge</span><span class="mtk1">: </span><span class="mtk7">0</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">distanceFilter</span><span class="mtk1">: </span><span class="mtk7">1</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">return</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">Geolocation</span><span class="mtk1">.</span><span class="mtk3">clearWatch</span><span class="mtk1">(</span><span class="mtk4">watchId</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }, [])</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk11">Text</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">title</span><span class="mtk9">}</span><span class="mtk1">&gt;Geolocation Tutorial&lt;/</span><span class="mtk11">Text</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">{</span><span class="mtk4">currentLocation</span><span class="mtk1"> </span><span class="mtk9">?</span><span class="mtk1"> (</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &lt;</span><span class="mtk11">Text</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">title</span><span class="mtk9">}</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk9">{</span><span class="mtk11">currentLocation</span><span class="mtk1">.</span><span class="mtk4">latitude</span><span class="mtk9">}</span><span class="mtk1"> / </span><span class="mtk9">{</span><span class="mtk11">currentLocation</span><span class="mtk1">.</span><span class="mtk4">longitude</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &lt;/</span><span class="mtk11">Text</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      ) </span><span class="mtk9">:</span><span class="mtk1"> (</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &lt;</span><span class="mtk11">Text</span><span class="mtk1"> </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk11">styles</span><span class="mtk1">.</span><span class="mtk4">title</span><span class="mtk9">}</span><span class="mtk1">&gt;location undefined&lt;/</span><span class="mtk11">Text</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      )</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk11">View</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">styles</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">StyleSheet</span><span class="mtk1">.</span><span class="mtk3">create</span><span class="mtk1">({</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">title</span><span class="mtk1">: {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">textAlign</span><span class="mtk1">: </span><span class="mtk6">&quot;center&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontSize</span><span class="mtk1">: </span><span class="mtk7">25</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">margin</span><span class="mtk1">: </span><span class="mtk7">15</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">color</span><span class="mtk1">: </span><span class="mtk6">&quot;black&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">fontWeight</span><span class="mtk1">: </span><span class="mtk6">&quot;600&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  },</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">})</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
 <table>
-    <tr>
+    <tbody><tr>
         <td>
-            <img alt='geo3' src='https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo3.png'>
+            <img alt="geo3" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo3.png">
         </td>
         <td>
-            <img alt='geo4' src='https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo4.png'>
+            <img alt="geo4" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo4.png">
         </td>
     </tr>
-</table>
+</tbody></table>
 <p>이렇게 위치 정보의 접근하는 메시지가 뜨고, 동의하면 좌표 값이 정상적으로 출력된다.</p>
 <p>그런데 실제 모바일 디바이스에서 실행한 것도 아니고 에뮬레이터에 표시된 <code>37.4219983, -122.084</code> 라는 좌표는 뭘까? 이 좌표를 한번 구글 맵에 검색해 보았다.</p>
-<img alt='geo5' src='https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo5.png'>
+<img alt="geo5" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/231018/geo5.png">
 <p>이렇듯 PC 개발 환경에서 위치 정보를 받아 오면 default로 구글 본사의 위치가 표시되는 것을 볼 수 있다.</p>
 <p>APK를 생성하여 모바일 디바이스에서 앱을 실행해 보면 현재 자신이 위치에 있는 좌표 값이 나오는 것을 확인해 볼 수 있을 것이다. APK 생성 방법은 아래 포스트를 참고하였다.</p>
 <p><a href="https://ssilook.tistory.com/entry/React-Native-RN-Android-Studio%EB%A1%9C-APK-%EC%B6%94%EC%B6%9C%ED%95%98%EA%B8%B0" target="_blank" rel="noopener noreferrer">RN - APK 추출하기 1편(Android Studio로 APK 추출하기)</a></p>
 <hr>
-<h2>Reference</h2>
+<h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <p><a href="https://www.npmjs.com/package/react-native-geolocation-service" target="_blank" rel="noopener noreferrer">react-native-geolocation-service - npm</a></p>
 <p><a href="https://velog.io/@flowersayo/React-NativeExpo%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-GPS-%EC%9C%84%EC%B9%98%EC%B6%94%EC%A0%81-%EB%9F%AC%EB%8B%9D-%ED%8A%B8%EB%9E%98%ED%82%B9-%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0" target="_blank" rel="noopener noreferrer">React Native(Expo)를 이용한 GPS 위치추적 - 러닝 트래킹 앱 만들기</a></p>
 <p><a href="https://www.scaler.com/topics/react-native-geolocation-service/" target="_blank" rel="noopener noreferrer">React Native Geolocation Service</a></p>
 <p><a href="https://agilog.tistory.com/2" target="_blank" rel="noopener noreferrer">리액트 네이티브 현재 위치 정보 가져오기, Getting current location with a react native geolocation service</a></p>
 <p><a href="https://velog.io/@eunddodi/ReactNative%EB%A1%9C-%EB%9F%AC%EB%8B%9D-%EC%96%B4%ED%94%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0-Geolocation%EC%9C%BC%EB%A1%9C-%EC%82%AC%EC%9A%A9%EC%9E%90-%EB%9F%AC%EB%8B%9D-%ED%8A%B8%EB%9E%98%ED%82%B9%ED%95%98%EA%B8%B0" target="_blank" rel="noopener noreferrer">ReactNative로 러닝 어플 만들기 - Geolocation으로 사용자 러닝 트래킹하기</a></p>
-<p><a href="https://ssilook.tistory.com/entry/React-Native-RN-Android-Studio%EB%A1%9C-APK-%EC%B6%94%EC%B6%9C%ED%95%98%EA%B8%B0" target="_blank" rel="noopener noreferrer">RN - APK 추출하기 1편(Android Studio로 APK 추출하기)</a></p></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1pgmiy6">.css-1pgmiy6{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="css-1pgmiy6"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 e1yummiu0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="6cgvfx">.css-6cgvfx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:left;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-left-width:4px;border-color:#404040;}.css-6cgvfx:hover{background-color:#DDD;}</style><a rel="prev" class="css-6cgvfx" href="/Java/230925/"><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></div><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="kk4m4x">.css-kk4m4x{color:#1D1D1D;}</style><p class="css-kk4m4x">이전 포스트</p><p>Java Basic</p></div></a></div><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="1qhu0pg">.css-1qhu0pg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-right-width:4px;border-color:#404040;}.css-1qhu0pg:hover{background-color:#DDD;}</style><a rel="next" class="css-1qhu0pg" href="/Algorithm/240117/"><div class="css-v38or"><p class="css-kk4m4x">다음 포스트</p><p>최적의 여행 경로를 찾기 위한 최근접 이웃 알고리즘 솔루션</p></div><div class="css-19o7xeo"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e7xb9g90"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e7xb9g91"><style data-emotion-css="lg558f">.css-lg558f{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(42,67,101,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-lg558f{margin-bottom:1rem;}}</style><div class="css-lg558f gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAB5y57T1wKEB//xAAWEAEBAQAAAAAAAAAAAAAAAAADIAH/2gAIAQEAAQUChF1J/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAQEBAAAAAAAAAAAAAAAAASARIf/aAAgBAQAGPwKDQ5P/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQIFFx/9oACAEBAAE/IdjEZfcPHVQnH//aAAwDAQACAAMAAAAQ/wDovv/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAAICAgMAAAAAAAAAAAAAAAERABAxQSFRcf/aAAgBAQABPxCIjO64sIWsDAUux4DryzX/2Q==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
+<p><a href="https://ssilook.tistory.com/entry/React-Native-RN-Android-Studio%EB%A1%9C-APK-%EC%B6%94%EC%B6%9C%ED%95%98%EA%B8%B0" target="_blank" rel="noopener noreferrer">RN - APK 추출하기 1편(Android Studio로 APK 추출하기)</a></p>
+<style class="grvsc-styles">
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line > * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: ' ';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .mtki { font-style: italic; }
+  .one-dark-pro .mtk5 { color: #7F848E; }
+  .one-dark-pro .mtk1 { color: #ABB2BF; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk6 { color: #98C379; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .mtk11 { color: #E5C07B; }
+  .one-dark-pro .mtk7 { color: #D19A66; }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+</style></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1pgmiy6">.css-1pgmiy6{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="css-1pgmiy6"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 e1yummiu0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="6cgvfx">.css-6cgvfx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:left;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-left-width:4px;border-color:#404040;}.css-6cgvfx:hover{background-color:#DDD;}</style><a rel="prev" class="css-6cgvfx" href="/Java/230925/"><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></div><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="kk4m4x">.css-kk4m4x{color:#1D1D1D;}</style><p class="css-kk4m4x">이전 포스트</p><p>Java Basic</p></div></a></div><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="1qhu0pg">.css-1qhu0pg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-right-width:4px;border-color:#404040;}.css-1qhu0pg:hover{background-color:#DDD;}</style><a rel="next" class="css-1qhu0pg" href="/Algorithm/240117/"><div class="css-v38or"><p class="css-kk4m4x">다음 포스트</p><p>최적의 여행 경로를 찾기 위한 최근접 이웃 알고리즘 솔루션</p></div><div class="css-19o7xeo"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e7xb9g90"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e7xb9g91"><style data-emotion-css="lg558f">.css-lg558f{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(42,67,101,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-lg558f{margin-bottom:1rem;}}</style><div class="css-lg558f gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAB5y57T1wKEB//xAAWEAEBAQAAAAAAAAAAAAAAAAADIAH/2gAIAQEAAQUChF1J/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAQEBAAAAAAAAAAAAAAAAASARIf/aAAgBAQAGPwKDQ5P/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQIFFx/9oACAEBAAE/IdjEZfcPHVQnH//aAAwDAQACAAMAAAAQ/wDovv/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAAICAgMAAAAAAAAAAAAAAAERABAxQSFRcf/aAAgBAQABPxCIjO64sIWsDAUux4DryzX/2Q==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/cc017/profile.jpg 1.5x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/0c30b/profile.jpg 2x" /><img loading="lazy" width="128" height="128" srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/cc017/profile.jpg 1.5x,

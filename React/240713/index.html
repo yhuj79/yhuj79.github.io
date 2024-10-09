@@ -61,7 +61,7 @@
 </ul></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="by4vme">.css-by4vme{padding:0.3rem;}</style><img src="/static/React-20530fa5de330efbdd54919e30ef8ec1.png" alt="React" class="css-by4vme"/><div><style data-emotion-css="jpq9fv">.css-jpq9fv{font-size:1rem;word-break:break-word;}.css-jpq9fv h1 > a > svg,.css-jpq9fv h2 > a > svg,.css-jpq9fv h3 > a > svg,.css-jpq9fv h4 > a > svg,.css-jpq9fv h5 > a > svg,.css-jpq9fv h6 > a > svg{fill:#000;}.css-jpq9fv h1,.css-jpq9fv h2{font-size:1.25rem;font-weight:600;margin-top:1.5rem;margin-bottom:1.5rem;}.css-jpq9fv h3,.css-jpq9fv h4,.css-jpq9fv h5,.css-jpq9fv h6{font-size:1.125rem;margin-top:1.5rem;margin-bottom:1.5rem;font-weight:600;}@media (min-width:640px){.css-jpq9fv h1,.css-jpq9fv h2{font-size:1.5rem;}.css-jpq9fv h3,.css-jpq9fv h4,.css-jpq9fv h5,.css-jpq9fv h6{font-size:1.25rem;}}.css-jpq9fv a{color:#0042ED;}.css-jpq9fv a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-jpq9fv p{margin:0.3rem;margin-top:0.75rem;margin-bottom:0.75rem;}.css-jpq9fv strong{color:#000;}.css-jpq9fv ul,.css-jpq9fv ol{margin:0.3rem;margin-left:2rem;}.css-jpq9fv li > p,.css-jpq9fv li > ul,.css-jpq9fv li > ol{margin-bottom:0;}.css-jpq9fv ol{list-style-type:decimal;}.css-jpq9fv ul{list-style-type:disc;}.css-jpq9fv blockquote{padding:0.5rem;background-color:#fff;margin:0.3rem;margin-top:0.5rem;margin-bottom:0.5rem;border-left-width:4px;border-color:#404040;}.css-jpq9fv blockquote > p{margin:0.5rem;}.css-jpq9fv blockquote > h1,.css-jpq9fv blockquote > h2,.css-jpq9fv blockquote > h3,.css-jpq9fv blockquote > h4,.css-jpq9fv blockquote > h5{margin-top:0.5rem;margin-bottom:0.5rem;}.css-jpq9fv td,.css-jpq9fv th{padding:0;}.css-jpq9fv tr:nth-of-type(even){background-color:#fff;}.css-jpq9fv th{background-color:#fff;}.css-jpq9fv table{margin-bottom:1.5rem;display:block;max-width:-webkit-fit-content;max-width:-moz-fit-content;max-width:fit-content;margin:0 auto;overflow-x:auto;white-space:nowrap;}.css-jpq9fv p > code,.css-jpq9fv li > code{padding-top:0.1rem;padding-bottom:0.1rem;padding-right:0.25rem;padding-left:0.25rem;border-radius:0.25rem;color:#1D1D1D;background-color:#fff;white-space:pre-line;}.css-jpq9fv pre.grvsc-container{margin-top:24px;margin-bottom:24px;}.css-jpq9fv hr{margin-top:24px;margin-bottom:24px;height:1px;border:none;background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="markdown css-jpq9fv"><blockquote>
 <p>360도 회전하는 이미지를 볼 수 있고, 더 나아가 드래그 이벤트를 통해 그 물체를 조작해 볼 수 있는 기능은 다양한 웹사이트에서 사용되고 있다. 주로 자동차, 신발, 시계 등의 상품을 관찰할 수 있게 서비스하는 경우가 많다. 이 포스트는 360 뷰어를 구현할 수 있는 다양한 방법 중 react-360-view 라이브러리를 통해 구현하는 법과 오류 방지 팁, 한계점에 대해 다룬다.</p>
 </blockquote>
-<h2>react-360-view</h2>
+<h2 id="react-360-view" style="position:relative;"><a href="#react-360-view" aria-label="react 360 view permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>react-360-view</h2>
 <div style="display: flex; justify-content: space-between;">
     <img alt="360viewer1" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/240713/360viewer1.gif" width="49%">
     <img alt="360viewer2" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/240713/360viewer2.gif" width="49%">
@@ -110,46 +110,42 @@
 <p>라이브러리를 사용하지 않고 드래그 이벤트 처리를 통해 마우스 이동 방향에 따라 이미지 값을 바꾸어 가는 방식으로 개발을 할 수도 있지만, <code>react-360-view</code> 라이브러리를 사용하면 복잡한 코드를 작성하지 않고 간단하게 구현해낼 수 있다. (그만큼 존재하는 단점에 대해서는 포스트 뒷 부분에)</p>
 <img alt="img-list" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/240713/img-list.png" width="30%">
 <p>각도 변화에 따른 여러 이미지가 준비되어 있어야 한다. 구현에는 GitHub에 업로드한 차량 이미지를 사용해 보았다.</p>
-<pre><code class="language-bash">$ npx create-react-app react360view
-$ cd react360view
-$ npm start
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="bash" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ npx create-react-app react360view</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ </span><span class="mtk8">cd</span><span class="mtk1"> react360view</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ npm start</span></span></span></code></pre>
 <p>먼저 React를 설치한다.</p>
-<pre><code class="language-bash">$ npm install react-360-view
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="bash" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">$ npm install react-360-view</span></span></span></code></pre>
 <p>react-360-view 라이브러리를 설치한다.</p>
-<pre><code class="language-javascript">// App.js
-import ThreeSixty from "react-360-view"
-import "./App.css"
-
-function App() {
-  return (
-    &#x3C;div>
-      &#x3C;div
-        style={{
-          width: "40%",
-          alignItems: "center",
-          border: "2px solid black",
-          margin: "30px auto",
-          position: "relative",
-        }}
-      >
-        &#x3C;ThreeSixty
-          amount={36}
-          imagePath="https://raw.githubusercontent.com/yhuj79/blog-assets/main/240713/car"
-          fileName="car-{index}.webp"
-          spinReverse
-        />
-      &#x3C;/div>
-    &#x3C;/div>
-  )
-}
-
-export default App
-</code></pre>
-<pre><code class="language-css">/* App.css */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css");
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">// App.js</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">ThreeSixty</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-360-view&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk6">&quot;./App.css&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">function</span><span class="mtk1"> </span><span class="mtk3">App</span><span class="mtk1">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk4">div</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk4">div</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">width</span><span class="mtk1">: </span><span class="mtk6">&quot;40%&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">alignItems</span><span class="mtk1">: </span><span class="mtk6">&quot;center&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">border</span><span class="mtk1">: </span><span class="mtk6">&quot;2px solid black&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">margin</span><span class="mtk1">: </span><span class="mtk6">&quot;30px auto&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">position</span><span class="mtk1">: </span><span class="mtk6">&quot;relative&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        }</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &lt;</span><span class="mtk11">ThreeSixty</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk7 mtki">amount</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk7">36</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk7 mtki">imagePath</span><span class="mtk8">=</span><span class="mtk6">&quot;https://raw.githubusercontent.com/yhuj79/blog-assets/main/240713/car&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk7 mtki">fileName</span><span class="mtk8">=</span><span class="mtk6">&quot;car-{index}.webp&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk7 mtki">spinReverse</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        /&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;/</span><span class="mtk4">div</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk4">div</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="css" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk5 mtki">/* App.css */</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">@import</span><span class="mtk1"> </span><span class="mtk8">url</span><span class="mtk1">(</span><span class="mtk6">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css&quot;</span><span class="mtk1">);</span></span></span></code></pre>
 <p>App.js와 App.css의 내용을 위와 같이 수정했다. 여기서 css는 라이브러리의 아이콘이 fontawesome을 사용하기 때문에 적용되었다.</p>
 <p>ThreeSixty 속성을 살펴보면 amount가 있는데, 뷰어에 적용될 총 이미지 수를 넣으면 된다. 이미지 수가 많아질수록 미세한 각도까지 표현되면서 더 부드러워질 것이다. imagePath에는 도메인을, fileName에는 이미지 이름과 형식을 적었다. 이 부분이 중요한데, {index}를 통해 이미지 순서에 따라 구현이 된다. 사용한 이미지가 car-1, car-2, car-3 ... 의 패턴이기 때문에 car-{index}.webp 로 작성하였다.</p>
 <img alt="360viewer3" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/240713/360viewer3.gif">
@@ -195,7 +191,7 @@ export default App
 <img alt="360viewer4" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/240713/360viewer4.gif">
 <p>지구가 열심히 돌아간다.</p>
 <p>이 이상으로는 GIF 프레임의 한계 때문에 느낌이 전달되지 않기 때문에 react-360-view에 대해 궁금하거나 관련 기능을 필요로 하고 있다면, 이미지를 구해 실제로 테스트를 해보는 것을 추천한다.</p>
-<h2>스크롤 시 오류 방지</h2>
+<h2 id="스크롤-시-오류-방지" style="position:relative;"><a href="#%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%8B%9C-%EC%98%A4%EB%A5%98-%EB%B0%A9%EC%A7%80" aria-label="스크롤 시 오류 방지 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>스크롤 시 오류 방지</h2>
 <p>react-360-view 라이브러리는 회전 뿐만 아니라 이미지의 확대, 축소 기능도 제공한다. 위에서 다룬 지구를 예로 들자면, Google Earth만큼 좋은 화질은 아니겠지만 원하는 부분을 확대해볼 수 있다.</p>
 <div style="display: flex; justify-content: space-between;">
     <img alt="360viewer-zoom1" src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/240713/360viewer-zoom1.gif" width="49%">
@@ -203,57 +199,56 @@ export default App
 </div>
 <p>하지만 프로젝트에 적용할 때 한 가지 문제가 발생한다. 이미지 위에 마우스가 위치할 때 확대 및 축소가 발생할 텐데, 웹페이지의 다른 부분에서부터 스크롤을 진행하다가 뷰어 위에 마우스가 위치하게 된다면 의도치 않게 확대, 축소가 작동할 가능성이 있다.</p>
 <p>확대와 축소는 이미지 아래 툴 박스를 이용하면 충분하다. 그래서 오류 방지를 위해 wheel event 발생을 차단하는 코드를 추가해 보았다.</p>
-<pre><code class="language-javascript">import { useEffect } from "react"
-import ThreeSixty from "react-360-view"
-import "./App.css"
-
-function App() {
-  // 스크롤 시 의도치 않게 특정 요소가 확대, 축소되는 현상 방지
-  useEffect(() => {
-    const element = document.getElementById("container-viewer")
-
-    if (element) {
-      const handleWheel = (event) => {
-        event.stopPropagation()
-      }
-
-      // wheel event가 다른 요소로 전파되기 전에 stopPropagation에 의해 중단
-      element.addEventListener("wheel", handleWheel)
-
-      // 언마운트 될 때, wheel event listener 제거
-      return () => {
-        element.removeEventListener("wheel", handleWheel)
-      }
-    }
-  }, [])
-
-  return (
-    &#x3C;div>
-      &#x3C;div
-        id="container-viewer"
-        style={{
-          width: "40%",
-          alignItems: "center",
-          border: "2px solid black",
-          margin: "30px auto",
-          position: "relative",
-        }}
-      >
-        &#x3C;ThreeSixty
-          amount={34}
-          imagePath="https://raw.githubusercontent.com/yhuj79/blog-assets/main/240713/earth"
-          fileName="earth-{index}.png"
-          spinReverse
-        />
-      &#x3C;/div>
-    &#x3C;/div>
-  )
-}
-
-export default App
-</code></pre>
+<pre class="grvsc-container one-dark-pro" data-language="javascript" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> { </span><span class="mtk4">useEffect</span><span class="mtk1"> } </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk4">ThreeSixty</span><span class="mtk1"> </span><span class="mtk9">from</span><span class="mtk1"> </span><span class="mtk6">&quot;react-360-view&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">import</span><span class="mtk1"> </span><span class="mtk6">&quot;./App.css&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">function</span><span class="mtk1"> </span><span class="mtk3">App</span><span class="mtk1">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk5 mtki">// 스크롤 시 의도치 않게 특정 요소가 확대, 축소되는 현상 방지</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk3">useEffect</span><span class="mtk1">(() </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk11">element</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> </span><span class="mtk11">document</span><span class="mtk1">.</span><span class="mtk3">getElementById</span><span class="mtk1">(</span><span class="mtk6">&quot;container-viewer&quot;</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk9">if</span><span class="mtk1"> (</span><span class="mtk4">element</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">const</span><span class="mtk1"> </span><span class="mtk3">handleWheel</span><span class="mtk1"> </span><span class="mtk8">=</span><span class="mtk1"> (</span><span class="mtk4 mtki">event</span><span class="mtk1">) </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">event</span><span class="mtk1">.</span><span class="mtk3">stopPropagation</span><span class="mtk1">()</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk5 mtki">// wheel event가 다른 요소로 전파되기 전에 stopPropagation에 의해 중단</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk11">element</span><span class="mtk1">.</span><span class="mtk3">addEventListener</span><span class="mtk1">(</span><span class="mtk6">&quot;wheel&quot;</span><span class="mtk1">, </span><span class="mtk4">handleWheel</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk5 mtki">// 언마운트 될 때, wheel event listener 제거</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk9">return</span><span class="mtk1"> () </span><span class="mtk9">=&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">element</span><span class="mtk1">.</span><span class="mtk3">removeEventListener</span><span class="mtk1">(</span><span class="mtk6">&quot;wheel&quot;</span><span class="mtk1">, </span><span class="mtk4">handleWheel</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  }, [])</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk9">return</span><span class="mtk1"> (</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;</span><span class="mtk4">div</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;</span><span class="mtk4">div</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">id</span><span class="mtk8">=</span><span class="mtk6">&quot;container-viewer&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk7 mtki">style</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">width</span><span class="mtk1">: </span><span class="mtk6">&quot;40%&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">alignItems</span><span class="mtk1">: </span><span class="mtk6">&quot;center&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">border</span><span class="mtk1">: </span><span class="mtk6">&quot;2px solid black&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">margin</span><span class="mtk1">: </span><span class="mtk6">&quot;30px auto&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk4">position</span><span class="mtk1">: </span><span class="mtk6">&quot;relative&quot;</span><span class="mtk1">,</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        }</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        &lt;</span><span class="mtk11">ThreeSixty</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk7 mtki">amount</span><span class="mtk8">=</span><span class="mtk9">{</span><span class="mtk7">34</span><span class="mtk9">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk7 mtki">imagePath</span><span class="mtk8">=</span><span class="mtk6">&quot;https://raw.githubusercontent.com/yhuj79/blog-assets/main/240713/earth&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk7 mtki">fileName</span><span class="mtk8">=</span><span class="mtk6">&quot;earth-{index}.png&quot;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">          </span><span class="mtk7 mtki">spinReverse</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        /&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">      &lt;/</span><span class="mtk4">div</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    &lt;/</span><span class="mtk4">div</span><span class="mtk1">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  )</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk9">export</span><span class="mtk1"> </span><span class="mtk9">default</span><span class="mtk1"> </span><span class="mtk4">App</span></span></span></code></pre>
 <p>div에 container-viewer라는 id를 부여하여 관리한다. 이벤트 리스너를 통해 wheel event를 제어함으로써 해당 컨테이너는 스크롤이 더이상 작동하지 않게 되었다.</p>
-<h2>한계점</h2>
+<h2 id="한계점" style="position:relative;"><a href="#%ED%95%9C%EA%B3%84%EC%A0%90" aria-label="한계점 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>한계점</h2>
 <p>지금까지 다룬 부분에 대해서만 다룰 것이라면, 이 라이브러리는 기능적으로 충분하다.</p>
 <p>하지만 좀 더 깊이 다루고자 한다면 막히는 부분이 생긴다. 예시를 몇 개 들어보자면...</p>
 <ol>
@@ -262,12 +257,120 @@ export default App
 </ol>
 <p>1번 예시처럼 로딩 문제가 발생할 경우 <a href="https://yhuj79.github.io/React/240608" target="_blank" rel="noopener noreferrer">Pre Loading</a> 과 같은 이미지 처리가 필요할 것이고, 2번의 경우 직접 드래그 이벤트를 작성하면서 뷰어를 처음부터 개발해 나가야 할 것이다. Vanilla Javascript로 코드를 작성한다면 throttle 도달 수치를 조정하여 드래그 감도를 조절하고, 자동차의 색상이나 타이어를 교체할 수 있게 추가적인 커스터마이징도 충분히 가능할 것이다. 대신 그만큼 필요한 이미지의 수 또한 늘어날 것이다.</p>
 <hr>
-<h2>Reference</h2>
+<h2 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
 <p><a href="https://www.npmjs.com/package/react-360-view" target="_blank" rel="noopener noreferrer">react-360-view - npm</a></p>
 <p><a href="https://www.youtube.com/watch?v=CmxVQ7XV9WE&#x26;ab_channel=CodeWithYd" target="_blank" rel="noopener noreferrer">360 degrees Product Viewer in React js - Code With Yd</a></p>
 <p><a href="https://studio3.com/gifs-and-spins/" target="_blank" rel="noopener noreferrer">GIFs and Spins: Making your Product Come to Life</a></p>
 <p><a href="https://www.mercedes-benz.com.au/passengercars/configurator.html?group=all&#x26;subgroup=see-all&#x26;view=BODYTYPE" target="_blank" rel="noopener noreferrer">Configurator | Mercedes-Benz</a></p>
-<p><a href="https://www.google.com/intl/ko_ALL/earth" target="_blank" rel="noopener noreferrer">Google Earth</a></p></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1pgmiy6">.css-1pgmiy6{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="css-1pgmiy6"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 e1yummiu0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="6cgvfx">.css-6cgvfx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:left;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-left-width:4px;border-color:#404040;}.css-6cgvfx:hover{background-color:#DDD;}</style><a rel="prev" class="css-6cgvfx" href="/Algorithm/240624/"><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></div><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="kk4m4x">.css-kk4m4x{color:#1D1D1D;}</style><p class="css-kk4m4x">이전 포스트</p><p>NP-난해와 NP-완전의 혼용</p></div></a></div><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="1qhu0pg">.css-1qhu0pg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-right-width:4px;border-color:#404040;}.css-1qhu0pg:hover{background-color:#DDD;}</style><a rel="next" class="css-1qhu0pg" href="/React/240804/"><div class="css-v38or"><p class="css-kk4m4x">다음 포스트</p><p>react-device-detect로 기기별 최적화된 화면 만들기</p></div><div class="css-19o7xeo"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e7xb9g90"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e7xb9g91"><style data-emotion-css="lg558f">.css-lg558f{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(42,67,101,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-lg558f{margin-bottom:1rem;}}</style><div class="css-lg558f gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAB5y57T1wKEB//xAAWEAEBAQAAAAAAAAAAAAAAAAADIAH/2gAIAQEAAQUChF1J/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAQEBAAAAAAAAAAAAAAAAASARIf/aAAgBAQAGPwKDQ5P/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQIFFx/9oACAEBAAE/IdjEZfcPHVQnH//aAAwDAQACAAMAAAAQ/wDovv/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAAICAgMAAAAAAAAAAAAAAAERABAxQSFRcf/aAAgBAQABPxCIjO64sIWsDAUux4DryzX/2Q==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
+<p><a href="https://www.google.com/intl/ko_ALL/earth" target="_blank" rel="noopener noreferrer">Google Earth</a></p>
+<style class="grvsc-styles">
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line > * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: ' ';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .mtki { font-style: italic; }
+  .one-dark-pro .mtk1 { color: #ABB2BF; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .mtk5 { color: #7F848E; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk6 { color: #98C379; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk7 { color: #D19A66; }
+  .one-dark-pro .mtk11 { color: #E5C07B; }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+</style></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1pgmiy6">.css-1pgmiy6{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="css-1pgmiy6"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 e1yummiu0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="6cgvfx">.css-6cgvfx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:left;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-left-width:4px;border-color:#404040;}.css-6cgvfx:hover{background-color:#DDD;}</style><a rel="prev" class="css-6cgvfx" href="/Algorithm/240624/"><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></div><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="kk4m4x">.css-kk4m4x{color:#1D1D1D;}</style><p class="css-kk4m4x">이전 포스트</p><p>NP-난해와 NP-완전의 혼용</p></div></a></div><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="1qhu0pg">.css-1qhu0pg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-right-width:4px;border-color:#404040;}.css-1qhu0pg:hover{background-color:#DDD;}</style><a rel="next" class="css-1qhu0pg" href="/React/240804/"><div class="css-v38or"><p class="css-kk4m4x">다음 포스트</p><p>react-device-detect로 기기별 최적화된 화면 만들기</p></div><div class="css-19o7xeo"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e7xb9g90"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e7xb9g91"><style data-emotion-css="lg558f">.css-lg558f{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(42,67,101,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-lg558f{margin-bottom:1rem;}}</style><div class="css-lg558f gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAB5y57T1wKEB//xAAWEAEBAQAAAAAAAAAAAAAAAAADIAH/2gAIAQEAAQUChF1J/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAQEBAAAAAAAAAAAAAAAAASARIf/aAAgBAQAGPwKDQ5P/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQIFFx/9oACAEBAAE/IdjEZfcPHVQnH//aAAwDAQACAAMAAAAQ/wDovv/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAAICAgMAAAAAAAAAAAAAAAERABAxQSFRcf/aAAgBAQABPxCIjO64sIWsDAUux4DryzX/2Q==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/cc017/profile.jpg 1.5x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/0c30b/profile.jpg 2x" /><img loading="lazy" width="128" height="128" srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/cc017/profile.jpg 1.5x,
