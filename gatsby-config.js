@@ -54,6 +54,13 @@ module.exports = {
               elements: [`h1`, `h2`, `h3`, `h4`, `h5`, `h6`],
             },
           },
+          {
+            resolve: `gatsby-remark-external-links`,
+            options: {
+              target: `_blank`,
+              rel: `noopener noreferrer`,
+            },
+          },
           `gatsby-remark-emoji`,
         ],
       },
