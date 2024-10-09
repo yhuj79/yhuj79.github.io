@@ -103,60 +103,62 @@
 </ul></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="by4vme">.css-by4vme{padding:0.3rem;}</style><img src="/static/React-20530fa5de330efbdd54919e30ef8ec1.png" alt="React" class="css-by4vme"/><div><style data-emotion-css="jpq9fv">.css-jpq9fv{font-size:1rem;word-break:break-word;}.css-jpq9fv h1 > a > svg,.css-jpq9fv h2 > a > svg,.css-jpq9fv h3 > a > svg,.css-jpq9fv h4 > a > svg,.css-jpq9fv h5 > a > svg,.css-jpq9fv h6 > a > svg{fill:#000;}.css-jpq9fv h1,.css-jpq9fv h2{font-size:1.25rem;font-weight:600;margin-top:1.5rem;margin-bottom:1.5rem;}.css-jpq9fv h3,.css-jpq9fv h4,.css-jpq9fv h5,.css-jpq9fv h6{font-size:1.125rem;margin-top:1.5rem;margin-bottom:1.5rem;font-weight:600;}@media (min-width:640px){.css-jpq9fv h1,.css-jpq9fv h2{font-size:1.5rem;}.css-jpq9fv h3,.css-jpq9fv h4,.css-jpq9fv h5,.css-jpq9fv h6{font-size:1.25rem;}}.css-jpq9fv a{color:#0042ED;}.css-jpq9fv a:hover{-webkit-text-decoration:underline;text-decoration:underline;}.css-jpq9fv p{margin:0.3rem;margin-top:0.75rem;margin-bottom:0.75rem;}.css-jpq9fv strong{color:#000;}.css-jpq9fv ul,.css-jpq9fv ol{margin:0.3rem;margin-left:2rem;}.css-jpq9fv li > p,.css-jpq9fv li > ul,.css-jpq9fv li > ol{margin-bottom:0;}.css-jpq9fv ol{list-style-type:decimal;}.css-jpq9fv ul{list-style-type:disc;}.css-jpq9fv blockquote{padding:0.5rem;background-color:#fff;margin:0.3rem;margin-top:0.5rem;margin-bottom:0.5rem;border-left-width:4px;border-color:#404040;}.css-jpq9fv blockquote > p{margin:0.5rem;}.css-jpq9fv blockquote > h1,.css-jpq9fv blockquote > h2,.css-jpq9fv blockquote > h3,.css-jpq9fv blockquote > h4,.css-jpq9fv blockquote > h5{margin-top:0.5rem;margin-bottom:0.5rem;}.css-jpq9fv td,.css-jpq9fv th{padding:0;}.css-jpq9fv tr:nth-of-type(even){background-color:#fff;}.css-jpq9fv th{background-color:#fff;}.css-jpq9fv table{margin-bottom:1.5rem;display:block;max-width:-webkit-fit-content;max-width:-moz-fit-content;max-width:fit-content;margin:0 auto;overflow-x:auto;white-space:nowrap;}.css-jpq9fv p > code,.css-jpq9fv li > code{padding-top:0.1rem;padding-bottom:0.1rem;padding-right:0.25rem;padding-left:0.25rem;border-radius:0.25rem;color:#1D1D1D;background-color:#fff;white-space:pre-line;}.css-jpq9fv pre.grvsc-container{margin-top:24px;margin-bottom:24px;}.css-jpq9fv hr{margin-top:24px;margin-bottom:24px;height:1px;border:none;background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="markdown css-jpq9fv"><blockquote>
 <p>레포트 제출 용도로 작성했던 React Tutorial입니다. 이 글은 웹개발 및 React 입문자를 대상으로 작성되었습니다. 설치 및 실행, 기본 구조, 컴포넌트 및 Props 등에 대해 기초적인 부분만 다룹니다.</p>
 </blockquote>
-<h1 id="phase-1-react란" style="position:relative;"><a href="#phase-1-react%EB%9E%80" aria-label="phase 1 react란 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Phase 1. React란?</h1>
+<h1>Phase 1. React란?</h1>
 <p><strong>React</strong>는 Facebook에서 개발한 <strong>Javascript 기반 오픈 소스 라이브러리</strong>입니다. 최근 들어 웹개발 시장에서 Javascript가 지배적인 가운데, React는 Angular, Vue 등과 함께 제일 인기있는 프레임워크로 꼽힙니다. <strong>싱글 페이지 어플리케이션</strong>이라 불리는 React는 한 개의 Html을 사용하는데, 다른 페이지를 띄우고 싶을 경우 그 부분에 한해서만 내용을 교체하여 사용자에게 보여줍니다. 이러한 원리에 대해 먼저 간단하게 설명하겠습니다.</p>
-<h3 id="virtual-dom" style="position:relative;"><a href="#virtual-dom" aria-label="virtual dom permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Virtual DOM</h3>
+<h3>Virtual DOM</h3>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/dom.png" alt="dom" width="400">
 <p><strong>DOM</strong>은 Html 문서 구조를 트리 형태의 객체로 표현한 것으로, 웹 브라우저는 DOM을 활용하여 객체에 Css나 Javascript를 적용하게 됩니다. DOM은 동적으로 여러 페이지를 오가게 될 경우 단점이 드러납니다. 페이지가 변화할 때마다 DOM 연산을 계속 반복해야 하는 것입니다. 이는 큰 에너지가 들어가는 작업은 아니지만 페이지 렌더링이 누적되면 될 수록 무시할 수 없는 수치입니다. 이러한 DOM 생성을 최소한으로 만들기 위해 <strong>Virtual DOM</strong>이 등장했습니다.</p>
 <p>이름에서 알 수 있듯이 <strong>Virtual DOM은 DOM의 추상화 버전</strong>입니다. React는 <strong>가상 DOM을 생성하여 기존 DOM에서 앞으로 렌더링 해야할 부분의 DOM만 변경</strong>하는 과정을 거칩니다. 이러한 작업을 수행함으로써 불필요한 연산이 대폭 감소됨은 물론, 사용자에게 기존의 DOM 연산 방식보다 훨씬 쾌적한 경험을 제공할 수 있습니다.</p>
-<h3 id="component" style="position:relative;"><a href="#component" aria-label="component permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Component</h3>
+<h3>Component</h3>
 <p>컴포넌트의 상태값이 변경됨에 따라 새로운 가상 DOM 객체를 만들고, 이전 DOM 객체와 비교하여 UI를 업데이트합니다. React의 꽃이라 할 수 있는 <strong>컴포넌트(Component)</strong>는 <strong>데이터(props)를 입력받아 상태값에 따라 DOM을 출력</strong>합니다. 좀 더 간단하게 이야기하면 React는 여러 컴포넌트 덩어리로 이루어져 있고, 이 컴포넌트들이 특정 상태에 따라 반응하며 페이지 내용의 교체가 일어납니다. 페이지 변경 과정에서 변동 사항이 없는 컴포넌트는 그대로 유지됩니다.</p>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/htmlstructure.png" alt="htmlstructure" width="300">
 <p>위 사진은 Html 시멘틱 태그 구조입니다. 여기서는 1~6번이 각각 컴포넌트라 생각해 봅시다. 보통 React 프로젝트를 위의 구조처럼 설계하면 Header.js, Nav.js, Section.js ... 와 같은 개별 컴포넌트 파일로 작성합니다. 컴포넌트는 기본적으로 다음과 같은 형태를 띠게 됩니다.</p>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/component.png" alt="component" width="400">
 <p>만약 사용자가 Section 1번 페이지를 보던 중 Section 2번으로 넘어가고 싶을 경우, Header, Footer 등의 요소는 변경될 필요가 없습니다. 기존의 DOM에서는 Section 2번 페이지로 넘어가기 위해 모든 DOM을 렌더링해야 했지만, React에서는 그렇지 않아도 됩니다. Section.js만 교체가 일어나고 Header.js, Footer.js 등의 컴포넌트는 유지되는 것입니다.</p>
-<h1 id="phase-2-react-설치" style="position:relative;"><a href="#phase-2-react-%EC%84%A4%EC%B9%98" aria-label="phase 2 react 설치 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Phase 2. React 설치</h1>
+<h1>Phase 2. React 설치</h1>
 <p>React를 설치하기 위해서는 <strong>Node.js</strong>가 설치되어 있어야 합니다. Node.js는 <strong>V8 엔진으로 빌드된 Javascript 런타임으로, 확장성 있는 어플리케이션 개발을 위해 고안된 플랫폼</strong>입니다.</p>
 <p><a href="https://nodejs.org/en" target="_blank">Node.js 설치가 필요하면 여기를 눌러 설치해주세요.</a></p>
 <p>설치가 완료되었으면 CLI에서 <code>node -v</code>, <code>npm -v</code> 명령어를 통해 설치가 잘 되었는지 확인합니다.</p>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/nodev.png" alt="nodev" width="400">
 <p>이제 두 가지 방법이 있습니다. <strong>Create React App을 설치하고 그 명령어를 통해 React를 생성</strong>하거나, <strong>NPX(Node Package eXcute)를 통해 최신 버전의 React를 바로 설치</strong>할 수 있습니다.</p>
 <h3>🔹 npm install -g create-react-app / create-react-app 프로젝트명</h3>
-<pre class="grvsc-container one-dark-pro" data-language="" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">NPM(Node Package Manager)를 통해 Create React App을 설치</span></span>
-<span class="grvsc-line"><span class="grvsc-source">설치 후 create-react-app 프로젝트명을 통해 React App 생성</span></span>
-<span class="grvsc-line"><span class="grvsc-source">React 생성 시 추가 다운로드가 필요 없으나, 최신 버전이 나올 경우 재설치가 필요</span></span></code></pre>
+<pre><code>NPM(Node Package Manager)를 통해 Create React App을 설치
+설치 후 create-react-app 프로젝트명을 통해 React App 생성
+React 생성 시 추가 다운로드가 필요 없으나, 최신 버전이 나올 경우 재설치가 필요
+</code></pre>
 <h3>🔹 npx create-react-app 프로젝트명</h3>
-<pre class="grvsc-container one-dark-pro" data-language="" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">NPX(Node Package eXcute)를 통해 React App 생성</span></span>
-<span class="grvsc-line"><span class="grvsc-source">항상 최신 버전의 React를 생성 할 수 있지만, 매번 다운로드 시간이 필요</span></span></code></pre>
+<pre><code>NPX(Node Package eXcute)를 통해 React App 생성
+항상 최신 버전의 React를 생성 할 수 있지만, 매번 다운로드 시간이 필요
+</code></pre>
 <p><code>npx create-react-app 프로젝트명</code>으로 한번 설치해보도록 하겠습니다.</p>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactinstall1.png" alt="reactinstall1" width="600">
 <p>설치 디렉터리에서 <code>npm start</code>를 통해 앱을 실행할 수 있습니다. (yarn을 사용해도 상관없습니다.)</p>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactinstall2.png" alt="reactinstall2" width="600">
 <table>
-  <tbody><tr>
+  <tr>
     <td width="47%">
-        <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactinstall3.png" alt="reactinstall3">
+        <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactinstall3.png" alt="reactinstall3"/>
     </td>
     <td width="40%">
-        <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactinstall4.png" alt="reactinstall4">
+        <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactinstall4.png" alt="reactinstall4"/>
     </td>
   </tr>
-</tbody></table>
-<h1 id="phase-3-react의-구조" style="position:relative;"><a href="#phase-3-react%EC%9D%98-%EA%B5%AC%EC%A1%B0" aria-label="phase 3 react의 구조 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Phase 3. React의 구조</h1>
+</table>
+<h1>Phase 3. React의 구조</h1>
 <p>앞서 npm start를 통해 React 앱이 <code>http://localhost:3000</code>에서 실행되었습니다.</p>
 <p>어떻게 웹 페이지가 실행되었는지 React의 구조에 대해 살펴보겠습니다.</p>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactstructure.png" alt="reactstructure" width="200">
-<h3 id="1-node_modules" style="position:relative;"><a href="#1-node_modules" aria-label="1 node_modules permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1) node_modules</h3>
+<h3>1) node_modules</h3>
 <p><strong>설치된 모듈들이 위치하는 디렉터리</strong>입니다. React는 인기가 굉장히 많기 때문에 수많은 외부 라이브러리가 존재합니다. input, 캘린더, 날씨 위젯 등부터 퍼블리싱을 위한 UI 템플릿, 상태 관리 라이브러리 등 무수히 많습니다. 이러한 라이브러리를 설치하면 node_modules에 내장되게 됩니다.</p>
 <p>라이브러리와 관련해서 <strong>package.json</strong> 또한 약간의 이해가 필요합니다. 프로젝트 폴더 루트(/)에 위치해 있습니다.</p>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactpackagejson.png" alt="reactpackagejson" width="300">
 <p>라이브러리 모듈이 node_modules에 설치되면 package.json의 <strong>dependencies</strong>에 명시가 됩니다. <strong>외부 라이브러리의 의존성(dependency) 관리를 위한 명세</strong>를 한 것입니다. 이는 오픈 소스 패키지 생태계를 위해 수많은 라이브러리의 버전과 종류를 정리하기 위한 목적입니다. 또한 불상사로 인해 프로젝트 파일이 손상되었을 경우 package.json에 명시된 패키지를 install하여 라이브러리를 복구할 수 있습니다.</p>
-<h3 id="2-public" style="position:relative;"><a href="#2-public" aria-label="2 public permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2) public</h3>
+<h3>2) public</h3>
 <p><strong>favicon.ico</strong> : 웹 브라우저의 주소창에 표시되는 페이지를 대표하는 아이콘입니다.</p>
 <p><strong>manifest.json</strong> : 앱에 대한 정보가 포함된 json 파일입니다. 배경 및 테마 색상, 프로젝트명, favicon 정보 등을 담고 있습니다.</p>
 <p><strong>index.html</strong> : 가상 DOM을 위한 html 파일입니다. 아래에서 설명할 index.js에 대응됩니다. 따라서, 웹의 메인 페이지가 public 디렉터리에 포함되어 있는 구조입니다.</p>
 <table>
-  <tbody><tr>
+  <tr>
     <td width="70%">
         <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactroot.png" alt="reactroot">
     </td>
@@ -164,21 +166,21 @@
         <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactindexhtml.png" alt="reactindexhtml">
     </td>
   </tr>
-</tbody></table>
+</table>
 <p>위 사진을 보면 개발자 도구에서 확인한 root div와 index.html 파일이 어딘가 닮아있음을 알 수 있습니다.</p>
-<h3 id="3-src" style="position:relative;"><a href="#3-src" aria-label="3 src permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3) src</h3>
+<h3>3) src</h3>
 <p><strong>index.js</strong> : 메인 파일이라고 할 수 있습니다. Html Templete, Javascript Component를 렌더링합니다. App.js를 포함합니다.</p>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactindexjs.png" alt="reactindexjs" width="500">
 <p><strong>index.css</strong> : 전체 앱의 전역 스타일을 지정할 수 있습니다.</p>
 <p><strong>App.js</strong> : 컴포넌트를 정의한 jsx 형태의 파일입니다. 실제로 화면 상에 출력할 내용을 이 파일에서 편집합니다. 다음 챕터에서 본격적으로 다루도록 하겠습니다.</p>
 <p><strong>App.css</strong> : App.js의 Css 파일입니다.</p>
-<h1 id="phase-4-컴포넌트와-props" style="position:relative;"><a href="#phase-4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80-props" aria-label="phase 4 컴포넌트와 props permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Phase 4. 컴포넌트와 Props</h1>
+<h1>Phase 4. 컴포넌트와 Props</h1>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactappjs.png" alt="reactappjs" width="500">
 <p>App.js는 <strong>JSX</strong> 형식으로 이루어져 있습니다. React에서 UI를 구성할 때 사용하는 구문인 JSX는 기본적으로 return 문안에 html의 형태를 갖추고 있으며, Javascript의 모든 기능을 사용할 수 있습니다. 엄청 다양하지만, 기본적인 기능 몇개만 다뤄보겠습니다.</p>
-<h3 id="1-컴포넌트-활용" style="position:relative;"><a href="#1-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%ED%99%9C%EC%9A%A9" aria-label="1 컴포넌트 활용 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. 컴포넌트 활용</h3>
+<h3>1. 컴포넌트 활용</h3>
 <p>먼저 변수 <code>num</code>을 지정하고 화면에 출력시켜 보겠습니다.</p>
 <table>
-    <tbody><tr>
+    <tr>
         <td>
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactvar1.png" alt="reactvar1" width="500">
         </td>
@@ -186,11 +188,11 @@
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactvar2.png" alt="reactvar2" width="500">
         </td>
     </tr>
-</tbody></table>
+</table>
 <p><code>let num = 30;</code>으로 선언 및 정의한 변수를 p태그 안에 중괄호를 사용하여 바로 출력할 수 있습니다.</p>
 <p>이번에는 컴포넌트 파일을 생성해서 App.js에 컴포넌트를 추가해 보겠습니다.</p>
 <table>
-    <tbody><tr>
+    <tr>
         <td>
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom1.png" alt="reactcom1" width="500">
         </td>
@@ -198,11 +200,11 @@
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom2.png" alt="reactcom2" width="500">
         </td>
     </tr>
-</tbody></table>
+</table>
 <p>src 디렉터리에 <code>DogImage.js</code>라는 파일을 생성했습니다. (~~~.jsx 확장자도 가능합니다.) <strong>RSF 스니펫</strong>을 활용하면 간편하게 jsx 형식을 갖출 수 있습니다.</p>
 <p>강아지 이모티콘을 출력하는 컴포넌트를 작성해 보겠습니다.</p>
 <table>
-    <tbody><tr>
+    <tr>
         <td>
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom3.png" alt="reactcom3" width="500">
         </td>
@@ -210,13 +212,13 @@
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom4.png" alt="reactcom4" width="500">
         </td>
     </tr>
-</tbody></table>
+</table>
 <p><code>img_style</code> 함수를 정의하고 img 태그에 적용시켜 주었습니다. React에서 이미지 src를 적용할 경우 상단에 이미지를 import한 후 적용하거나, 위처럼 require을 사용해야 합니다.</p>
 <p>App.js에서 DogImage.js를 import한 후, a 태그 부분을 지운 뒤 컴포넌트를 넣었습니다.</p>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom5.png" alt="reactcom5" width="500">
 <p>결과는 이렇게 잘 나옵니다! 이번엔 이미지를 5번 반복시켜 보겠습니다.</p>
 <table>
-    <tbody><tr>
+    <tr>
         <td>
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom7.png" alt="reactcom7" width="430">
         </td>
@@ -224,11 +226,11 @@
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom6.png" alt="reactcom6" width="500">
         </td>
     </tr>
-</tbody></table>
+</table>
 <p>map 함수를 활용하면 다음과 같이 반복할 수 있습니다. 예제로는 이미지를 다뤘지만, 주로 함수 내에서 사용하는 배열이나 json 객체와 관련하여 다룰 때 효과적입니다. React를 탐구하면 할수록 자주 사용하게 되는 방식입니다.</p>
 <p>컴포넌트 또한 반복 가능합니다.</p>
 <table>
-    <tbody><tr>
+    <tr>
         <td>
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom8.png" alt="reactcom8" width="500">
         </td>
@@ -236,11 +238,11 @@
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom9.png" alt="reactcom9" width="369">
         </td>
     </tr>
-</tbody></table>
-<h3 id="2-props" style="position:relative;"><a href="#2-props" aria-label="2 props permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Props</h3>
+</table>
+<h3>2. Props</h3>
 <p><strong>Props</strong>는 Properties의 줄임말로, 컴포넌트에 전달하는 데이터를 말합니다. <code>Number.js</code>라는 새 컴포넌트를 만들고 props 값을 넘겨 그 값을 출력하도록 설계해 보겠습니다.</p>
 <table>
-    <tbody><tr>
+    <tr>
         <td>
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom10.png" alt="reactcom10" width="440">
         </td>
@@ -251,18 +253,18 @@
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactcom12.png" alt="reactcom12" width="126">
         </td>
     </tr>
-</tbody></table>
+</table>
 <p>Number.js에서 num을 받아 h1 태그 안에 출력하고, App.js에서는 컴포넌트에 <code>num={넘길 값}</code>의 형태로 값을 전달했습니다.</p>
 <p>위와 같은 예제는 간단한 경우이지만, 복잡한 구조 속에서 이러한 컴포넌트와 Props를 잘 활용하면 불필요한 코드의 반복을 줄일 수 있고, 효율적인 프로그래밍을 실현할 수 있습니다.</p>
-<h1 id="phase-5-상태-관리" style="position:relative;"><a href="#phase-5-%EC%83%81%ED%83%9C-%EA%B4%80%EB%A6%AC" aria-label="phase 5 상태 관리 permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Phase 5. 상태 관리</h1>
+<h1>Phase 5. 상태 관리</h1>
 <p>지금까지 예제에서는 정적인 부분만 다뤘습니다. 하지만 웹페이지는 시시각각 변화하며, 다양한 동적 데이터를 다루어야 하는 경우가 많습니다.</p>
 <p>사용자 요청에 따라 값이 바뀌어야 할 경우, 값의 상태를 관리하는 방법이 대해 알아보겠습니다.</p>
-<h3 id="usestate" style="position:relative;"><a href="#usestate" aria-label="usestate permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UseState</h3>
+<h3>UseState</h3>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactusestate.png" alt="reactusestate" width="500">
 <p><strong>UseState</strong>는 React에서 지원하는 상태 관리 도구입니다. useState import 후 위와 같은 구문으로 사용 가능합니다. 초깃값은 0으로 설정해 두었고, <code>setNum</code>을 사용하여 <code>num</code> 값을 수정할 수 있습니다.</p>
 <p>num 값을 조절할 수 있는 마이너스, 플러스 함수를 생성하고, 버튼으로 실행시켜 값을 변경해보도록 하겠습니다.</p>
 <table>
-    <tbody><tr>
+    <tr>
         <td>
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactstate1.png" alt="reactstate1" width="500">
         </td>
@@ -270,16 +272,16 @@
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactstate2.png" alt="reactstate2" width="500">
         </td>
     </tr>
-</tbody></table>
+</table>
 <p>App.js 코드를 위처럼 변경했습니다. 추가적으로, React에서 인라인 스타일을 지정하려면 <code>style={{ display: "flex" }}</code>처럼 중괄호를 이중으로 해야합니다.</p>
 <p><strong>setPlus 함수</strong> : num의 값을 1 증가</p>
 <p><strong>setMinus 함수</strong> : num의 값을 1 감소</p>
 <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactstate3.gif" alt="reactstate3" width="500">
 <p>선택하는 이벤트에 따라 알맞게 작동합니다.</p>
-<h3 id="useeffect" style="position:relative;"><a href="#useeffect" aria-label="useeffect permalink" class="toc-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UseEffect</h3>
+<h3>UseEffect</h3>
 <p><strong>UseEffect</strong>는 컴포넌트가 렌더링 될 때 특정 작업을 실행할 수 있는 hook입니다. 위에서 다룬 num 값의 변화를 UseEffect로 감지하여 console.log로 출력해 보겠습니다.</p>
 <table>
-    <tbody><tr>
+    <tr>
         <td>
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactuseeffect1.png" alt="reactuseeffect1" width="400">
         </td>
@@ -287,107 +289,9 @@
             <img src="https://raw.githubusercontent.com/yhuj79/blog-assets/main/230429/reactuseeffect2.gif" alt="reactuseeffect2" width="668">
         </td>
     </tr>
-</tbody></table>
+</table>
 <p>useEffect 함수의 마지막 파라미터에 num을 넣음으로써 num 값이 변할 때마다 useEffect에 등록한 함수가 호출됩니다. 따라서 클릭 이벤트가 발생할 때 num 값을 출력하는 console.log가 실행되는 것을 볼 수 있습니다.</p>
-<p>이렇게 React의 기본적인 정보에 대해 살펴보았습니다. 이것보다 더 놀랍고 유용한 기능들이 많으니 웹 프로그래밍에 관심 있으신 분들은 여러가지 다른 자료를 찾아가며 React를 배워 보시길 추천드립니다.</p>
-<style class="grvsc-styles">
-  .grvsc-container {
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-    padding-top: 1rem;
-    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
-    padding-bottom: 1rem;
-    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
-    border-radius: 8px;
-    border-radius: var(--grvsc-border-radius, 8px);
-    font-feature-settings: normal;
-    line-height: 1.4;
-  }
-  
-  .grvsc-code {
-    display: table;
-  }
-  
-  .grvsc-line {
-    display: table-row;
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
-  }
-  
-  .grvsc-line > * {
-    position: relative;
-  }
-  
-  .grvsc-gutter-pad {
-    display: table-cell;
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  .grvsc-gutter {
-    display: table-cell;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter::before {
-    content: attr(data-content);
-  }
-  
-  .grvsc-source {
-    display: table-cell;
-    padding-left: 1.5rem;
-    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
-    padding-right: 1.5rem;
-    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
-  }
-  
-  .grvsc-source:empty::after {
-    content: ' ';
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-  
-  .grvsc-gutter + .grvsc-source {
-    padding-left: 0.75rem;
-    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
-  }
-  
-  /* Line transformer styles */
-  
-  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
-    content: ' ';
-    position: absolute;
-    width: 100%;
-  }
-  
-  .grvsc-line-diff-add::before {
-    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
-  }
-  
-  .grvsc-line-diff-del::before {
-    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
-  }
-  
-  .grvsc-line-number {
-    padding: 0 2px;
-    text-align: right;
-    opacity: 0.7;
-  }
-  
-  .one-dark-pro {
-    background-color: #282c34;
-    color: #abb2bf;
-  }
-  .one-dark-pro .grvsc-line-highlighted::before {
-    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
-    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
-  }
-</style></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1pgmiy6">.css-1pgmiy6{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="css-1pgmiy6"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 e1yummiu0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="6cgvfx">.css-6cgvfx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:left;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-left-width:4px;border-color:#404040;}.css-6cgvfx:hover{background-color:#DDD;}</style><a rel="prev" class="css-6cgvfx" href="/Database/230411/"><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></div><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="kk4m4x">.css-kk4m4x{color:#1D1D1D;}</style><p class="css-kk4m4x">이전 포스트</p><p>관계 데이터 모델의 개념</p></div></a></div><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="1qhu0pg">.css-1qhu0pg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-right-width:4px;border-color:#404040;}.css-1qhu0pg:hover{background-color:#DDD;}</style><a rel="next" class="css-1qhu0pg" href="/Computer Science/230628/"><div class="css-v38or"><p class="css-kk4m4x">다음 포스트</p><p>운영체제 프로세스와 쓰레드</p></div><div class="css-19o7xeo"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e7xb9g90"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e7xb9g91"><style data-emotion-css="lg558f">.css-lg558f{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(42,67,101,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-lg558f{margin-bottom:1rem;}}</style><div class="css-lg558f gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAB5y57T1wKEB//xAAWEAEBAQAAAAAAAAAAAAAAAAADIAH/2gAIAQEAAQUChF1J/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAQEBAAAAAAAAAAAAAAAAASARIf/aAAgBAQAGPwKDQ5P/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQIFFx/9oACAEBAAE/IdjEZfcPHVQnH//aAAwDAQACAAMAAAAQ/wDovv/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAAICAgMAAAAAAAAAAAAAAAERABAxQSFRcf/aAAgBAQABPxCIjO64sIWsDAUux4DryzX/2Q==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
+<p>이렇게 React의 기본적인 정보에 대해 살펴보았습니다. 이것보다 더 놀랍고 유용한 기능들이 많으니 웹 프로그래밍에 관심 있으신 분들은 여러가지 다른 자료를 찾아가며 React를 배워 보시길 추천드립니다.</p></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><div><style data-emotion-css="17t5ffy">.css-17t5ffy{margin-top:1rem;margin-bottom:1rem;}</style><div class="css-17t5ffy"><style data-emotion-css="1l4w6pd">.css-1l4w6pd{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</style><div class="css-1l4w6pd"><style data-emotion-css="1pgmiy6">.css-1pgmiy6{border-radius:9999px;width:100%;height:1px;--bg-opacity:1;background-color:rgba(247,250,252,var(--bg-opacity));background:linear-gradient( 270deg,#FFFFFF,#404040,#FFFFFF );}</style><div class="css-1pgmiy6"></div></div></div><style data-emotion-css="i1cgbm">.css-i1cgbm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;margin-top:1rem;padding-left:0.5rem;padding-right:0.5rem;}</style><div class="css-i1cgbm"><style data-emotion-css="16k19ub">.css-16k19ub{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#2D87FD;}</style><button class="css-16k19ub"><style data-emotion-css="u7tj59">.css-u7tj59{fill:currentColor;margin-top:auto;margin-bottom:auto;margin-right:0.25rem;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>Share with <!-- -->Facebook</button><style data-emotion-css="9nr5sz">.css-9nr5sz{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#1CA1F2;}</style><button class="css-9nr5sz"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>Share with <!-- -->Twitter</button><style data-emotion-css="rk0yc0">.css-rk0yc0{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;margin-top:0.5rem;margin-bottom:0.5rem;margin-left:0.5rem;border-radius:0.25rem;--text-opacity:1;color:rgba(255,255,255,var(--text-opacity));background-color:#6E7783;}</style><button class="css-rk0yc0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="css-u7tj59" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path></svg>Share with <!-- -->Url</button></div></div></div></div></div><div class="css-1bdwg0l e15oq7vq0"><style data-emotion-css="17t1oy1">.css-17t1oy1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap-reverse;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse;margin-left:0.5rem;margin-right:0.5rem;margin-top:1rem;}@media (min-width:768px){.css-17t1oy1{-webkit-flex-wrap:nowrap;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}}</style><div class="css-17t1oy1 e1yummiu0"><style data-emotion-css="1pwr1ry">.css-1pwr1ry{width:100%;margin:0.5rem;}@media (min-width:768px){.css-1pwr1ry{width:50%;margin:1rem;}}</style><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="6cgvfx">.css-6cgvfx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:left;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-left-width:4px;border-color:#404040;}.css-6cgvfx:hover{background-color:#DDD;}</style><a rel="prev" class="css-6cgvfx" href="/Database/230411/"><style data-emotion-css="19o7xeo">.css-19o7xeo{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;margin-right:1rem;margin-left:0.5rem;height:100%;}</style><div class="css-19o7xeo"><style data-emotion-css="11za1ik">.css-11za1ik{width:2rem;height:2rem;margin-top:auto;margin-bottom:auto;}</style><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 0 0 0 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"></path></svg></div><style data-emotion-css="v38or">.css-v38or{display:inline-block;margin-top:0.5rem;margin-bottom:0.5rem;}</style><div class="css-v38or"><style data-emotion-css="kk4m4x">.css-kk4m4x{color:#1D1D1D;}</style><p class="css-kk4m4x">이전 포스트</p><p>관계 데이터 모델의 개념</p></div></a></div><div class="css-1pwr1ry e1yummiu1"><style data-emotion-css="1qhu0pg">.css-1qhu0pg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-transition:all 300ms cubic-bezier(0.4,0,0.2,1);transition:all 300ms cubic-bezier(0.4,0,0.2,1);text-align:right;width:100%;height:100%;padding:0.5rem;background-color:#FFF;border-radius:0.25rem;border-right-width:4px;border-color:#404040;}.css-1qhu0pg:hover{background-color:#DDD;}</style><a rel="next" class="css-1qhu0pg" href="/Computer Science/230628/"><div class="css-v38or"><p class="css-kk4m4x">다음 포스트</p><p>운영체제 프로세스와 쓰레드</p></div><div class="css-19o7xeo"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="css-11za1ik" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 0 0 0-48.4z"></path></svg></div></a></div></div><style data-emotion-css="14yohw7">.css-14yohw7{width:100%;max-width:768px;padding-left:1rem;padding-right:1rem;margin-left:auto;margin-right:auto;padding-top:2rem;margin-top:0.5rem;margin-bottom:1rem;}@media (min-width:768px){.css-14yohw7{padding-left:0;padding-right:0;padding-top:3rem;}}</style><div class="css-14yohw7 e7xb9g90"><style data-emotion-css="180ky7f">.css-180ky7f{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:0.5rem;padding-right:0.5rem;}@media (min-width:768px){.css-180ky7f{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><div class="css-180ky7f e7xb9g91"><style data-emotion-css="lg558f">.css-lg558f{border-radius:9999px;border-width:1px;--border-opacity:1;border-color:rgba(42,67,101,var(--border-opacity));margin-right:2rem;margin-bottom:0.5rem;}@media (min-width:768px){.css-lg558f{margin-bottom:1rem;}}</style><div class="css-lg558f gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:128px;height:128px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAwDAQACEAMQAAAB5y57T1wKEB//xAAWEAEBAQAAAAAAAAAAAAAAAAADIAH/2gAIAQEAAQUChF1J/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFxABAQEBAAAAAAAAAAAAAAAAASARIf/aAAgBAQAGPwKDQ5P/xAAaEAEBAAIDAAAAAAAAAAAAAAABEQAQIFFx/9oACAEBAAE/IdjEZfcPHVQnH//aAAwDAQACAAMAAAAQ/wDovv/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8QH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EABwQAAICAgMAAAAAAAAAAAAAAAERABAxQSFRcf/aAAgBAQABPxCIjO64sIWsDAUux4DryzX/2Q==" alt="profileImg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/cc017/profile.jpg 1.5x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/0c30b/profile.jpg 2x" /><img loading="lazy" width="128" height="128" srcset="/static/1a8ae7d4a25def4f63c4c4b05392bb86/6dc0c/profile.jpg 1x,
 /static/1a8ae7d4a25def4f63c4c4b05392bb86/cc017/profile.jpg 1.5x,
