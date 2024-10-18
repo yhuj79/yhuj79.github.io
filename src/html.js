@@ -16,10 +16,10 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=0"
           />
-          <meta
+          {/* <meta
             name="google-site-verification"
             content="YrSW4MzDhrvSmZ3VfNIrwEt20skXiU5pjoenBPxK_zA"
-          />
+          /> */}
           {jennifer_front_id && (
             <script
               dangerouslySetInnerHTML={{
