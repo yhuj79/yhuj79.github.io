@@ -1,4 +1,147 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Nov 2024 08:41:31 GMT</lastBuildDate><item><title><![CDATA[MVC, MVP, MVVM]]></title><description><![CDATA[소프트웨어 개발에서 다양한 아키텍처 패턴은 코드의 구조를 체계화하고 유지보수성을 높이는 데 필수적인 역할을 한다. 그중에서도 MVC(Model-View-Controller), MVP(Model-View-Presenter), MVVM(Model-View…]]></description><link>https://yhuj79.github.io/Computer Science/241119/</link><guid isPermaLink="false">https://yhuj79.github.io/Computer Science/241119/</guid><pubDate>Tue, 19 Nov 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[BLOG_YHUJ]]></title><description><![CDATA[yhuj79's Blog]]></description><link>https://yhuj79.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 21 Dec 2024 09:58:10 GMT</lastBuildDate><item><title><![CDATA[Javascript V8 작동 원리]]></title><description><![CDATA[V8은 Google에서 개발한 오픈소스 자바스크립트 엔진으로, 주로 Chrome 브라우저와 Node.js에서 사용된다. V…]]></description><link>https://yhuj79.github.io/Javascript/241222/</link><guid isPermaLink="false">https://yhuj79.github.io/Javascript/241222/</guid><pubDate>Sat, 21 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+&lt;p&gt;V8은 Google에서 개발한 오픈소스 자바스크립트 엔진으로, 주로 Chrome 브라우저와 Node.js에서 사용된다. V8은 자바스크립트 코드를 기계어로 변환하여 실행하는 고성능 엔진이며, 최신 웹 애플리케이션과 서버 애플리케이션의 핵심 역할을 담당하고 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;스크립트-언어와-현대-프로그래밍&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%96%B8%EC%96%B4%EC%99%80-%ED%98%84%EB%8C%80-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D&quot; aria-label=&quot;스크립트 언어와 현대 프로그래밍 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;스크립트 언어와 현대 프로그래밍&lt;/h2&gt;
+&lt;p&gt;프로그래밍 언어는 보통 작동 방식에 따라 컴파일 언어(Compiled Language)와 인터프리터 언어(Interpreter Language)로 구분되곤 한다. 초기 스크립트 언어는 주로 대형 컴퓨터 시스템에서 작업 자동화를 목적으로 사용되었지만, 현재는 뛰어난 범용성과 확장성을 바탕으로 복잡한 응용 프로그램 개발에도 효과적으로 사용되고 있다.&lt;/p&gt;
+&lt;p&gt;과거에는 스크립트 언어가 컴파일 언어에 비해 실행 속도가 느리다는 평가를 받았으나, 현대에는 AJITC와 같은 기술 덕분에 이 격차가 크게 줄어들었다. AJITC(Adaptive Just-In-Time Compilation)는 컴파일러와 인터프리터의 장점을 결합한 개념으로, 스크립트 언어의 실행 성능을 네이티브 컴파일 언어와 유사한 수준으로 끌어올렸다. 이러한 기술의 발전은 컴파일 언어와 인터프리터 언어 간의 구분이 점차 희미해지고 있음을 보여준다.&lt;/p&gt;
+&lt;p&gt;Chrome의 V8 엔진은 JIT 컴파일러를 기반으로 인터프리터와 컴파일러 방식을 결합하여 동작하는 대표적인 예이다. 이처럼 현대 자바스크립트 엔진은 빠른 실행 속도와 높은 효율성을 동시에 추구하며 진화하고 있다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://yhuj79.github.io/Computer%20Science/241021&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;스크립트 언어의 진화와 미래 기술 동향&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;v8-엔진&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#v8-%EC%97%94%EC%A7%84&quot; aria-label=&quot;v8 엔진 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;V8 엔진&lt;/h2&gt;
+&lt;p&gt;자바스크립트 엔진은 자바스크립트 소스 코드를 기계어로 변환하여 실행하는 프로그램이다. 브라우저마다 각기 다른 엔진을 사용하지만, 기본적인 작동 원리는 유사하다. Google Chrome과 Node.js에서 사용되는 V8 엔진은 C++로 작성된 오픈소스 엔진으로, 높은 성능과 효율성을 자랑한다.&lt;/p&gt;
+&lt;img alt=&quot;v8-1&quot; src=&quot;https://raw.githubusercontent.com/yhuj79/blog-assets/main/241221/v8-1.png&quot;&gt;
+&lt;img alt=&quot;v8-2&quot; src=&quot;https://raw.githubusercontent.com/yhuj79/blog-assets/main/241221/v8-2.png&quot;&gt;
+&lt;h4 id=&quot;1-parsing&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-parsing&quot; aria-label=&quot;1 parsing permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Parsing&lt;/h4&gt;
+&lt;p&gt;자바스크립트 엔진은 소스 코드를 파싱하여 &lt;strong&gt;Abstract Syntax Tree&lt;/strong&gt;를 생성한다. AST는 코드의 문법 구조를 계층적으로 표현한 데이터 구조로, 컴파일러가 이해할 수 있는 형태로 변환하기 위한 첫 단계이다.&lt;/p&gt;
+&lt;h4 id=&quot;2-interpreter-ignition&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-interpreter-ignition&quot; aria-label=&quot;2 interpreter ignition permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Interpreter: Ignition&lt;/h4&gt;
+&lt;p&gt;V8 엔진의 인터프리터는 &lt;strong&gt;Ignition&lt;/strong&gt;으로, AST를 바탕으로 &lt;strong&gt;Bytecode&lt;/strong&gt;를 생성하고 실행한다. Bytecode는 가상 머신에서 실행 가능한 중간 언어로, 플랫폼 독립성을 제공한다. Ignition은 코드 실행 초기 단계에서 빠르게 바이트코드를 생성하여 즉시 실행할 수 있도록 한다.&lt;/p&gt;
+&lt;h4 id=&quot;3-optimizing-compiler-turbofan&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-optimizing-compiler-turbofan&quot; aria-label=&quot;3 optimizing compiler turbofan permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. Optimizing Compiler: TurboFan&lt;/h4&gt;
+&lt;p&gt;자바스크립트 코드 실행 중 프로파일링 데이터를 수집하여 &lt;strong&gt;뜨거운 코드(hot code)&lt;/strong&gt;를 식별한다. 뜨거운 코드에 대해서는 아래 AJITC 부분에서 설명한다. 이러한 코드는 TurboFan이라는 최적화 컴파일러로 전달되어 고도로 최적화된 기계어로 변환된다. 최적화된 기계어는 반복 실행 시 성능을 크게 향상시킨다.&lt;/p&gt;
+&lt;h4 id=&quot;4-deoptimization&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#4-deoptimization&quot; aria-label=&quot;4 deoptimization permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. Deoptimization&lt;/h4&gt;
+&lt;p&gt;만약 프로파일링 데이터가 변경되거나, 최적화된 코드가 예상치 못한 결과를 초래할 경우, 엔진은 최적화된 코드를 버리고 다시 Bytecode로 되돌린다. 이를 통해 실행 환경의 변화를 유연하게 처리한다.&lt;/p&gt;
+&lt;h2 id=&quot;ajitc-adaptive-just-in-time-compilation&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ajitc-adaptive-just-in-time-compilation&quot; aria-label=&quot;ajitc adaptive just in time compilation permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;AJITC (Adaptive Just-In-Time Compilation)&lt;/h2&gt;
+&lt;img alt=&quot;jit&quot; src=&quot;https://raw.githubusercontent.com/yhuj79/blog-assets/main/241221/jit.png&quot;&gt;
+&lt;p&gt;JIT 컴파일(Just-In-Time Compilation)은 프로그램을 실제 실행하는 시점에 기계어로 번역하는 컴파일 기법이다. V8은 &lt;strong&gt;AJITC&lt;/strong&gt;를 통해 성능과 유연성을 극대화한다. 적응형 JIT 컴파일 방식으로, 모든 코드를 기계어로 변환하지 않고 자주 실행되는 코드만 선택적으로 최적화한다. 이를 통해 &lt;strong&gt;Compilation Overhead(컴파일 과부하)&lt;/strong&gt;를 최소화하고 실행 성능을 개선한다.&lt;/p&gt;
+&lt;p&gt;다음은 예시 javascript 코드이다.&lt;/p&gt;
+&lt;pre class=&quot;grvsc-container one-dark-pro&quot; data-language=&quot;javascript&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk4 mtki&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk4 mtki&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk9&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; (&lt;/span&gt;&lt;span class=&quot;mtk9&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;; &lt;/span&gt;&lt;span class=&quot;mtk4&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mtk8&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;) {&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mtk3&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;mtk7&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;mtk1&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;mtk1&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;위 함수는 반복적으로 호출되면서 &lt;strong&gt;뜨거운 코드&lt;/strong&gt;로 간주된다. &lt;strong&gt;TurboFan은 이러한 코드를 최적화하여 실행 속도를 높인다.&lt;/strong&gt; 하지만 동일 함수가 다른 데이터 타입과 함께 호출되면, 기존 최적화된 코드가 무효화되고 Deoptimization이 발생한다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=5nmpokoRaZI&amp;#x26;ab_channel=JSConf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;JavaScript Engines: The Good Parts - Benedikt Meurer, Mathias Bynens&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@poojasharma_93670/sneak-peek-into-javascript-v8-engine-d2bb2eb2bdb2&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Sneak Peek into Javascript V8 Engine - Pooja Sharma&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://v8.dev&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;V8 JavaScript engine&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://velog.io/@godori/JavaScript-engine-1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;JavaScript 엔진 톺아보기&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://velog.io/@kich555/JIT-Compiler-Chrome-V8-Engine&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;JIT Compiler &amp;#x26; Chrome V8 Engine&lt;/a&gt;&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .one-dark-pro {
+    background-color: #282c34;
+    color: #abb2bf;
+  }
+  .one-dark-pro .mtki { font-style: italic; }
+  .one-dark-pro .mtk9 { color: #C678DD; }
+  .one-dark-pro .mtk1 { color: #ABB2BF; }
+  .one-dark-pro .mtk3 { color: #61AFEF; }
+  .one-dark-pro .mtk4 { color: #E06C75; }
+  .one-dark-pro .mtk8 { color: #56B6C2; }
+  .one-dark-pro .mtk7 { color: #D19A66; }
+  .one-dark-pro .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[MVC, MVP, MVVM]]></title><description><![CDATA[소프트웨어 개발에서 다양한 아키텍처 패턴은 코드의 구조를 체계화하고 유지보수성을 높이는 데 필수적인 역할을 한다. 그중에서도 MVC(Model-View-Controller), MVP(Model-View-Presenter), MVVM(Model-View…]]></description><link>https://yhuj79.github.io/Computer Science/241119/</link><guid isPermaLink="false">https://yhuj79.github.io/Computer Science/241119/</guid><pubDate>Tue, 19 Nov 2024 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;소프트웨어 개발에서 다양한 아키텍처 패턴은 코드의 구조를 체계화하고 유지보수성을 높이는 데 필수적인 역할을 한다. 그중에서도 &lt;strong&gt;MVC(Model-View-Controller)&lt;/strong&gt;, &lt;strong&gt;MVP(Model-View-Presenter)&lt;/strong&gt;, &lt;strong&gt;MVVM(Model-View-ViewModel)&lt;/strong&gt;은 소프트웨어 설계에서 가장 널리 사용되는 패턴으로, 관심사를 분리하여 코드를 효율적으로 관리할 수 있게 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;mvc-model-view-controller&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#mvc-model-view-controller&quot; aria-label=&quot;mvc model view controller permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;MVC (Model-View-Controller)&lt;/h2&gt;
@@ -58,8 +201,8 @@ View와 Model 사이의 데이터와 상태를 관리한다. ViewModel은 View�
 &lt;h2 id=&quot;정리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;정리 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;정리&lt;/h2&gt;
 &lt;p&gt;세 가지 패턴은 모두 관심사를 분리하는 데 중점을 두지만, 구현 방식과 역할 분담에는 차이가 있다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;MVC&lt;/strong&gt;는 단순하고 명확한 구조로, View와 Model이 서로 직접적인 의존성을 가질 수 있다.  &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;MVP&lt;/strong&gt;는 Presenter를 통해 View와 Model 간의 의존성을 제거하며, View와 Presenter가 1:1 관계를 갖는다.  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MVC&lt;/strong&gt;는 단순하고 명확한 구조로, View와 Model이 서로 직접적인 의존성을 가질 수 있다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MVP&lt;/strong&gt;는 Presenter를 통해 View와 Model 간의 의존성을 제거하며, View와 Presenter가 1:1 관계를 갖는다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;MVVM&lt;/strong&gt;은 ViewModel을 통해 데이터와 UI를 자동으로 동기화하며, View와 Model 간의 의존성을 최소화한다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
@@ -227,7 +370,8 @@ View와 Model 사이의 데이터와 상태를 관리한다. ViewModel은 View�
 &lt;p&gt;결론적으로, 스크립트 언어의 상승 요인은 언어 자체의 성능이나 완성도에 있는 것은 아니다. 휼륭한 접근성, 생산성을 기반으로 발현되는 집단 지성을 통해 몸집을 눈덩이처럼 불려가는 것이 핵심적인 상승 요인이라고 볼 수 있다.&lt;/p&gt;
 &lt;h3 id=&quot;미래-발전-방향&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%AF%B8%EB%9E%98-%EB%B0%9C%EC%A0%84-%EB%B0%A9%ED%96%A5&quot; aria-label=&quot;미래 발전 방향 permalink&quot; class=&quot;toc-header before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;미래 발전 방향&lt;/h3&gt;
 &lt;p&gt;시간이 지남에 따라 스크립트 언어는 단순한 텍스트 해석 도구에서 벗어나 성능과 확장성 측면에서 상당한 발전을 이뤘다. 이에 따라, 미래의 스크립트 언어는 더욱 강력하고 유연한 방향으로 진화할 것이다.&lt;/p&gt;
-&lt;p&gt;첫째, 퍼포먼스의 향상이 컴퓨터 언어의 중요한 발전 축이 될 것이다. 과거에는 스크립트 언어가 컴파일 언어에 비해 상대적으로 느리다는 평가를 받았으나, 현대에는 JIT(Just-In-Time) 컴파일러와 같은 기술이 적용되면서 이러한 격차가 크게 줄어들었다. JIT 컴파일러는 컴파일러와 인터프리터의 장점을 합치고자 만들어진 개념으로, 앞으로는 JIT 컴파일러와 같은 최적화 기술들을 통해 스크립트 언어의 실행 성능이 네이티브 컴파일 언어와 유사한 수준에 도달할 것으로 예상된다. 사실 이러한 과정은 컴파일 언어, 인터프리터 언어를 구분하는 장벽이 서서히 무너지고 있다는 것을 의미하기도 한다. Chrome의 V8 엔진도 앞서 말했던 JIT 컴파일러가 적용되어 인터프리터 시스템의 일부로 컴파일러가 포함된 형태이다. 성능에 대한 요구가 증가함에 따라 개발자들은 점차 컴파일 언어, 스크립트 언어 서로의 장점을 혼합하여 퍼포먼스 향상을 이뤄내고, 더욱 폭넓게 사용할 수 있게 될 것이다.&lt;/p&gt;
+&lt;p&gt;첫째, 퍼포먼스의 향상이 컴퓨터 언어의 중요한 발전 축이 될 것이다. 과거에는 스크립트 언어가 컴파일 언어에 비해 상대적으로 느리다는 평가를 받았으나, 현대에는 AJITC와 같은 기술이 적용되면서 이러한 격차가 크게 줄어들었다. AJITC(Adaptive Just-In-Time Compilation)는 컴파일러와 인터프리터의 장점을 합치고자 만들어진 개념으로, 앞으로는 이러한 최적화 기술들을 통해 스크립트 언어의 실행 성능이 네이티브 컴파일 언어와 유사한 수준에 도달할 것으로 예상된다. 사실 이러한 과정은 컴파일 언어, 인터프리터 언어를 구분하는 장벽이 서서히 무너지고 있다는 것을 의미하기도 한다. Chrome의 V8 엔진도 앞서 말했던 JIT 컴파일러가 적용되어 인터프리터 시스템의 일부로 컴파일러가 포함된 형태이다. 성능에 대한 요구가 증가함에 따라 개발자들은 점차 컴파일 언어, 스크립트 언어 서로의 장점을 혼합하여 퍼포먼스 향상을 이뤄내고, 더욱 폭넓게 사용할 수 있게 될 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://yhuj79.github.io/Javascript/241221&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Javascript V8 작동 원리&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;둘째, 다중 플랫폼 지원이 스크립트 언어의 핵심적인 발전 방향이 될 것이다. Javascript와 같은 언어는 현재도 브라우저, 서버, 모바일 등 다양한 플랫폼에서 사용되고 있지만, 미래에는 더 많은 환경에서 스크립트 언어가 중요한 역할을 할 것으로 예상된다. 최근 동향을 살펴보면, WebAssembly와 같은 기술이 떠오르고 있다. WebAssembly는 브라우저뿐 아니라 서버, 게임 엔진, IoT 디바이스 등에서 Javascript와 상호 보완되며 사용할 수 있는 언어로, 성능과 다중 플랫폼 지원 측면에서 중요한 역할을 하고 있다. 단순한 클라이언트 제어용 언어를 넘어선 발전 가능성을 보여준다. 또한 IoT(사물인터넷), AR/VR, 블록체인과 같은 신기술이 대두되면서, 스크립트 언어가 다양한 디바이스 간의 연결과 데이터 처리에서 유용한 도구 중 하나로 자리매김하는 중이다. AR/VR 영역에서는 Javascript 기반 프레임워크인 Three.js나 A-Frame을 통해 웹 기반의 3D 콘텐츠 및 인터랙티브 환경이 구축되고 있고, 블록체인 기술에서는 Ethereum의 Smart Contract과 같은 기술이 Javascript 기반의 언어로 작성되는 경우가 있다. 이러한 신기술들은 스크립트 언어가 기존 플랫폼을 넘어서 더 다양한 환경에서 활발히 사용되고 있음을 보여주는 사례이며, 앞으로도 이러한 추세는 가속화될 것이다.&lt;/p&gt;
 &lt;p&gt;셋째, 개발자의 생산성을 극대화하는 도구의 발전이 이어질 것이다. 이미 다양한 프레임워크와 라이브러리들이 개발자들이 더 쉽게 복잡한 애플리케이션을 개발할 수 있도록 돕고 있다. React, Vue, Angular 같은 프레임워크를 통해 빠르고 효율적인 클라이언트 개발을 할 수 있고, Node.js를 통해 서버 측 애플리케이션 개발도 가능해졌으며, 이는 JavaScript 하나의 언어로 클라이언트와 서버 모두에서 활용할 수 있는 강력한 생태계를 형성하고 있다. 미래에는 이러한 JavaScript 도구들이 더욱 지능적이고 자동화된 형태로 발전할 것이다. AI 기반 코드 보완 도구나 자동화된 테스팅 프레임워크, 그리고 코드 생성기가 도입되면서 개발자는 코드 작성에 소모되는 시간을 줄이고, 논리적 문제 해결에 더 많은 시간을 할애할 수 있을 것이다. 또한, WebAssembly와 같은 기술의 발전으로 JavaScript의 성능이 한층 더 강화되면서, 브라우저 기반 애플리케이션의 복잡성과 성능이 크게 향상될 것이다. 이처럼 JavaScript 생태계의 발전은 개발자의 생산성을 비약적으로 높이는 데 중요한 역할을 하겠지만, 더 나아가 다른 스크립트 언어들도 점차 자동화와 성능 최적화를 통한 발전을 이어갈 것이며, 이는 전반적인 개발 환경의 변화를 이끌어낼 것이다.&lt;/p&gt;
 &lt;p&gt;넷째, 오픈 소스와 협업의 중요성이 더욱 커질 것이다. 스크립트 언어는 커뮤니티와의 협업을 통해 빠르게 발전해 왔으며, 이 트렌드는 앞으로도 지속될 것이다. 오픈 소스 프로젝트의 활성화는 더 많은 사람들이 개발에 참여할 수 있는 기회를 제공하며, 새로운 아이디어와 기술이 더 빠르게 발전할 수 있다.&lt;/p&gt;
